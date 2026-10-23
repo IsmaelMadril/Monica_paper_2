@@ -1,0 +1,11 @@
+icd10,recorded_anatomy,expected_anatomy,records
+C710,Supratentorial,Supratentorial,2324
+C711,Supratentorial,Supratentorial,521
+C712,Supratentorial,Supratentorial,289
+C713,Supratentorial,Supratentorial,267
+C714,Infratentorial/midline,Supratentorial,127
+C715,Infratentorial/midline,Infratentorial/midline,135
+C716,Infratentorial/midline,Infratentorial/midline,923
+C717,Unspecified,Infratentorial/midline,82
+C718,Overlapping,Overlapping,93
+C719,Unspecified,Unspecified,3488

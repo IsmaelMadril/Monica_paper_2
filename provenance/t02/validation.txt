@@ -1,0 +1,7 @@
+23 October 2026
+Baseline: 6 sources and 6 snapshots verified.
+Official ZIP checksums: all 17 main downloads verified by audit script.
+All 10 yearly cached C71 extracts checksum verified.
+Cohort integration checks passed: totals, source flow, unique row keys, anatomy, age/stay groups, death coding, labels, dates and flags.
+Three recoding boundary tests passed.
+Early-year residence-area labels remain provisional.

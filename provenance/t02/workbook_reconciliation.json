@@ -1,0 +1,16 @@
+[
+  {
+    "path": "Data_base/base monica encefalo base para graficos.xlsx",
+    "sheet": "Hoja3",
+    "rows": 8249,
+    "shared_fields": 12,
+    "same_order_and_values_as_sav_after_numeric_format_normalization": true
+  },
+  {
+    "path": "Data_base/base monica encefalo.xlsx",
+    "sheet": "Hoja3",
+    "rows": 8249,
+    "shared_fields": 12,
+    "same_order_and_values_as_sav_after_numeric_format_normalization": true
+  }
+]

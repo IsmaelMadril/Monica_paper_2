@@ -1,0 +1,10 @@
+{
+  "year": 2023,
+  "source_records": 1170813,
+  "c71_prefix_records": 1095,
+  "eligible_c710_c719": 1095,
+  "other_or_unknown_diagnosis": 1169718,
+  "missing_diagnosis": 0,
+  "excluded_after_c71_selection": 0,
+  "extract_sha256": "1519356bc2408a63ca9cad03e08c55b8db2c94ad24e6d0b169a1ee16edf49deb"
+}

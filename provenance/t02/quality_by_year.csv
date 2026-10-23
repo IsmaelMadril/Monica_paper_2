@@ -1,0 +1,11 @@
+year,age_unknown,outcome_unknown,los_unknown,ethnicity_unknown,residence_province_unknown,residence_foreign,same_day_calendar,negative_calendar_stay,stay_date_mismatch,discharge_year_mismatch
+2015,0,0,0,136,0,0,113,0,113,0
+2016,0,0,0,105,0,0,179,0,179,0
+2017,0,0,0,141,0,0,177,0,177,0
+2018,0,0,0,177,0,1,26,0,26,0
+2019,0,0,0,216,0,2,34,0,34,0
+2020,0,0,0,88,0,0,30,0,30,0
+2021,0,0,0,76,0,0,69,0,69,0
+2022,0,0,0,140,0,0,39,0,39,0
+2023,0,0,0,108,0,0,66,0,66,0
+2024,0,0,0,103,0,0,94,0,94,0

@@ -19,6 +19,8 @@ Priorities: P0 = blocks reliable results; P1 = major scientific/reporting revisi
 
 ## T02 — Reconstruct and audit the analytic admissions
 
+Progress, 23 October 2026: official 2015–2024 releases reconstructed (10,972 admissions; 963 deaths). See `t02_data_audit.md` and `../provenance/t02/`. Early-year residence-area labels remain provisional, and the historical cleaning script is unavailable for now. G1 has not been marked passed.
+
 - [ ] **P0 · data analyst + INEC/data custodian as needed · 2–4 days · after T01.**
 - Obtain original annual INEC discharge files and year-specific dictionaries for 2015–2024. Record file dates/releases, coverage and annual source row counts.
 - Implement documented primary-discharge C71.0–C71.9 selection, accounting for punctuation, labels, whitespace and year-specific coding. Inspect filters, joins, dropped records and missing discharge outcomes. Distinguish exact duplicated records from legitimate repeat admissions; never infer patient identity from demographic similarities.

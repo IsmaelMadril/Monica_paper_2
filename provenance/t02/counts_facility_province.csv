@@ -1,0 +1,206 @@
+source_year,facility_province,records
+2015,Azuay,91
+2015,Cañar,2
+2015,Chimborazo,23
+2015,Cotopaxi,5
+2015,El Oro,14
+2015,Esmeraldas,6
+2015,Guayas,370
+2015,Imbabura,5
+2015,Loja,29
+2015,Los Ríos,10
+2015,Manabí,65
+2015,Morona Santiago,1
+2015,Orellana,1
+2015,Pastaza,2
+2015,Pichincha,379
+2015,Santa Elena,20
+2015,Santo Domingo de los Tsáchilas,17
+2015,Tungurahua,33
+2016,Azuay,88
+2016,Bolívar,1
+2016,Carchi,2
+2016,Cañar,2
+2016,Chimborazo,15
+2016,Cotopaxi,9
+2016,El Oro,14
+2016,Esmeraldas,9
+2016,Guayas,479
+2016,Imbabura,5
+2016,Loja,37
+2016,Los Ríos,10
+2016,Manabí,38
+2016,Morona Santiago,2
+2016,Pichincha,300
+2016,Santa Elena,12
+2016,Santo Domingo de los Tsáchilas,12
+2016,Sucumbíos,2
+2016,Tungurahua,19
+2016,Zamora Chinchipe,1
+2017,Azuay,164
+2017,Carchi,2
+2017,Cañar,6
+2017,Chimborazo,23
+2017,Cotopaxi,4
+2017,El Oro,17
+2017,Esmeraldas,10
+2017,Guayas,459
+2017,Imbabura,17
+2017,Loja,31
+2017,Los Ríos,25
+2017,Manabí,40
+2017,Morona Santiago,1
+2017,Napo,2
+2017,Pastaza,1
+2017,Pichincha,359
+2017,Santa Elena,10
+2017,Santo Domingo de los Tsáchilas,17
+2017,Tungurahua,31
+2017,Zamora Chinchipe,2
+2018,Azuay,149
+2018,Bolívar,2
+2018,Carchi,1
+2018,Cañar,5
+2018,Chimborazo,13
+2018,Cotopaxi,5
+2018,El Oro,27
+2018,Esmeraldas,10
+2018,Galapagos,1
+2018,Guayas,280
+2018,Imbabura,6
+2018,Loja,35
+2018,Los Ríos,31
+2018,Manabí,86
+2018,Morona Santiago,2
+2018,Orellana,1
+2018,Pastaza,1
+2018,Pichincha,419
+2018,Santa Elena,19
+2018,Santo Domingo de los Tsáchilas,20
+2018,Sucumbíos,5
+2018,Tungurahua,30
+2019,Azuay,167
+2019,Bolívar,2
+2019,Carchi,3
+2019,Cañar,4
+2019,Chimborazo,31
+2019,Cotopaxi,6
+2019,El Oro,21
+2019,Esmeraldas,5
+2019,Galápagos,1
+2019,Guayas,288
+2019,Imbabura,24
+2019,Loja,68
+2019,Los Ríos,19
+2019,Manabí,53
+2019,Morona Santiago,4
+2019,Napo,1
+2019,Pichincha,478
+2019,Santa Elena,16
+2019,Santo Domingo de los Tsáchilas,21
+2019,Sucumbíos,9
+2019,Tungurahua,18
+2020,Azuay,111
+2020,Bolívar,1
+2020,Carchi,1
+2020,Cañar,4
+2020,Chimborazo,17
+2020,Cotopaxi,7
+2020,El Oro,11
+2020,Esmeraldas,4
+2020,Guayas,288
+2020,Imbabura,14
+2020,Loja,25
+2020,Los Ríos,1
+2020,Manabí,24
+2020,Morona Santiago,1
+2020,Pastaza,4
+2020,Pichincha,383
+2020,Santa Elena,4
+2020,Santo Domingo de los Tsáchilas,13
+2020,Sucumbíos,5
+2020,Tungurahua,23
+2020,Zamora Chinchipe,1
+2021,Azuay,120
+2021,Bolívar,2
+2021,Carchi,1
+2021,Cañar,4
+2021,Chimborazo,14
+2021,Cotopaxi,9
+2021,El Oro,16
+2021,Esmeraldas,4
+2021,Guayas,362
+2021,Imbabura,18
+2021,Loja,82
+2021,Los Ríos,10
+2021,Manabí,26
+2021,Morona Santiago,1
+2021,Napo,2
+2021,Pastaza,2
+2021,Pichincha,347
+2021,Santa Elena,10
+2021,Santo Domingo de los Tsáchilas,22
+2021,Sucumbíos,4
+2021,Tungurahua,23
+2021,Zamora Chinchipe,1
+2022,Azuay,145
+2022,Carchi,4
+2022,Cañar,4
+2022,Chimborazo,14
+2022,Cotopaxi,1
+2022,El Oro,39
+2022,Esmeraldas,3
+2022,Galápagos,1
+2022,Guayas,362
+2022,Imbabura,17
+2022,Loja,54
+2022,Los Ríos,3
+2022,Manabí,70
+2022,Morona Santiago,4
+2022,Orellana,1
+2022,Pichincha,312
+2022,Santa Elena,8
+2022,Santo Domingo de los Tsáchilas,25
+2022,Sucumbíos,7
+2022,Tungurahua,23
+2022,Zamora Chinchipe,1
+2023,Azuay,219
+2023,Bolívar,1
+2023,Carchi,2
+2023,Cañar,7
+2023,Chimborazo,29
+2023,Cotopaxi,4
+2023,El Oro,20
+2023,Esmeraldas,5
+2023,Guayas,300
+2023,Imbabura,10
+2023,Loja,54
+2023,Los Ríos,11
+2023,Manabí,76
+2023,Morona Santiago,1
+2023,Napo,1
+2023,Pastaza,1
+2023,Pichincha,279
+2023,Santa Elena,10
+2023,Santo Domingo de los Tsáchilas,24
+2023,Sucumbíos,2
+2023,Tungurahua,37
+2023,Zamora Chinchipe,2
+2024,Azuay,115
+2024,Carchi,2
+2024,Cañar,3
+2024,Chimborazo,14
+2024,Cotopaxi,4
+2024,El Oro,19
+2024,Esmeraldas,2
+2024,Guayas,350
+2024,Imbabura,22
+2024,Loja,42
+2024,Los Ríos,9
+2024,Manabí,78
+2024,Pichincha,310
+2024,Santa Elena,6
+2024,Santo Domingo de los Tsáchilas,20
+2024,Sucumbíos,1
+2024,Tungurahua,21
+2024,Zamora Chinchipe,1

@@ -2,8 +2,9 @@
 
 Research workspace for the 2015–2024 nationwide hospital-discharge manuscript.
 The unit of analysis is an admission/discharge record. The project is currently
-at **T01: inputs preserved and reproducibility workspace prepared**. Data integrity,
-rates and statistical models still require the planned validation.
+at **T02: official-source admission reconstruction implemented**. The rebuilt cohort
+contains 10,972 admissions and 963 deaths. Early-year residence-area labels remain
+provisional; rates and models require recalculation. See the [T02 audit](Writeable/t02_data_audit.md).
 
 Start with the [independent review](Writeable/current_state_review.md),
 [revision task plan](Writeable/revision_task_plan.md) and
@@ -11,8 +12,8 @@ Start with the [independent review](Writeable/current_state_review.md),
 
 ## Local setup
 
-The baseline environment was created with Python 3.14.7. T01 tooling uses only
-the Python standard library; later analysis dependencies will be pinned as chosen.
+The environment uses Python 3.14.7. `requirements.txt` now pins the installed T02
+reading/analysis dependencies; T01 preservation tooling still uses only the standard library.
 
 ```sh
 python3 -m venv .venv
@@ -65,6 +66,22 @@ filename-based candidates; their production history is unknown. The editable
 manuscript, original annual INEC files/codebooks, population files, and plotting
 code are not present. See the lineage and provenance notes for the full record.
 
-Next is **T02: reconstruct and audit the analytic admissions**, especially 2017,
-2023, 2024, discharge-event coding and age/stay recodes. T01 does not validate the
-existing model estimates or repair their reported convergence warnings.
+T02 downloaded and reconstructed all ten national releases. The audit documents
+year discrepancies, corrected anatomical groups and explicit age/stay/outcome coding.
+The original extraction script is unavailable for now; early-year residence-area
+labels still require confirmation before association modelling. Next is T03 rate
+recalculation, followed by model repair in T04/T05.
+
+Reproduce the audit from downloaded sources:
+
+```sh
+.venv/bin/python scripts/extract_inec.py
+.venv/bin/python scripts/audit_admissions.py
+.venv/bin/python -m unittest discover -s tests -v
+```
+
+For new source acquisition, run `scripts/acquire_inec.py` and optionally
+`scripts/acquire_early_dictionaries.py` first; these require internet access.
+Individual admission outputs remain ignored; aggregate audit evidence is tracked
+in `provenance/t02/`. T01 environment records describe the historical baseline;
+current versions are recorded separately in `provenance/t02/environment_freeze.txt`.

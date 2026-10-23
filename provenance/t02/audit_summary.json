@@ -1,0 +1,10 @@
+{
+  "admissions": 10972,
+  "deaths": 963,
+  "alive": 10009,
+  "unknown_outcome": 0,
+  "legacy_misclassified_anatomy": 209,
+  "legacy_projected_duplicates_beyond_first": 714,
+  "retention_policy": "All C710-C719 records retained; no covariate or deduplication exclusions; unknown covariates explicitly flagged",
+  "year_policy": "All 2015-2024 years retained from official source reconstruction; no anomaly-year exclusion"
+}
