@@ -1,0 +1,2 @@
+# T01 tooling uses the Python standard library only.
+# Add and pin dependencies here when the analysis pipeline is implemented.

@@ -1,0 +1,8 @@
+{
+  "recorded_utc": "2026-10-23T14:00:04.722690+00:00",
+  "python_version": "3.14.7",
+  "python_implementation": "CPython",
+  "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+  "environment": ".venv",
+  "dependencies": "standard library only for T01; pip bootstrap recorded in environment_freeze.txt"
+}

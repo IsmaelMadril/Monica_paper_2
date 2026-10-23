@@ -1,0 +1,9 @@
+artifact,reported_or_candidate_source,generation_evidence,status,missing_information
+Table 1,Data_base/BASE DATOS TESIS.sav,SPV CROSSTABS by con_egrpa,legacy route identified but not reproduced,Exact saved dataset version and manuscript export reconciliation
+Table 2,Data_base/BASE DATOS TESIS.sav,SPV CROSSTABS by CIE10_1,legacy route identified but not reproduced,Exact saved dataset version and manuscript export reconciliation
+Table 3,Data_base workbooks are candidates,Manuscript direct-standardization description only,unknown generation route,Rate formulas population files weights and export code
+Table 4,Data_base/BASE DATOS TESIS.sav,SPV LOGISTIC REGRESSION con_egrpa,legacy route identified; invalid fit warning,Event mapping corrected fit and exact output-to-table mapping
+Table 5,Data_base/BASE DATOS TESIS.sav,SPV NOMREG CIE10_1 BASE=3,legacy route identified; fit validity warning,Validated model and exact output-to-table mapping
+Figure 1,Plotting workbook is filename-based candidate,No plotting script supplied,unverified,Workbook sheets formulas plotting code and rate-table link
+Figure 2,Geographic records in supplied files are candidates,No mapping script supplied,unknown generation route,Province variable boundaries aggregation and rendering code
+Abstract and narrative,Manuscript tables and models,No automated generation supplied,manual linkage unverified,Traceable final output references after reanalysis

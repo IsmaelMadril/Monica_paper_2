@@ -1,0 +1,22 @@
+READ-ONLY LEGACY EVIDENCE: extracted XML text, not runnable syntax. Not refitted.
+
+ARCHIVE MEMBER: outputViewer0000000000.xml
+Resultado
+<p style="text-align:right; margin-top: 0">Page &[Page]</p>
+Registro
+<head><style type="text/css">p{color:0;font-family:Monospaced;font-size:14pt;font-style:normal;font-weight:normal;text-decoration:none}</style></head><BR>RECODE edad (0 thru 17=1) (18 thru 44=2) (45 thru 64=3) (65 thru 79=4) (ELSE=5) INTO EDAD_1. VARIABLE LABELS EDAD_1 'EDAD_1'. EXECUTE. RECODE dia_estad (1 thru 3=1) (4 thru 14=2) (15 thru 30=3) (ELSE=4) INTO DIAS_HOSP. VARIABLE LABELS DIAS_HOSP 'DIAS_HOSP'. EXECUTE. AUTORECODE VARIABLES=sexo etnia area_res sector CIE10 /INTO SEXO1 ETNIA1 AREA_RES1 SECTOR1 CIE10_1 /PRINT. sexo into SEXO1 Old Value New Value Value Label Hombre 1 Hombre Mujer 2 Mujer etnia into ETNIA1 Old Value New Value Value Label Afroecuatoriano/a 1 Afroecuatoriano/a Blanco/a 2 Blanco/a Indígena 3 Indígena Mestizo/a 4 Mestizo/a Montubio/a 5 Montubio/a Otro/a 6 Otro/a area_res into AREA_RES1 Old Value New Value Value Label Rural 1 Rural Urbana 2 Urbana sector into SECTOR1 Old Value New Value Value Label Privado 1 Privado Público 2 Público CIE10 into CIE10_1 Old Value New Value Value Label Infratentorial y Línea Media 1 Infratentorial y Línea Media Lesiones Sobrepuestas 2 Lesiones Sobrepuestas No Especificado / Otros 3 No Especificado / Otros Supratentorial (Hemisférico) 4 Supratentorial (Hemisférico) CROSSTABS /TABLES=EDAD_1 SEXO1 ETNIA1 AREA_RES1 SECTOR1 CIE10_1 DIAS_HOSP Año BY con_egrpa /FORMAT=AVALUE TABLES /STATISTICS=CHISQ /CELLS=COUNT COLUMN /COUNT ROUND CELL.
+
+ARCHIVE MEMBER: outputViewer0000000002.xml
+Resultado
+Registro
+<head><style type="text/css">p{color:0;font-family:Monospaced;font-size:14pt;font-style:normal;font-weight:normal;text-decoration:none}</style></head><BR> SAVE OUTFILE='[legacy-local-path]/BASE DATOS TESIS.sav' /COMPRESSED. CROSSTABS /TABLES=EDAD_1 SEXO1 ETNIA1 AREA_RES1 SECTOR1 DIAS_HOSP Año BY CIE10_1 /FORMAT=AVALUE TABLES /STATISTICS=CHISQ /CELLS=COUNT COLUMN /COUNT ROUND CELL.
+
+ARCHIVE MEMBER: outputViewer0000000004.xml
+Resultado
+Registro
+<head><style type="text/css">p{color:0;font-family:Monospaced;font-size:14pt;font-style:normal;font-weight:normal;text-decoration:none}</style></head><BR>GET FILE='[legacy-local-path]/BASE DATOS TESIS.sav'. DATASET NAME ConjuntoDatos1 WINDOW=FRONT. LOGISTIC REGRESSION VARIABLES con_egrpa /METHOD=ENTER EDAD_1 SEXO1 ETNIA1 AREA_RES1 SECTOR1 CIE10_1 DIAS_HOSP Año /CONTRAST (EDAD_1)=Indicator(1) /CONTRAST (SEXO1)=Indicator(1) /CONTRAST (ETNIA1)=Indicator(1) /CONTRAST (AREA_RES1)=Indicator(1) /CONTRAST (SECTOR1)=Indicator(1) /CONTRAST (CIE10_1)=Indicator(1) /CONTRAST (DIAS_HOSP)=Indicator(1) /CONTRAST (Año)=Indicator(1) /PRINT=CI(95) /CRITERIA=PIN(0.05) POUT(0.10) ITERATE(20) CUT(0.5).
+
+ARCHIVE MEMBER: outputViewer0000000006.xml
+Resultado
+Registro
+<head><style type="text/css">p{color:0;font-family:Monospaced;font-size:14pt;font-style:normal;font-weight:normal;text-decoration:none}</style></head><BR>NOMREG CIE10_1 (BASE=3 ORDER=ASCENDING) BY EDAD_1 SEXO1 ETNIA1 AREA_RES1 SECTOR1 DIAS_HOSP Año /CRITERIA CIN(95) DELTA(0) MXITER(100) MXSTEP(5) CHKSEP(20) LCONVERGE(0) PCONVERGE(0.000001) SINGULAR(0.00000001) /MODEL /STEPWISE=PIN(.05) POUT(0.1) MINEFFECT(0) RULE(SINGLE) ENTRYMETHOD(LR) REMOVALMETHOD(LR) /INTERCEPT=INCLUDE /PRINT=PARAMETER SUMMARY LRT CPS STEP MFI.

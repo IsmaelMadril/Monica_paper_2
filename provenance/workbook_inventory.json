@@ -1,0 +1,64 @@
+[
+  {
+    "path": "Data_base/base monica encefalo base para graficos.xlsx",
+    "sheets": [
+      {
+        "name": "Hoja2",
+        "sheet_id": "8"
+      },
+      {
+        "name": "Hoja4",
+        "sheet_id": "9"
+      },
+      {
+        "name": "Hoja3",
+        "sheet_id": "3"
+      },
+      {
+        "name": "Hoja1",
+        "sheet_id": "4"
+      },
+      {
+        "name": "Hoja1 (2)",
+        "sheet_id": "5"
+      },
+      {
+        "name": "bi",
+        "sheet_id": "6"
+      },
+      {
+        "name": "multi",
+        "sheet_id": "7"
+      }
+    ],
+    "role_verified": false,
+    "inspection": "workbook metadata only; no patient-level records exported"
+  },
+  {
+    "path": "Data_base/base monica encefalo.xlsx",
+    "sheets": [
+      {
+        "name": "Hoja3",
+        "sheet_id": "3"
+      },
+      {
+        "name": "Hoja1",
+        "sheet_id": "4"
+      },
+      {
+        "name": "Hoja1 (2)",
+        "sheet_id": "5"
+      },
+      {
+        "name": "bi",
+        "sheet_id": "6"
+      },
+      {
+        "name": "multi",
+        "sheet_id": "7"
+      }
+    ],
+    "role_verified": false,
+    "inspection": "workbook metadata only; no patient-level records exported"
+  }
+]
