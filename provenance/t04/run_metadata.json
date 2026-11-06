@@ -1,0 +1,18 @@
+{
+  "inputs_sha256": {
+    "data/processed/admissions_c71_audited.csv": "ee5d45af5653e07e8177c90d37633058697a58bb54db0a026a5554abe64c83d5",
+    "provenance/t04/analysis_specification.md": "f05bab8b4261a22c372d9319367628eec78c127b244c2669c0effe40907d9979"
+  },
+  "statsmodels": "0.15.0",
+  "primary_event": "death=1",
+  "primary_covariance": "Observed-information, independent admissions",
+  "assumption": "Unobserved patient/facility dependence remains unresolved",
+  "primary_references": {
+    "age_group": "0-17",
+    "sex": "Hombre",
+    "ethnicity": "6",
+    "sector_binary": "Private",
+    "anatomy": "Supratentorial",
+    "year": "2015"
+  }
+}

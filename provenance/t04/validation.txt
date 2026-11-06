@@ -1,0 +1,8 @@
+6 November 2026
+38 project tests passed, including T04 event-direction, logistic2x2, outcome-reversal, separation, reference and integration checks.
+Primary:10972 admissions;963 deaths;27 full-rank parameters;6 iterations;score infinity norm1.42e-11.
+All8 fits converge with finite estimates; no fitting warnings or LP separation.
+Original SPV encoded death0/live1; old model summary reports no final solution.
+Rebuilt numeric outcome death1/live0 verified against raw source discharge codes.
+Six sparse primary levels have supplementary profile-likelihood intervals.
+Patient/facility clustering unresolved; model-based and HC0 covariance limitations documented.

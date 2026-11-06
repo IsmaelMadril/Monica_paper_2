@@ -1,6 +1,6 @@
 # Research provenance and reproducibility
 
-This directory documents the preserved T01 baseline, T02 source reconstruction and T03 rates.
+This directory documents the preserved T01 baseline, T02 source reconstruction, T03 rates and T04 mortality models.
 It is shared through Git; large inputs and generated admission files are restored
 separately on each machine. See the [main README](../README.md) for macOS and Windows
 PowerShell setup and [the T02 audit](../Writeable/t02_data_audit.md) for findings.
@@ -117,3 +117,15 @@ not interchangeable. `annual_standardized_rates.csv` includes both residence
 policies and age schemes. `run_metadata.json` records input fingerprints.
 T03 environment versions are in `t03/environment_freeze.txt`. The generated Table 3
 is under `outputs/tables/` and can be regenerated using the main README commands.
+
+## T04 mortality-model evidence
+
+`provenance/t04/` records the pre-fit specification, explicit outcome cross-tabulation,
+legacy SPV encoding, primary crude/adjusted ORs, sensitivity fits, rank/separation/
+convergence checks, sparse-level profile intervals and environment versions.
+The supplied SPV confirms its old internal event 1 was live discharge; the rebuilt
+model explicitly uses death=1. Final LOS is secondary only, and unverified early
+rural/urban labels are excluded from the primary fit. See the
+[T04 report](../Writeable/t04_mortality_analysis.md) for interpretation and limitations.
+Legacy evidence can be re-examined when the supplied SPV is restored; primary
+model reproduction requires the audited cohort, not the original SPV.

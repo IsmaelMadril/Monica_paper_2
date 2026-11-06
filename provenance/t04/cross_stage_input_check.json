@@ -1,0 +1,10 @@
+{
+  "t03_recorded_hash": "3716a7f3433d5b0c9aa72586c10b8f0837173d9f8f4f635c0007f815edd19b36",
+  "t04_current_and_line_ending_variant_hashes": {
+    "current": "ee5d45af5653e07e8177c90d37633058697a58bb54db0a026a5554abe64c83d5",
+    "lf": "ee5d45af5653e07e8177c90d37633058697a58bb54db0a026a5554abe64c83d5",
+    "crlf": "3716a7f3433d5b0c9aa72586c10b8f0837173d9f8f4f635c0007f815edd19b36"
+  },
+  "same_file_after_line_ending_conversion": true,
+  "interpretation": "T04 LF bytes become the exact recorded T03 bytes under CRLF conversion; no data changes are needed"
+}

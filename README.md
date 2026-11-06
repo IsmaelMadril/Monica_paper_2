@@ -4,7 +4,8 @@ Research workspace for the 2015–2024 nationwide hospital-discharge manuscript.
 The unit of analysis is an admission/discharge record. T02 reconstructed **10,972
 admissions and 963 in-hospital deaths** from official INEC releases. Early-year
 residence-area labels remain provisional. T03 has rebuilt resident-population rates;
-T04/T05 model recalculation remains pending.
+T04 mortality modelling is complete for its documented specification; T05 multinomial
+modelling remains pending.
 
 Start with the [independent review](Writeable/current_state_review.md),
 [revision task plan](Writeable/revision_task_plan.md),
@@ -200,8 +201,8 @@ acquired and can be restored as described in the reproduction guide.
 The original workbook generation history is unverified. Confirm 2015–2017
 residence-area labels before rural/urban association modelling.
 
-T03 rate recalculation is complete for its documented specification. Next is model
-repair in T04/T05; T02 early residence-area labels still require confirmation. T01 environment
+T03 rate recalculation and T04 mortality modelling are complete for their documented
+specifications. Next is T05 multinomial model repair; T02 early residence-area labels still require confirmation. T01 environment
 records describe the historical baseline; T02 versions are recorded separately in
 `provenance/t02/environment_freeze.txt`. Those records are provenance, not a virtual
 environment to copy between machines.
@@ -226,3 +227,23 @@ are under `provenance/t03/`; the primary table is generated as
 `outputs/tables/table3_rebuilt.md` and `.csv`. T03 uses 10,969 resident discharges
 (three foreign-resident live discharges excluded) and keeps an all-discharge
 sensitivity analysis. These national rates do not depend on rural/urban labels.
+
+## Reproduce T04 mortality associations
+
+After generating the audited cohort, with the local environment active:
+
+```sh
+python -m pip install -r requirements.txt
+python -X utf8 scripts/fit_mortality.py
+python -X utf8 scripts/profile_sparse_mortality.py
+python -X utf8 -m unittest discover -s tests -v
+```
+
+To re-examine the original SPV when restored, run
+`python -X utf8 scripts/inspect_legacy_mortality.py`. This optional examination is
+separate from the rebuilt model. See [the T04 report](Writeable/t04_mortality_analysis.md)
+and `provenance/t04/analysis_specification.md`. Generated Table 4 is in
+`outputs/tables/table4_rebuilt.md` and `.csv`. The primary event is death=1; final
+LOS and unverified early residence-area labels are excluded from the primary fit.
+T04 includes sensitivities and sparse-level profile intervals. The new T04 stage
+has been executed on macOS; it has not yet been verified on Windows.

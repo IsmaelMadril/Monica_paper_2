@@ -1,6 +1,6 @@
 # Manuscript revision task plan
 
-Prepared 23 October 2026. Companion evidence: `current_state_review.md`. Preserve `review_issues.md` as the original review record. This plan covers all original issues 1–22 and new findings N01–N15. This is the original task sequence; dated progress notes below record completed work. T01 and the T03 rate specification are implemented; T02 retains an early residence-label question and model refits remain pending.
+Prepared 23 October 2026. Companion evidence: `current_state_review.md`. Preserve `review_issues.md` as the original review record. This plan covers all original issues 1–22 and new findings N01–N15. This is the original task sequence; dated progress notes below record completed work. T01, T03 and the T04 technical mortality analysis are implemented; T02 retains an early residence-label question and T05 multinomial refitting remains pending.
 
 **Recommended order: establish trustworthy data → rebuild rates and models → rewrite findings → prepare submission.** Do not retain a result because it supports the present narrative. If data or models cannot be validated, narrow the paper to defensible descriptive analyses and revise its scope accordingly.
 
@@ -55,7 +55,8 @@ Progress, 23 October 2026: official 2015–2024 releases reconstructed (10,972 a
 
 ## T04 — Repair and validate the mortality analysis
 
-- [ ] **P0 · statistician + clinical coauthor · 2–3 days · after T02; agree analysis specification before refitting.**
+- [x] **Technical analysis completed 6 November 2026 for the documented specification.** See `t04_mortality_analysis.md`, `../provenance/t04/` and `../outputs/tables/table4_rebuilt.md`. The original SPV confirms event 1 was survival; the rebuilt primary model uses death=1, omits final LOS/provisional residence labels, and includes 10,972 admissions/963 deaths. Eight fits converge without separation; sparse-level profile intervals are supplied. Patient/facility dependence and clinical specification review remain documented limitations for submission.
+- **P0 · statistician + clinical coauthor · 2–3 days · after the national-cohort audit; specification recorded before fitting.**
 - Open/export the SPSS dependent-variable encoding, warning and model-summary tables. Reconcile those outputs to the manuscript version.
 - Create and validate an explicit numeric event `death=1`, `alive=0`, with unknown outcomes excluded or otherwise handled transparently. Cross-tabulate against original labels and compute simple crude odds ratios to verify event/reference directions.
 - Specify the objective as association with death during an included admission. Distinguish causal explanation, association and prediction; the current study does not establish a clinical prediction tool.

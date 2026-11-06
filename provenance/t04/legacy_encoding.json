@@ -1,0 +1,28 @@
+{
+  "status": "decoded",
+  "source_path": "Results/RESULTADOS.spv",
+  "source_sha256": "f72f24e628e687111ea556f5516fe4f5cb5842674095c37a1ab7f74dc05abbdf",
+  "member": "00000000055_lightTableData.bin",
+  "member_sha256": "6826eaac9aa5ee4a6fe61d8730e0b59bca1be4fca7ce723cb8fddd239ebb5c40",
+  "encoding": {
+    "Fallecid": {
+      "leaf_index": 0,
+      "internal_value": 0
+    },
+    "Vivo": {
+      "leaf_index": 1,
+      "internal_value": 1
+    }
+  },
+  "warnings": {
+    "00000000053_lightWarningData.bin": [
+      "Este procedimiento no puede utilizar variables de cadena mayores que 8 bytes. Se truncarán los valores.X",
+      "Este procedimiento no puede utilizar variables de cadena mayores que 8 bytes. Se truncarán los valores."
+    ],
+    "000000000582_lightTableData.bin": [
+      "La estimación ha terminado en el número de iteración ^1 porque se ha alcanzado el máximo de iteraciones. La solución final no se puede encontrar."
+    ]
+  },
+  "interpretation": "Internal event=1 is Vivo",
+  "format_reference": "https://www.gnu.org/software/pspp/pspp-dev/html_node/index.html"
+}

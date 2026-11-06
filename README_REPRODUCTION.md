@@ -1,8 +1,8 @@
 # Reproduce the analysis on macOS or Windows
 
-This guide reproduces the implemented **T01–T03 workflow**: input verification,
-C71 admission reconstruction, data audit and age-adjusted rates. T04/T05 model
-repair and later manuscript work are not yet implemented. Run commands from the
+This guide reproduces the implemented **T01–T04 workflow**: input verification,
+C71 admission reconstruction, data audit, age-adjusted rates and mortality modelling.
+T05 multinomial model repair and later manuscript work are not yet implemented. Run commands from the
 repository root and stop when a command reports an error.
 
 ## Immediate fix: `admissions_c71_audited.csv` is missing
@@ -363,3 +363,42 @@ archives and optional caches using your research backup. Derived CSVs and tables
 can be regenerated; copying them is optional and does not replace verifying their
 inputs. Keep `.venv` local to each machine. Preserve the committed manifests and
 avoid automatic line-ending conversion of hashed original text inputs.
+
+## T04: reproduce mortality modelling
+
+After step 5 has created `admissions_c71_audited.csv`, install updated requirements
+and run (the same commands in an active macOS or Windows environment):
+
+```sh
+python -m pip install -r requirements.txt
+python -X utf8 scripts/fit_mortality.py
+python -X utf8 scripts/profile_sparse_mortality.py
+python -X utf8 -m unittest discover -s tests -v
+```
+
+The modelling stage uses the T02 cohort directly; T03 population denominators are
+not model inputs. `fit_mortality.py` produces the primary Table 4 and seven sensitivity
+fits, with diagnostics in `provenance/t04/`. `profile_sparse_mortality.py` adds
+profile-likelihood intervals for six sparse primary categories. The original SPV
+is not required to run the rebuilt model.
+
+Optional legacy encoding examination, with `Results/RESULTADOS.spv` restored:
+
+```sh
+python -X utf8 scripts/inspect_legacy_mortality.py
+```
+
+If the supplied SPV is absent, that command reports its absence and preserves
+historical encoding evidence. Its absence does not change the rebuilt numeric
+death outcome. Tests specifically reading the original SPV can be skipped on a
+workstation without it; this is distinct from skipping the cohort/model integration
+tests, which must run after generating the analysis outputs.
+
+Expected primary model: 10,972 admissions, 963 deaths, 27 full-rank parameters,
+finite estimates and no separation or fitting warning. The model excludes final
+LOS and provisional early-year residence-area labels. Age 80+ vs 0–17 has aOR
+2.631358; public vs private sector has aOR 1.201195. These are adjusted admission-level
+associations. See [the complete T04 methods/report](Writeable/t04_mortality_analysis.md)
+for references, uncertainty and dependence limitations. New T04 execution has been
+verified on macOS only; the previously documented Windows validation of T02/T03
+does not establish Windows validation of this newly added model stage.
