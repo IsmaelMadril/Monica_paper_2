@@ -1,0 +1,9 @@
+6 November 2026
+16 project tests passed, including 10 T03 method/integration tests.
+Population source hashes verified; annual age totals and census totals reconciled.
+Primary population: 10,969 resident discharges; 963 deaths; 3 foreign-resident live discharges excluded.
+Standard: actual 2022 census, 16,938,986 persons.
+Annual standardization components add; deaths <= admissions; arithmetic means reproduce.
+Poisson/gamma intervals, Wilson intervals and zero-event bounds verified.
+All-discharge, narrower-age and pooled population-year sensitivity outputs generated.
+Early-year rural/urban labels are not used.

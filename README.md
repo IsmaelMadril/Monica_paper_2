@@ -3,11 +3,13 @@
 Research workspace for the 2015–2024 nationwide hospital-discharge manuscript.
 The unit of analysis is an admission/discharge record. T02 reconstructed **10,972
 admissions and 963 in-hospital deaths** from official INEC releases. Early-year
-residence-area labels remain provisional; rates and models require recalculation.
+residence-area labels remain provisional. T03 has rebuilt resident-population rates;
+T04/T05 model recalculation remains pending.
 
 Start with the [independent review](Writeable/current_state_review.md),
 [revision task plan](Writeable/revision_task_plan.md),
-[T02 audit](Writeable/t02_data_audit.md), and [provenance notes](provenance/README.md).
+[T02 audit](Writeable/t02_data_audit.md), [T03 rates and methods](Writeable/t03_rates_and_methods.md),
+and [provenance notes](provenance/README.md).
 
 ## Original analysis files and validation sources
 
@@ -182,7 +184,29 @@ files and plotting/mapping code remain unavailable in the documented workflow.
 The original workbook generation history is unverified. Confirm 2015–2017
 residence-area labels before rural/urban association modelling.
 
-Next is T03 rate recalculation, followed by model repair in T04/T05. T01 environment
+T03 rate recalculation is complete for its documented specification. Next is model
+repair in T04/T05; T02 early residence-area labels still require confirmation. T01 environment
 records describe the historical baseline; T02 versions are recorded separately in
 `provenance/t02/environment_freeze.txt`. Those records are provenance, not a virtual
 environment to copy between machines.
+
+## Reproduce T03 rates
+
+With the local environment active on macOS or Windows PowerShell, and the T02
+audited cohort already generated:
+
+```sh
+python -m pip install -r requirements.txt
+python -X utf8 scripts/acquire_population.py
+python -X utf8 scripts/prepare_population.py
+python -X utf8 scripts/calculate_rates.py
+python -X utf8 -m unittest discover -s tests -v
+```
+
+Population acquisition requires internet access only for absent files; existing
+source hashes are verified. Restore `data/raw/population_2026-11-06/` from backup
+to reproduce the exact acquired versions. Source hashes and derived rate evidence
+are under `provenance/t03/`; the primary table is generated as
+`outputs/tables/table3_rebuilt.md` and `.csv`. T03 uses 10,969 resident discharges
+(three foreign-resident live discharges excluded) and keeps an all-discharge
+sensitivity analysis. These national rates do not depend on rural/urban labels.

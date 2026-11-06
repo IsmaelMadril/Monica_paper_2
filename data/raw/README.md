@@ -11,6 +11,7 @@ with that machine's own virtual environment active; see the
 | `baseline_2026-10-23/` | Byte-for-byte snapshots of the six supplied research inputs |
 | `inec_2026-10-23/` | Official annual INEC archives, dictionaries, syntax and extracted SAV files |
 | `inec_discovery_2026-10-23/` | Archived release pages and discovered source links |
+| `population_2026-11-06/` | T03 annual population and census standard workbooks, plus archived discovery pages |
 
 The dated directories identify the acquisition/baseline batch. Actual download
 timestamps and source versions are documented in manifests. The supplied legacy
@@ -78,3 +79,12 @@ hashes are in `provenance/inec_download_manifest.csv` and
 `provenance/inec_syntax_manifest.csv`. Investigate a mismatch instead of replacing
 the expected hash. The preservation policy relies on checksums and careful handling,
 not operating-system write protection.
+
+## T03 population inputs
+
+Restore `population_2026-11-06/` from backup, or with the environment active run
+`python -X utf8 scripts/acquire_population.py` on either operating system. The
+script only downloads absent files and rejects differences from the existing
+`provenance/t03/population_manifest.csv`. The two XLSX sources supply annual
+midyear populations and actual 2022 census counts respectively. Do not edit them
+or substitute one for the other.

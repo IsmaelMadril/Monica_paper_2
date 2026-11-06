@@ -1,6 +1,6 @@
 # Research provenance and reproducibility
 
-This directory documents the preserved T01 baseline and T02 source reconstruction.
+This directory documents the preserved T01 baseline, T02 source reconstruction and T03 rates.
 It is shared through Git; large inputs and generated admission files are restored
 separately on each machine. See the [main README](../README.md) for macOS and Windows
 PowerShell setup and [the T02 audit](../Writeable/t02_data_audit.md) for findings.
@@ -31,6 +31,7 @@ national source release date.
 | `inec_download_manifest.csv` | Official annual SPSS/dictionary download URLs, dates, sizes and hashes |
 | `inec_syntax_manifest.csv` | Early-year official syntax archive URLs and hashes |
 | `t02/` | Annual schemas, selection flow, reconciliation, missingness, recoding definitions, validation and T02 environment records |
+| `t03/` | Population-source hashes, annual denominators, observed census weights, rates, intervals, sensitivity analyses and run metadata |
 
 T02 downloaded the ten official annual INEC releases and available separate
 2018–2024 dictionaries. Early-year SAV metadata and official syntax were also
@@ -80,7 +81,7 @@ invalidate content hashes; altered text line endings do.
    fully traced from the final legacy files alone.
 2. The editable DOCX/LaTeX manuscript source is absent in the documented workflow.
 3. Workbook creators, transformations and generation history remain unverified.
-4. Population denominators and the actual 2022 standard weights remain to be obtained.
+4. T03 has obtained annual population denominators and actual 2022 census standard counts; their full provenance is in `t03/`. The original manuscript calculation history remains unverified.
 5. Plotting/mapping scripts and geographic boundary files remain unavailable.
 6. The legacy SPV contains model warnings and does not establish valid final fits.
 7. The 2015–2017 residence-area labels remain provisional; confirm them before
@@ -99,3 +100,13 @@ Investigate verification failures instead of overwriting expected hashes. Distin
 review findings, data-stage corrections and manuscript edits in the issue log.
 Record software/platform versions for subsequent scientific analysis runs without
 replacing historical T01/T02 environment evidence.
+
+## T03 rate evidence
+
+See [the methods appendix](../Writeable/t03_rates_and_methods.md).
+`population_manifest.csv` inside `t03/` fixes the two workbook versions by SHA-256.
+Annual estimates and the observed census standard are separate sources; they are
+not interchangeable. `annual_standardized_rates.csv` includes both residence
+policies and age schemes. `run_metadata.json` records input fingerprints.
+T03 environment versions are in `t03/environment_freeze.txt`. The generated Table 3
+is under `outputs/tables/` and can be regenerated using the main README commands.

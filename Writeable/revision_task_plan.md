@@ -1,6 +1,6 @@
 # Manuscript revision task plan
 
-Prepared 23 October 2026. Companion evidence: `current_state_review.md`. Preserve `review_issues.md` as the original review record. This plan covers all original issues 1–22 and new findings N01–N15. It specifies future work; no data corrections or model refits have yet been completed.
+Prepared 23 October 2026. Companion evidence: `current_state_review.md`. Preserve `review_issues.md` as the original review record. This plan covers all original issues 1–22 and new findings N01–N15. This is the original task sequence; dated progress notes below record completed work. T01 and the T03 rate specification are implemented; T02 retains an early residence-label question and model refits remain pending.
 
 **Recommended order: establish trustworthy data → rebuild rates and models → rewrite findings → prepare submission.** Do not retain a result because it supports the present narrative. If data or models cannot be validated, narrow the paper to defensible descriptive analyses and revise its scope accordingly.
 
@@ -42,7 +42,8 @@ Progress, 23 October 2026: official 2015–2024 releases reconstructed (10,972 a
 
 ## T03 — Rebuild every rate and uncertainty estimate
 
-- [ ] **P0 · epidemiologist/statistician · 1–2 days · after T02.**
+- [x] **Completed 6 November 2026 for the reconstructed-cohort specification.** See `t03_rates_and_methods.md`, `../provenance/t03/` and `../outputs/tables/table3_rebuilt.md`. Primary rates use 10,969 resident discharges, annual INEC denominators and the observed 2022 census standard; all-discharge and narrower-band sensitivity analyses are supplied. The outstanding T02 early residence-area labels are not used in these national calculations.
+- **P0 · epidemiologist/statistician · 1–2 days · after the national-cohort portions of T02.**
 - Archive annual Ecuador population denominators by age, their source/revision and the 2022 standard weights. Verify common age categories and weights summing to one.
 - Compute annual age-specific admission and death rates, then standardize both using the same weights. Separate annual population denominators from the fixed standard population. Assess whether narrower age groups are feasible.
 - Recalculate each anatomical component, annual total and 10-year summary from full-precision values. Define arithmetic mean of annual standardized rates versus any pooled summary; label whichever is used.
