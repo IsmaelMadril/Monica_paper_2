@@ -1,49 +1,91 @@
-# T01 baseline and provenance
+# Research provenance and reproducibility
 
-Baseline date: 23 October 2026. All six supplied research inputs have verified
-local snapshots and SHA-256 hashes. `input_manifest.csv` records source paths,
-snapshot paths, sizes, modification times, capture time and version uncertainty.
-Modification times are filesystem metadata, not proof of a source release date.
+This directory documents the preserved T01 baseline and T02 source reconstruction.
+It is shared through Git; large inputs and generated admission files are restored
+separately on each machine. See the [main README](../README.md) for macOS and Windows
+PowerShell setup and [the T02 audit](../Writeable/t02_data_audit.md) for findings.
 
-Files:
+## Baseline and source records
 
-- `input_manifest.csv`: preserved manuscript, original review, SAV, two workbooks
-  and SPV output. The independent review and plan remain working documents.
-- `artifact_lineage.csv`: provenance for all five tables and both figures,
-  distinguishing observed SPSS commands from candidate or unknown routes.
-- `workbook_inventory.json`: workbook sheet names; roles are not established by
-  names alone. The workbook without “graficos” is an analytic candidate and the
-  “base para graficos” workbook is a plotting candidate. Neither derivation is known.
-- `legacy_spss_log.txt`: embedded XML log text from the supplied SPV, with the
-  legacy absolute machine path redacted. This is evidence, not runnable syntax.
-- `variable_dictionary.csv`: provisional definitions from the manuscript/logs;
-  observed mappings do not establish valid data or annual coding consistency.
-- `issue_resolution_log.csv`: all 22 original issues and 15 additional findings,
-  plus T01 status. Review statuses are carried forward, not treated as verified fixes.
-- `environment.json` and `environment_freeze.txt`: environment metadata and
-  installed bootstrap package versions. T01 requires no third-party libraries.
+Baseline date: 23 October 2026. Six supplied research inputs have local snapshots
+and SHA-256 hashes. Filesystem modification times are metadata, not proof of a
+national source release date.
 
-## Known gaps for T02 and source recovery
+| File | Purpose |
+|---|---|
+| `input_manifest.csv` | Original/snapshot relative paths, sizes, hashes, timestamps and version uncertainty |
+| `artifact_lineage.csv` | Baseline provenance for all five manuscript tables and both figures; unknown routes remain explicit |
+| `workbook_inventory.json` | Baseline workbook sheet inventory; names alone do not establish production history |
+| `legacy_spss_log.txt` | Extracted legacy SPSS XML log text with the old machine path redacted; not runnable syntax |
+| `variable_dictionary.csv` | Provisional baseline variable definitions from the manuscript and logs |
+| `issue_resolution_log.csv` | Original issues, new findings, task decisions and validation status |
+| `environment.json`, `environment_freeze.txt` | Historical T01 environment and bootstrap packages |
+| `inec_download_manifest.csv` | Official annual SPSS/dictionary download URLs, dates, sizes and hashes |
+| `inec_syntax_manifest.csv` | Early-year official syntax archive URLs and hashes |
+| `t02/` | Annual schemas, selection flow, reconciliation, missingness, recoding definitions, validation and T02 environment records |
 
-1. Original annual INEC downloads, release versions and codebooks are absent.
-2. Editable DOCX/LaTeX manuscript source is absent; only the supplied PDF is present.
-3. Workbook creators, original formulas/transforms and generation history are unknown.
-4. Population-denominator files and actual 2022 standard weights are absent.
-5. Plotting/mapping scripts and map boundary files are absent.
-6. The SPV records legacy commands but does not prove which dataset version was
-   used for the manuscript or that its model fits were valid.
+T02 downloaded the ten official annual INEC releases and available separate
+2018–2024 dictionaries. Early-year SAV metadata and official syntax were also
+inspected. These acquisitions supersede the T01 statement that all national source
+files were absent. They do not establish how the old 8,249-record extract was made.
 
-These gaps are explicitly recorded rather than inferred as established provenance.
-The T01 workspace is ready; complete scientific reproducibility depends on resolving
-these gaps during the subsequent work.
+## Using the records on macOS and Windows
 
-## Preservation policy
+Manifest paths are relative to the repository root and use `/`. Python `pathlib`
+resolves them on either operating system; do not replace them with your machine's
+absolute paths or change path separators inside the manifests.
 
-Keep original inputs and baseline snapshots unchanged. Do not run transformations
-in place. Put newly acquired national files in a separate versioned `data/raw/`
-subdirectory and maintain a separate manifest for them. Put derived datasets in
-`data/processed/` and generated tables/figures/reports in `outputs/`.
+Create a local virtual environment and install the shared `requirements.txt` on
+each machine. Do not copy `.venv` or assume macOS binaries run on Windows.
+The environment records describe past runs; they are not platform-independent
+Python installations. Use explicit UTF-8 mode for project commands so Spanish
+labels and text files have the same encoding on both machines.
 
-Run `.venv/bin/python scripts/freeze_inputs.py --verify` before analysis. Any
-mismatch stops verification; investigate it rather than overwriting the baseline.
-The snapshot is protected by policy and checksum verification, not OS write protection.
+After changing to the project root and activating the local environment, run these
+same commands in either shell:
+
+```sh
+python -X utf8 scripts/freeze_inputs.py --verify
+python -X utf8 scripts/extract_inec.py
+python -X utf8 scripts/audit_admissions.py
+python -X utf8 -m unittest discover -s tests -v
+```
+
+If PowerShell activation is blocked, replace `python` with
+`.\.venv\Scripts\python.exe`. Without activation on macOS, replace it with
+`./.venv/bin/python`. No execution-policy change is required to invoke Python
+directly. Restore baseline and official input files before running the audit.
+
+Keep the version-controlled manifests and their archived inputs together. Do not
+rerun acquisition merely to verify a restored archive: the acquisition scripts can
+update manifests. The audit verifies official archive hashes, and the extraction
+script checks cached C71 extract hashes. Baseline verification checks both original
+and snapshot content. Different filesystem timestamps on a second machine do not
+invalidate content hashes; altered text line endings do.
+
+## Remaining provenance gaps
+
+1. The original extraction/cleaning script is unavailable for now; the author may
+   supply it later. Historical year losses and category transformations cannot be
+   fully traced from the final legacy files alone.
+2. The editable DOCX/LaTeX manuscript source is absent in the documented workflow.
+3. Workbook creators, transformations and generation history remain unverified.
+4. Population denominators and the actual 2022 standard weights remain to be obtained.
+5. Plotting/mapping scripts and geographic boundary files remain unavailable.
+6. The legacy SPV contains model warnings and does not establish valid final fits.
+7. The 2015–2017 residence-area labels remain provisional; confirm them before
+   modelling rural/urban associations. Raw source codes are preserved.
+
+The rebuilt cohort and explicit selection rules support subsequent work; these
+remaining gaps must stay visible in decisions and reporting.
+
+## Preservation and updates
+
+Keep original inputs and baseline snapshots unchanged. Put new national files in
+versioned `data/raw/` directories with their own manifest; derived datasets belong
+in `data/processed/`, and generated tables/figures/reports in `outputs/`.
+
+Investigate verification failures instead of overwriting expected hashes. Distinguish
+review findings, data-stage corrections and manuscript edits in the issue log.
+Record software/platform versions for subsequent scientific analysis runs without
+replacing historical T01/T02 environment evidence.

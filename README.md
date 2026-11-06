@@ -1,87 +1,177 @@
 # Malignant brain neoplasm hospitalizations in Ecuador
 
 Research workspace for the 2015–2024 nationwide hospital-discharge manuscript.
-The unit of analysis is an admission/discharge record. The project is currently
-at **T02: official-source admission reconstruction implemented**. The rebuilt cohort
-contains 10,972 admissions and 963 deaths. Early-year residence-area labels remain
-provisional; rates and models require recalculation. See the [T02 audit](Writeable/t02_data_audit.md).
+The unit of analysis is an admission/discharge record. T02 reconstructed **10,972
+admissions and 963 in-hospital deaths** from official INEC releases. Early-year
+residence-area labels remain provisional; rates and models require recalculation.
 
 Start with the [independent review](Writeable/current_state_review.md),
-[revision task plan](Writeable/revision_task_plan.md) and
-[baseline provenance notes](provenance/README.md).
+[revision task plan](Writeable/revision_task_plan.md),
+[T02 audit](Writeable/t02_data_audit.md), and [provenance notes](provenance/README.md).
 
-## Local setup
+## Requirements and moving between machines
 
-The environment uses Python 3.14.7. `requirements.txt` now pins the installed T02
-reading/analysis dependencies; T01 preservation tooling still uses only the standard library.
+Use Python **3.14** on both machines to match the environment used for the audit
+(recorded version: 3.14.7). Dependencies are pinned in `requirements.txt`.
+Windows commands below use **PowerShell** and the Python launcher `py`.
+
+Create `.venv` separately on each machine. Virtual environments contain local
+paths and platform-specific packages; do not copy or synchronize `.venv` between
+macOS and Windows. Transfer code through Git and restore ignored research files
+from a separate backup, preserving the folder layout and exact file bytes.
+
+The scripts resolve project paths relative to their own location. Commands below
+are run from the project root; replace example paths with your checkout location.
+Use `python -X utf8` for project scripts and tests on both systems. Explicit UTF-8
+mode keeps Spanish labels and text files consistent, including in Windows shells
+whose default text encoding differs. UTF-8 mode does not itself change line endings.
+
+## First setup on macOS
 
 ```sh
-python3 -m venv .venv
+cd "/path/to/Monica_paper_2"
+python3.14 -m venv .venv
 source .venv/bin/activate
+python --version
 python -m pip install -r requirements.txt
-python scripts/freeze_inputs.py --verify
+python -X utf8 scripts/freeze_inputs.py --verify
 ```
 
-The `.venv` already exists in the current workspace. For a new checkout, create
-it using the commands above and restore the source inputs and snapshots from
-separate storage before verification. Python 3.11 or newer is required for the
-checksum script. Environment records are in `provenance/environment.json` and
-`provenance/environment_freeze.txt`; activation ends with `deactivate`.
+If your Python 3.14 installation exposes `python3` instead of `python3.14`, check
+`python3 --version` and use `python3 -m venv .venv` to create the environment.
+
+## First setup on Windows PowerShell
+
+```powershell
+Set-Location "C:\path\to\Monica_paper_2"
+py -3.14 -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python --version
+python -m pip install -r requirements.txt
+python -X utf8 scripts/freeze_inputs.py --verify
+```
+
+If `py` is unavailable, use the installed Python 3.14 executable to run
+`-m venv .venv`. If PowerShell blocks `Activate.ps1`, activation is optional;
+run the environment's interpreter directly without changing execution policy:
+
+```powershell
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+.\.venv\Scripts\python.exe -X utf8 scripts/freeze_inputs.py --verify
+```
+
+For any later command beginning with `python`, substitute
+`.\.venv\Scripts\python.exe` when working without activation. On macOS the
+equivalent direct interpreter is `./.venv/bin/python`.
+
+## Returning to an existing environment
+
+After opening a new terminal, change to the project root and activate the local
+environment again:
+
+macOS:
+
+```sh
+source .venv/bin/activate
+```
+
+Windows PowerShell:
+
+```powershell
+.\.venv\Scripts\Activate.ps1
+```
+
+The remaining commands are identical in both shells once the environment is
+active. Run `deactivate` to leave it. After pulling dependency changes, run
+`python -m pip install -r requirements.txt` again in that machine's environment.
+
+## Restore the research inputs
+
+A Git checkout does not contain the ignored inputs needed to reproduce the audit.
+Restore these folders from your research backup, at the same relative paths:
+
+- `Data_base/`: the supplied SAV and both workbooks.
+- `Results/`: the supplied `RESULTADOS.spv`.
+- `data/raw/baseline_2026-10-23/`: six preserved baseline snapshots.
+- `data/raw/inec_2026-10-23/` and `data/raw/inec_discovery_2026-10-23/`:
+  official downloads and archived release pages, if already available.
+
+Keep the original manuscript PDF and `Writeable/review_issues.md` byte-identical
+to the baseline as well. Git/editor line-ending conversion of a text input can
+cause a checksum mismatch even when the visible text looks unchanged. Consult
+[the input manifest](provenance/input_manifest.csv) for the exact files and hashes.
+Do not regenerate the baseline to bypass a mismatch.
+
+Verify the restored originals and snapshots:
+
+```sh
+python -X utf8 scripts/freeze_inputs.py --verify
+```
+
+This checks content hashes, not machine paths or file modification times. The
+baseline already exists; running the script without `--verify` refuses to replace
+its manifest. See [raw-data instructions](data/raw/README.md) for preservation.
+
+## Download official sources when needed
+
+These commands work in either shell with the local environment active and require
+internet access. Allow several GB of disk space for ZIP archives and extracted SAV
+files. The scripts use the existing dated acquisition directory; that date identifies
+the project batch, while manifests record actual access timestamps.
+
+```sh
+python -X utf8 scripts/acquire_inec.py
+python -X utf8 scripts/acquire_early_dictionaries.py
+```
+
+The first command obtains the 2015–2024 releases and linked dictionaries. The
+second obtains early-year syntax archives used to investigate missing labels.
+Restoring archived downloads is preferable when reproducing the original audit;
+files served by the website may change. Preserve existing manifests and compare
+checksums before treating fresh downloads as the same source version.
+
+## Reproduce the admission audit
+
+After restoring the baseline inputs and acquiring/restoring the official sources:
+
+```sh
+python -X utf8 scripts/extract_inec.py
+python -X utf8 scripts/audit_admissions.py
+python -X utf8 -m unittest discover -s tests -v
+```
+
+The audited cohort is written to `data/processed/admissions_c71_audited.csv`.
+Aggregate evidence and dictionaries are written to `provenance/t02/`.
+Run extraction and auditing before the tests: cohort-integrity tests are skipped
+if the generated cohort is absent, so a test run alone does not prove reconstruction.
+
+The documented audit was executed on macOS. Windows instructions have been checked
+against the scripts' path handling; execution on a Windows machine remains to be
+verified. The test suite and checksum verification provide the checks to run there.
 
 ## Project layout
 
 | Path | Purpose |
 |---|---|
-| `Writeable/` | Manuscript PDF, original review, independent review and revision plan |
-| `Data_base/` | Supplied legacy SAV and workbooks; preserve unchanged |
-| `Results/` | Supplied legacy SPSS viewer output |
-| `data/raw/baseline_2026-10-23/` | Verified local snapshots of six supplied inputs |
-| `data/processed/` | Future derived datasets |
-| `provenance/` | Input hashes, variable dictionary, lineage, issue log and environment records |
-| `scripts/` | Reproducible processing and verification tools |
-| `outputs/tables/`, `outputs/figures/`, `outputs/reports/` | Future generated analysis products |
+| `Writeable/` | Manuscript PDF, reviews, revision plan and T02 audit |
+| `Data_base/` | Preserved legacy SAV and workbooks; ignored by Git |
+| `Results/` | Legacy SPSS viewer output; SPV files ignored by Git |
+| `data/raw/` | Preserved baseline, downloaded national releases and release pages |
+| `data/processed/` | Generated admission extracts; ignored by Git |
+| `provenance/` | Hashes, dictionaries, lineage, issue log and audit evidence |
+| `scripts/` | Acquisition, extraction, auditing and preservation scripts |
+| `tests/` | Recoding boundaries and cohort-integrity checks |
+| `outputs/` | Generated tables, figures and reports; products ignored by Git |
 
-## Verify the preserved inputs
+## Current limits and next work
 
-```sh
-.venv/bin/python scripts/freeze_inputs.py --verify
-```
+The official annual files and available dictionaries have been acquired in T02.
+The original legacy extraction script, editable manuscript source, population
+files and plotting/mapping code remain unavailable in the documented workflow.
+The original workbook generation history is unverified. Confirm 2015–2017
+residence-area labels before rural/urban association modelling.
 
-This checks SHA-256 hashes for both original paths and local snapshots. The initial
-freeze has already been performed; running the script without `--verify` refuses
-to overwrite an existing manifest. The manifest records filesystem dates and a
-capture timestamp; national source release dates remain unknown.
-
-Dataset files, SPV output, local snapshots, derived data, generated analysis
-products and the virtual environment are excluded from Git. Metadata, scripts,
-review documents and the manuscript PDF remain eligible for version control.
-Use separate storage/backups for ignored inputs; Git alone is insufficient to
-restore this project. No files have been committed as part of this setup.
-
-## Current provenance limits and next work
-
-Observed SPSS commands identify candidate routes for Tables 1, 2, 4 and 5.
-Table 3 and Figures 1–2 lack verified generation routes. Workbook purposes are
-filename-based candidates; their production history is unknown. The editable
-manuscript, original annual INEC files/codebooks, population files, and plotting
-code are not present. See the lineage and provenance notes for the full record.
-
-T02 downloaded and reconstructed all ten national releases. The audit documents
-year discrepancies, corrected anatomical groups and explicit age/stay/outcome coding.
-The original extraction script is unavailable for now; early-year residence-area
-labels still require confirmation before association modelling. Next is T03 rate
-recalculation, followed by model repair in T04/T05.
-
-Reproduce the audit from downloaded sources:
-
-```sh
-.venv/bin/python scripts/extract_inec.py
-.venv/bin/python scripts/audit_admissions.py
-.venv/bin/python -m unittest discover -s tests -v
-```
-
-For new source acquisition, run `scripts/acquire_inec.py` and optionally
-`scripts/acquire_early_dictionaries.py` first; these require internet access.
-Individual admission outputs remain ignored; aggregate audit evidence is tracked
-in `provenance/t02/`. T01 environment records describe the historical baseline;
-current versions are recorded separately in `provenance/t02/environment_freeze.txt`.
+Next is T03 rate recalculation, followed by model repair in T04/T05. T01 environment
+records describe the historical baseline; T02 versions are recorded separately in
+`provenance/t02/environment_freeze.txt`. Those records are provenance, not a virtual
+environment to copy between machines.
