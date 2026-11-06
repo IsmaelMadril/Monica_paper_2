@@ -9,6 +9,17 @@ Start with the [independent review](Writeable/current_state_review.md),
 [revision task plan](Writeable/revision_task_plan.md),
 [T02 audit](Writeable/t02_data_audit.md), and [provenance notes](provenance/README.md).
 
+## Original analysis files and validation sources
+
+Author clarification, 6 November 2026: the supplied `BASE DATOS TESIS.sav`,
+`RESULTADOS.spv`, and both XLSX workbooks are the complete set of data/output
+files used for the original analysis. **No additional original SAV file is missing.**
+The annual INEC files downloaded during T02 are additional validation sources;
+they were not part of the supplied original analysis package. The 8,249-record
+supplied cohort and 10,972-record reconstruction must be distinguished when
+reporting or investigating their differences. Those differences concern dataset
+contents and processing, not evidence of an absent SAV file.
+
 ## Requirements and moving between machines
 
 Use Python **3.14** on both machines to match the environment used for the audit

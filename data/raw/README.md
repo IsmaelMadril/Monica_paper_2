@@ -14,7 +14,10 @@ with that machine's own virtual environment active; see the
 
 The dated directories identify the acquisition/baseline batch. Actual download
 timestamps and source versions are documented in manifests. The supplied legacy
-SAV/workbooks are distinct from the official annual INEC downloads.
+SAV/workbooks are distinct from the official annual INEC downloads. The author
+confirmed on 6 November 2026 that the supplied SAV, SPV and XLSX files constitute
+the complete original analysis package; no additional original SAV is missing.
+The INEC downloads were acquired separately for validation during T02.
 
 ## Restore on another machine
 

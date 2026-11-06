@@ -19,6 +19,11 @@ Priorities: P0 = blocks reliable results; P1 = major scientific/reporting revisi
 
 ## T02 — Reconstruct and audit the analytic admissions
 
+Author clarification, 6 November 2026: the supplied SAV, SPV and XLSX files are the
+complete original analysis package; no additional original SAV is missing. Annual
+INEC acquisitions in this task are independent validation sources. Outstanding
+processing questions must not be presented as missing original SAV files.
+
 Progress, 23 October 2026: official 2015–2024 releases reconstructed (10,972 admissions; 963 deaths). See `t02_data_audit.md` and `../provenance/t02/`. Early-year residence-area labels remain provisional, and the historical cleaning script is unavailable for now. G1 has not been marked passed.
 
 - [ ] **P0 · data analyst + INEC/data custodian as needed · 2–4 days · after T01.**

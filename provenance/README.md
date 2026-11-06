@@ -5,6 +5,14 @@ It is shared through Git; large inputs and generated admission files are restore
 separately on each machine. See the [main README](../README.md) for macOS and Windows
 PowerShell setup and [the T02 audit](../Writeable/t02_data_audit.md) for findings.
 
+## Confirmed original analysis package
+
+On 6 November 2026, the author confirmed that only the supplied SAV, SPV and two
+XLSX files were used for the original analysis. That package is complete; no other
+original SAV is expected. The INEC annual files acquired in T02 are independent
+validation inputs, not recovered missing original-analysis files. Uncertainty about
+how the supplied data were prepared must not be described as a missing SAV.
+
 ## Baseline and source records
 
 Baseline date: 23 October 2026. Six supplied research inputs have local snapshots
@@ -27,7 +35,9 @@ national source release date.
 T02 downloaded the ten official annual INEC releases and available separate
 2018–2024 dictionaries. Early-year SAV metadata and official syntax were also
 inspected. These acquisitions supersede the T01 statement that all national source
-files were absent. They do not establish how the old 8,249-record extract was made.
+files had not yet been acquired for validation. They were not additional files
+reported as used in the original analysis. They do not establish how the supplied
+8,249-record extract was prepared.
 
 ## Using the records on macOS and Windows
 

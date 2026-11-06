@@ -2,6 +2,16 @@
 
 Audit date: 23 October 2026. **The cohort has been rebuilt from official annual INEC SPSS releases, rather than repaired by editing the supplied SAV.** The reconstructed C71.0–C71.9 cohort contains **10,972 discharge records: 963 deaths and 10,009 live discharges**. These supersede the legacy dataset counts for the next analysis stage; they are not yet replacement manuscript results. Rates and regressions must be recalculated in T03–T05.
 
+## Author clarification — 6 November 2026
+
+The supplied SAV, SPV and both XLSX files are the complete set of data/output files
+used for the original analysis. **There is no missing original SAV file.** The annual
+INEC files downloaded in T02 are independent validation sources. Differences
+between their reconstructed cohort and the supplied cohort concern record contents,
+selection or transformation, not proof that another SAV should have been supplied.
+The original 8,249-record cohort and the new 10,972-record reconstruction remain
+distinct datasets; reporting their provenance must preserve this distinction.
+
 ## Inputs and reproducibility
 
 Official SPSS files were obtained for every year 2015–2024. The download URLs, access timestamps, byte sizes and SHA-256 hashes are in [the source manifest](../provenance/inec_download_manifest.csv). Archived release pages are stored locally under `data/raw/inec_discovery_2026-10-23/`. Releases for 2015–2023 are linked from their annual INEC pages; 2024 is linked from the [current operation page](https://www.ecuadorencifras.gob.ec/camas-y-egresos-hospitalarios/). Separate dictionary archives were downloaded for 2018–2024; the annual SAV variable and value labels provide additional codebook evidence for all years. Early-year official syntax archives are recorded separately in `provenance/inec_syntax_manifest.csv`.
