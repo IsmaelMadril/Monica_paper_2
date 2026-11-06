@@ -24,6 +24,7 @@ htmlcov/
 Data_base/
 Results/*.spv
 data/raw/*
+!data/raw/baseline_2026-10-23
 !data/raw/README.md
 data/processed/*
 !data/processed/.gitkeep
