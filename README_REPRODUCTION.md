@@ -1,5 +1,16 @@
 # Reproduce the analysis on macOS or Windows
 
+The [bibliographic rationale](Writeable/reconstruction_rationale.md) explains
+the scientific choices behind these commands; the
+[decision register](provenance/reconstruction_decisions.csv) links each change
+to its sources and validation. Preserved inputs, scripted transformations and
+software records follow the reproducibility principles discussed by
+[Sandve et al. (2013)](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003285).
+SHA-256 checks detect changed bytes under the
+[NIST Secure Hash Standard](https://csrc.nist.gov/pubs/fips/180-4/upd1/final);
+they do not establish scientific validity. Making legacy comparisons optional
+is a project implementation choice, not a requirement of either reference.
+
 This guide reproduces the implemented **T01–T03 workflow**: input verification,
 C71 admission reconstruction, data audit and age-adjusted rates. T04/T05 model
 repair and later manuscript work are not yet implemented. Run commands from the

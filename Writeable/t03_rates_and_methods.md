@@ -18,6 +18,14 @@ The mean rate is the arithmetic mean of ten annual standardized rates. The fatal
 
 ## Sources, population denominators and standard weights
 
+Official source locators and artifact-access details are documented in
+[R03: INEC annual estimates](reconstruction_rationale.md#r03) and
+[R04: observed census workbook](reconstruction_rationale.md#r04).
+Choosing Ecuador 2022 as the fixed standard is a study choice consistent
+with the manuscript, not a universal recommendation from SEER.
+The [decision register](../provenance/reconstruction_decisions.csv), D12-D15,
+records numerator matching and age-band choices.
+
 **Annual denominators:** INEC, Estimaciones y Proyecciones de Población, Revisión 2024, expanded area-residence workbook `Tabulados_Estimacion_Proyeccion_v2.xlsx`, national sheet `1.1`. The population is at **30 June of each year**, both sexes combined, single completed ages 0–99 and 100+. The workbook labels its national source as Revisión 2024; the downloadable artifact is the expanded v2 workbook available at acquisition on 6 November 2026. Use that exact hashed artifact rather than infer version from its directory name alone.
 
 **Fixed standard:** actual observed 2022 census counts from `01_2022_CPV_Estructura_poblacional.xlsx`, sheet `3`, Total Nacional, single ages 0–99 and 100+. The standard sums to **16,938,986 persons**. It is the census distribution, not the projected 2022 distribution, a WHO world standard or the admission age distribution.
@@ -51,6 +59,12 @@ The code uses full-precision count/total weights and checks that each scheme sum
 
 ## Calculation
 
+The weighted age-specific-rate formula follows
+[NCI SEER's direct-standardization definition](reconstruction_rationale.md#r05).
+The actual age groups and standard population are specified here by the study.
+The equal-year arithmetic mean and pooled population-year rate are distinct
+chosen estimands, not alternatives that may be silently interchanged.
+
 For year t and age group i, let H_it be discharges, D_it deaths during those discharges, P_it the annual resident population, S_i the census standard count and w_i = S_i / sum(S_i).
 
 - Age-specific hospitalization rate: 100,000 × H_it/P_it.
@@ -72,6 +86,14 @@ Do not interchange these summaries or call either a ten-year cumulative risk.
 
 ## Confidence intervals and limits
 
+The rate intervals implement the original
+[Fay and Feuer (1997) method](reconstruction_rationale.md#r06);
+the admission-fatality intervals implement
+[Wilson's (1927) score method](reconstruction_rationale.md#r07).
+The [CDC uncertainty notes](reconstruction_rationale.md#r12) inform the
+interpretation of model limits, not the choice of a replacement interval
+variant. See D17-D21 for assumptions and study-specific reporting flags.
+
 Age-specific count rates use exact central Poisson/gamma intervals. Directly standardized rates use the **Fay–Feuer gamma method**. With unscaled rate R = sum(a_i × k_i), a_i = w_i/P_i, variance V = sum(a_i² × k_i), and b = max(a_i):
 
 - Lower endpoint, if R>0: Gamma quantile 0.025 with shape R²/V and scale V/R; zero if R=0.
@@ -86,6 +108,12 @@ Event counts under ten are flagged as sparse in the annual output (15 primary an
 
 ## Sensitivity analyses
 
+These analyses examine explicit alternative specifications, consistent with
+[STROBE items 12(e) and 17](reconstruction_rationale.md#r09).
+Neither the five primary age bands nor the below-ten sparse-event flag is
+prescribed by that reporting guidance. The former follows the manuscript;
+the latter is a local caution flag rather than a universal suppression rule.
+
 **Age bands:** mean annual resident AAHR is 6.634257 using 18 narrower groups versus 6.611238 using five groups. AAIMR is 0.601148 versus 0.598464. The changes in the two overall means are each below 0.5%; this does not establish absence of residual age differences within every category. Narrower groups are feasible and all results are supplied so the final reporting choice can be made explicitly.
 
 **Foreign residence:** all-discharge results retain 10,972 discharges and 963 deaths. Their pooled admission fatality is 8.776887% (95% interval 8.261757%–9.320872%). The population-denominator hospitalization series differs slightly in 2018/2019. Death rates are unchanged because the three excluded foreign-resident records were alive. All-discharge rates per resident population describe service-event burden, with a slightly mismatched resident numerator; the resident-only rates are the primary matched-population analysis.
@@ -93,6 +121,12 @@ Event counts under ten are flagged as sparse in the annual output (15 primary an
 Neither sensitivity excludes 2017 or 2023. Their low legacy counts were not reproduced by the T02 national-source reconstruction. Early-year rural/urban labels are not used in any T03 calculation, so that outstanding T02 item does not affect these national rates.
 
 ## Revised numerical claims
+
+The numbers below are derived from the local reconstruction and
+[verified Table 3 evidence](table3_verification.md); a methodological paper
+does not establish these study-specific results. Interpretation remains
+descriptive. The [rationale and evidence register](reconstruction_rationale.md)
+records what can and cannot be inferred from the changes.
 
 - **2017 is the highest total hospitalization-rate year**, 7.582913 per 100,000, and the highest in-hospital death-rate year, 0.758166, in the primary reconstruction. The legacy near-zero values should not be carried into a revised narrative or graph.
 - **2020 is the lowest total hospitalization-rate year**, 5.540394, and the lowest in-hospital death-rate year, 0.453874. These observations establish timing, not a causal pandemic effect.
@@ -113,7 +147,7 @@ python -X utf8 scripts/calculate_rates.py
 python -X utf8 -m unittest discover -s tests -v
 ```
 
-The audited T02 cohort must exist first. Acquisition downloads only absent files and rejects a mismatch against an existing population manifest. It never replaces an established expected source hash. Population workbooks and cohort data remain ignored by Git; source manifests, extracted aggregate denominators/weights and rate evidence are tracked under `provenance/t03/`. The scripts use repository-relative paths and explicit UTF-8 writing. Windows execution itself has not yet been tested.
+The audited T02 cohort must exist first. Acquisition downloads only absent files and rejects a mismatch against an existing population manifest. It never replaces an established expected source hash. Population workbooks and cohort data remain ignored by Git; source manifests, extracted aggregate denominators/weights and rate evidence are tracked under `provenance/t03/`. The scripts use repository-relative paths and explicit UTF-8 writing. The INEC-only reconstruction, population extraction, Table 3 regeneration and all 26 tests were verified on Windows on 6 November 2026 using the existing Python 3.13.7 environment.
 
 Key files:
 
@@ -125,11 +159,16 @@ Key files:
 - `run_metadata.json`: input fingerprints and analysis choices.
 - `outputs/tables/table3_rebuilt.md` and `.csv`: generated primary table.
 
-Verified: source hashes; both-sex totals; single-age sums versus source totals; one denominator per year/age; census sum 16,938,986; weight sums; rate-component additivity; death rates no larger than admission rates; exact arithmetic-mean reproduction; confidence-interval methods and zero-count behavior; source-cohort exclusions. **All 16 project tests pass**, including independent mathematical controls for Poisson and Wilson intervals. Source projections are not claimed to be error-free because arithmetic checks pass.
+Verified: source hashes; both-sex totals; single-age sums versus source totals; one denominator per year/age; census sum 16,938,986; weight sums; rate-component additivity; death rates no larger than admission rates; exact arithmetic-mean reproduction; confidence-interval methods and zero-count behavior; source-cohort exclusions. **All 26 project tests pass**, including independent mathematical controls for Poisson and Wilson intervals. Source projections are not claimed to be error-free because arithmetic checks pass.
 
 **T03 is complete for the documented reconstructed-cohort specification.** T02 residence-label verification and T04/T05 model repair remain separate work. Manuscript replacement numbers should explicitly identify the reconstructed cohort and the resident-only rate population.
 
 ## Official sources and statistical references
+
+The complete numbered [bibliography and argument for each change](reconstruction_rationale.md#references)
+and the [BibTeX library](../references/reconstruction.bib) accompany the selected
+links below. They also include the original Wilson paper, RECORD, STROBE,
+computational reproducibility guidance and the SHA-256 technical standard.
 
 - [INEC population estimates/projections](https://www.ecuadorencifras.gob.ec/proyecciones-poblacionales/) and [exact denominator workbook](https://www.ecuadorencifras.gob.ec/documentos/web-inec/Poblacion_y_Demografia/Proyecciones_Poblacionales/censo_2022/revision_2024_areas/Tabulados_Estimacion_Proyeccion_v2.xlsx).
 - [2022 census results](https://www.censoecuador.gob.ec/resultados-censo/) and [exact census structure workbook](https://www.censoecuador.gob.ec/wp-content/uploads/2024/04/01_2022_CPV_Estructura_poblacional.xlsx).

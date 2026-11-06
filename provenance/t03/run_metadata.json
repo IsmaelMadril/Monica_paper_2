@@ -1,5 +1,5 @@
 {
-  "recorded_utc": "2026-11-06T15:33:31.344353+00:00",
+  "recorded_utc": "2026-11-06T16:04:14.023581+00:00",
   "inputs_sha256": {
     "data/processed/admissions_c71_audited.csv": "3716a7f3433d5b0c9aa72586c10b8f0837173d9f8f4f635c0007f815edd19b36",
     "provenance/t03/population_manifest.csv": "4e85cf2d179b0e19627ef2d7d43bcd640724e9b3894bd7e19ae6845743aa7a78",
@@ -18,5 +18,8 @@
   "denominator": "June30 annual population; INEC Revision2024 expanded workbookv2",
   "rate_ci": "Fay-Feuer gamma; independent Poisson counts, fixed denominators",
   "fatality_ci": "Wilson binomial; admission records",
+  "methodological_rationale": "Writeable/reconstruction_rationale.md",
+  "decision_register": "provenance/reconstruction_decisions.csv",
+  "bibliography": "references/reconstruction.bib",
   "validation": "Additivity, death<=admission component, exact mean reproduction passed"
 }

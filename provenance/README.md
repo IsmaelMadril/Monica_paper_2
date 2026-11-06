@@ -1,5 +1,12 @@
 # Research provenance and reproducibility
 
+The [bibliographic rationale](../Writeable/reconstruction_rationale.md),
+[decision register](reconstruction_decisions.csv) and
+[BibTeX library](../references/reconstruction.bib) map the implemented
+reconstruction and Table 3 changes to primary sources, study-specific choices
+and local verification. Later changes must extend this record rather than
+inherit an unsupported claim of validation.
+
 This directory documents the preserved T01 baseline, T02 source reconstruction and T03 rates.
 It is shared through Git; large inputs and generated admission files are restored
 separately on each machine. See the [main README](../README.md) for macOS and Windows
