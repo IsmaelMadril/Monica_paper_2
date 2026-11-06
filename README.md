@@ -1,5 +1,12 @@
 # Malignant brain neoplasm hospitalizations in Ecuador
 
+Scientific and computational changes are documented in the
+[bibliographic rationale](Writeable/reconstruction_rationale.md), with a
+[decision/evidence register](provenance/reconstruction_decisions.csv) and
+[BibTeX library](references/reconstruction.bib). Each subsequent substantive
+revision must include its justification, exact source, local verification and
+unresolved assumptions.
+
 Research workspace for the 2015–2024 nationwide hospital-discharge manuscript.
 The unit of analysis is an admission/discharge record. T02 reconstructed **10,972
 admissions and 963 in-hospital deaths** from official INEC releases. Early-year

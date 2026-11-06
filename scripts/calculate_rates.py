@@ -1,4 +1,8 @@
-"""T03: national admission/death rates and admission-level fatality, with model-based CIs."""
+"""T03: national admission/death rates and admission-level fatality, with model-based CIs.
+
+Method references and study-specific choices: Writeable/reconstruction_rationale.md.
+Fay-Feuer (1997) for rate intervals; Wilson (1927) for admission proportions.
+"""
 import hashlib
 import json
 import math
@@ -157,6 +161,12 @@ def main():
         lines.append('| Mean annual rate | '+' | '.join(cell(frame.loc[k]) for k in ANATOMY)+' |')
         lines += ['']
     lines += ['Three foreign-resident live discharges are excluded from resident-population rates (one in 2018, two in 2019). All-discharge sensitivity results, narrower age bands, age-specific rates, fatality percentages and pooled population-year estimates are provided in the T03 CSV outputs.', '', 'The mean row is the arithmetic mean of ten annual standardized rates. Its interval is calculated from the weighted sum of annual age-specific event counts, not by averaging interval limits. Small event counts (<10) are flagged in the machine-readable table; component intervals do not add to the total interval.', '', 'Poisson and Wilson intervals assume independent event records and fixed population denominators. Repeat admissions, facility clustering, systematic record errors and population-estimation uncertainty are not represented; these are conditional model-based intervals, not patient-level risk intervals. No trend hypothesis test is reported.', '']
+    lines += [
+        '## Sources and methodological rationale', '',
+        'Discharge data: [INEC Camas y Egresos Hospitalarios](https://www.ecuadorencifras.gob.ec/camas-y-egresos-hospitalarios/). Annual denominators: [INEC Revision 2024](https://www.ecuadorencifras.gob.ec/proyecciones-poblacionales/), national sheet 1.1. Standard weights: [observed Ecuador 2022 census workbook](https://www.censoecuador.gob.ec/wp-content/uploads/2024/04/01_2022_CPV_Estructura_poblacional.xlsx), sheet 3. Exact source versions and hashes are in population_manifest.csv and inec_download_manifest.csv.', '',
+        'Direct standardization follows the [NCI SEER rate definition](https://seer.cancer.gov/seerstat/tutorials/aarates/definition.html); rate intervals use [Fay and Feuer (1997)](https://wonder.cdc.gov/controller/pdf/FayFeuerConfidenceIntervals.pdf). Admission-fatality intervals in the accompanying CSV use [Wilson (1927)](https://jhanley.biostat.mcgill.ca/c607/ch08/wilson_jasa_1927.pdf).', '',
+        'The Ecuador standard, five primary age bands, resident-only primary analysis, arithmetic mean and sparse-event flag are explicit study choices. Their arguments, evidence and limitations are in the [bibliographic rationale](../../Writeable/reconstruction_rationale.md), [decision register](../../provenance/reconstruction_decisions.csv) and [BibTeX library](../../references/reconstruction.bib). These sources support the methods; the [verification report](../../Writeable/table3_verification.md) documents the resulting numbers.', '',
+    ]
     (TABLES/'table3_rebuilt.md').write_text('\n'.join(lines), encoding='utf-8')
     main.to_csv(TABLES/'table3_rebuilt.csv', index=False)
     source_files = [cohort_path, PROV/'population_manifest.csv', PROV/'annual_population_by_age.csv', PROV/'standard_weights_2022.csv']
@@ -166,6 +176,9 @@ def main():
         primary_age_groups=['0-17', '18-44', '45-64', '65-79', '80+'], standard='Actual CPV2022 census; 16,938,986 persons',
         denominator='June30 annual population; INEC Revision2024 expanded workbookv2',
         rate_ci='Fay-Feuer gamma; independent Poisson counts, fixed denominators', fatality_ci='Wilson binomial; admission records',
+        methodological_rationale='Writeable/reconstruction_rationale.md',
+        decision_register='provenance/reconstruction_decisions.csv',
+        bibliography='references/reconstruction.bib',
         validation='Additivity, death<=admission component, exact mean reproduction passed'), indent=2)+'\n', encoding='utf-8')
     print(primary_summary.loc[primary_summary.anatomy.eq('Total'), ['measure', 'rate_per_100k', 'lower_95', 'upper_95']].to_string(index=False))
     print(f.loc[f.policy.eq('resident') & f.period.eq('2015-2024') & f.anatomy.eq('Total')].to_string(index=False))

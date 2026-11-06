@@ -1,0 +1,116 @@
+@misc{INECEgresos,
+  author = {{Instituto Nacional de Estadistica y Censos}},
+  title = {Registro Estadistico de Camas y Egresos Hospitalarios: microdata and metadata, 2015--2024},
+  url = {https://www.ecuadorencifras.gob.ec/camas-y-egresos-hospitalarios/},
+  note = {R01. Use the exact annual archive URLs and SHA-256 hashes in provenance/inec_download_manifest.csv; annual variable/value labels are preserved in provenance/t02/YYYY_schema.json. The current landing page alone does not identify all historical versions. Accessed 2026-11-06.}
+}
+
+@misc{PAHOICD10,
+  author = {{Pan American Health Organization} and {World Health Organization}},
+  title = {International Statistical Classification of Diseases and Related Health Problems, Tenth Revision: Chapter II, C71},
+  url = {https://ais.paho.org/classifications/Chapters/CAP02.html},
+  note = {R02. The official PAHO tabular text was inspected for C71.0-C71.9. It supports code meanings; it does not prescribe the study's four combined anatomical groups or validate individual diagnoses. Accessed 2026-11-06.}
+}
+
+@misc{INECRevision2024,
+  author = {{Instituto Nacional de Estadistica y Censos}},
+  title = {Estimaciones y Proyecciones de Poblacion de Ecuador, Revision 2024},
+  url = {https://www.ecuadorencifras.gob.ec/documentos/web-inec/Poblacion_y_Demografia/Proyecciones_Poblacionales/censo_2022/revision_2024_areas/Tabulados_Estimacion_Proyeccion_v2.xlsx},
+  note = {R03. The landing page confirms the revision and 30 June reference date. Exact workbook version/hash: provenance/t03/population_manifest.csv; extracted source-cell coordinates: population_single_age.csv. Accessed 2026-11-06.}
+}
+
+@misc{INECCensus2022,
+  author = {{Instituto Nacional de Estadistica y Censos}},
+  title = {Censo Ecuador 2022: Estructura poblacional},
+  url = {https://www.censoecuador.gob.ec/wp-content/uploads/2024/04/01_2022_CPV_Estructura_poblacional.xlsx},
+  note = {R04. The current web endpoint returned HTTP 403 during bibliographic checking. Evidence was inspected directly in the previously archived, checksum-verified workbook, not inferred from a search snippet. Exact version/hash: population_manifest.csv; cells: census_2022_single_age.csv. Accessed 2026-11-06.}
+}
+
+@misc{SEERAgeAdjustment,
+  author = {{National Cancer Institute}},
+  title = {SEER*Stat Tutorials: Calculating Age-adjusted Rates},
+  url = {https://seer.cancer.gov/seerstat/tutorials/aarates/definition.html},
+  note = {R05. Supports direct standardization as a weighted sum of age-specific rates. SEER's US standard and age groups are not adopted here; the Ecuador census and manuscript-compatible groups are explicit study choices. Accessed 2026-11-06.}
+}
+
+@article{FayFeuer1997,
+  author = {Fay, Michael P. and Feuer, Eric J.},
+  title = {Confidence intervals for directly standardized rates: a method based on the gamma distribution},
+  year = {1997},
+  journal = {Statistics in Medicine},
+  volume = {16},
+  number = {7},
+  pages = {791--801},
+  doi = {10.1002/(SICI)1097-0258(19970415)16:7<791::AID-SIM500>3.0.CO;2-#},
+  url = {https://wonder.cdc.gov/controller/pdf/FayFeuerConfidenceIntervals.pdf},
+  note = {R06. Original paper inspected, especially the weighted-Poisson construction. Supports the implemented gamma interval; it does not establish independence of repeated hospital admissions. Accessed 2026-11-06.}
+}
+
+@article{Wilson1927,
+  author = {Wilson, Edwin B.},
+  title = {Probable inference, the law of succession, and statistical inference},
+  year = {1927},
+  journal = {Journal of the American Statistical Association},
+  volume = {22},
+  number = {158},
+  pages = {209--212},
+  doi = {10.1080/01621459.1927.10502953},
+  url = {https://jhanley.biostat.mcgill.ca/c607/ch08/wilson_jasa_1927.pdf},
+  note = {R07. Original paper available as a scan hosted by McGill University; publisher DOI page was inaccessible. Supports the score interval used for admission-level proportions. Accessed 2026-11-06.}
+}
+
+@article{Benchimol2015RECORD,
+  author = {Benchimol, Eric I. and Smeeth, Liam and Guttmann, Astrid and others},
+  title = {The REporting of studies Conducted using Observational Routinely-collected health Data (RECORD) Statement},
+  year = {2015},
+  journal = {PLoS Medicine},
+  volume = {12},
+  number = {10},
+  pages = {e1001885},
+  doi = {10.1371/journal.pmed.1001885},
+  url = {https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.1001885},
+  note = {R08. Relevant items: 6.1-6.2 (codes/validation), 12.1-12.3 (access/cleaning/linkage), 13.1 (selection), 22.1 (access to protocol/data/code). Reporting guidance is not evidence of clinical validation. Accessed 2026-11-06.}
+}
+
+@article{Vandenbroucke2007STROBE,
+  author = {Vandenbroucke, Jan P. and von Elm, Erik and Altman, Douglas G. and others},
+  title = {Strengthening the Reporting of Observational Studies in Epidemiology (STROBE): Explanation and Elaboration},
+  year = {2007},
+  journal = {PLoS Medicine},
+  volume = {4},
+  number = {10},
+  pages = {e297},
+  doi = {10.1371/journal.pmed.0040297},
+  url = {https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.0040297},
+  note = {R09. Relevant items: 11 (quantitative-variable groupings), 12(b)/(e) (missing data/sensitivity), 13-14 (flow/missingness), 19-20 (limitations/interpretation). It does not dictate a specific estimator or certify this study's quality. Accessed 2026-11-06.}
+}
+
+@article{Sandve2013,
+  author = {Sandve, Geir Kjetil and Nekrutenko, Anton and Taylor, James and Hovig, Eivind},
+  title = {Ten simple rules for reproducible computational research},
+  year = {2013},
+  journal = {PLoS Computational Biology},
+  volume = {9},
+  number = {10},
+  pages = {e1003285},
+  doi = {10.1371/journal.pcbi.1003285},
+  url = {https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003285},
+  note = {R10. Supports scripted workflows, preserved inputs/intermediates, software-version recording and traceable outputs. The optional legacy-comparison command is our implementation of these principles. Accessed 2026-11-06.}
+}
+
+@misc{NISTSHA256,
+  author = {{National Institute of Standards and Technology}},
+  title = {Secure Hash Standard (SHS)},
+  year = {2015},
+  doi = {10.6028/NIST.FIPS.180-4},
+  url = {https://csrc.nist.gov/pubs/fips/180-4/upd1/final},
+  note = {R11. Technical source for SHA-256 digests used to detect byte changes. Matching hashes establish file identity against the recorded version, not validity of source data or correctness of scientific results. Accessed 2026-11-06.}
+}
+
+@misc{CDCConfidence2026,
+  author = {{Centers for Disease Control and Prevention}},
+  title = {Confidence Intervals: U.S. Cancer Statistics Technical Notes},
+  year = {2026},
+  url = {https://www.cdc.gov/united-states-cancer-statistics/technical-notes/confidence-intervals.html},
+  note = {R12. Supports explicit interpretation of model-based rate uncertainty and limitations beyond Poisson variation. Its production interval variant is not used as a substitute for the Fay-Feuer implementation. Accessed 2026-11-06.}
+}

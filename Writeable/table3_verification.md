@@ -4,6 +4,12 @@ Verified on 6 November 2026 in the local Windows environment. Result: PASS for t
 
 ## Source and calculation checks
 
+The [bibliographic argument and decision register](reconstruction_rationale.md)
+link the changes to source definitions, published statistical methods and
+declared study choices. This verification establishes computational agreement;
+it does not validate diagnoses, resolve patient identity or certify the
+independence assumptions in the cited statistical models.
+
 - Rebuilt the denominators and census weights from both SHA-256-verified official population workbooks; checked all 1,111 extracted population and census values against their recorded workbook cells.
 - Confirmed 10,972 reconstructed admissions and 963 deaths; the primary resident population contains 10,969 admissions and 963 deaths. Three foreign-resident live discharges are excluded.
 - Independently derived completed age, anatomical category, death and residence eligibility from preserved source fields, rather than using the corresponding derived cohort columns.

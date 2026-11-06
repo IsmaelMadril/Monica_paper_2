@@ -1,5 +1,12 @@
 # Manuscript revision task plan
 
+Bibliographic requirement for every implemented task: document the change,
+argument, exact primary reference/source locator, local verification and
+remaining uncertainty in [the rationale](reconstruction_rationale.md) and
+[decision register](../provenance/reconstruction_decisions.csv). The register covers T01-T03 work and links the separately documented T04 analysis.
+It does not validate pending T05 models, figures, causal interpretations or ethics
+claims.
+
 Prepared 23 October 2026. Companion evidence: `current_state_review.md`. Preserve `review_issues.md` as the original review record. This plan covers all original issues 1–22 and new findings N01–N15. This is the original task sequence; dated progress notes below record completed work. T01, T03 and the T04 technical mortality analysis are implemented; T02 retains an early residence-label question and T05 multinomial refitting remains pending.
 
 **Recommended order: establish trustworthy data → rebuild rates and models → rewrite findings → prepare submission.** Do not retain a result because it supports the present narrative. If data or models cannot be validated, narrow the paper to defensible descriptive analyses and revise its scope accordingly.

@@ -1,6 +1,6 @@
 # T02 — Admission reconstruction and data audit
 
-Audit date: 23 October 2026. **The cohort has been rebuilt from official annual INEC SPSS releases, rather than repaired by editing the supplied SAV.** The reconstructed C71.0–C71.9 cohort contains **10,972 discharge records: 963 deaths and 10,009 live discharges**. These supersede the legacy dataset counts for the next analysis stage; they are not yet replacement manuscript results. Rates and regressions must be recalculated in T03–T05.
+Audit date: 23 October 2026. **The cohort has been rebuilt from official annual INEC SPSS releases, rather than repaired by editing the supplied SAV.** The reconstructed C71.0–C71.9 cohort contains **10,972 discharge records: 963 deaths and 10,009 live discharges**. These supersede the legacy dataset counts for the next analysis stage; they are not yet replacement manuscript results. T03 rates have since been rebuilt and verified, and the T04 mortality analysis is complete for its documented specification. T05 multinomial modelling remains pending.
 
 ## Author clarification — 6 November 2026
 
@@ -18,23 +18,35 @@ Official SPSS files were obtained for every year 2015–2024. The download URLs,
 
 The annual files contain 1,161,044; 1,128,004; 1,143,765; 1,164,659; 1,195,311; 907,515; 1,038,235; 1,130,603; 1,170,813; and 1,132,667 national records, respectively. These are source-file row counts, not C71 admissions.
 
-Run, in order:
+For current cross-platform instructions, follow
+[README_REPRODUCTION.md](../README_REPRODUCTION.md). With the local environment
+active, run:
 
 ```sh
-source .venv/bin/activate
-pip install -r requirements.txt
-python scripts/freeze_inputs.py --verify
-# Only needed when restoring source downloads on a new machine:
-python scripts/acquire_inec.py
-python scripts/acquire_early_dictionaries.py
-python scripts/extract_inec.py
-python scripts/audit_admissions.py
-python -m unittest discover -s tests -v
+# Only when official sources need restoration:
+python -X utf8 scripts/restore_analysis_inputs.py --download
+python -X utf8 scripts/extract_inec.py
+python -X utf8 scripts/audit_admissions.py
+python -X utf8 -m unittest discover -s tests -v
 ```
+
+The default reconstruction uses INEC inputs independently of the original thesis
+files. To regenerate the legacy comparisons below, restore the complete thesis
+baseline and run audit_admissions.py --compare-legacy. Those comparisons are
+historical evidence when the optional step is not rerun. The separation is
+explained in [D01](reconstruction_rationale.md#decisions-and-supporting-evidence),
+as a reproducibility implementation choice.
 
 The generated extract is `data/processed/admissions_c71_audited.csv`. Each admission has a source-year/source-row key that identifies its position in the downloaded national file; this is not a patient identifier. Inputs, extracted annual SAV files and individual-level outputs remain ignored by Git. Aggregate audit tables and schemas are under `provenance/t02/` and can be version controlled.
 
 ## Selection and retention decisions
+
+Code meanings come from the official [INEC releases/annual metadata](reconstruction_rationale.md#r01)
+and [PAHO/WHO C71 tabular classification](reconstruction_rationale.md#r02).
+The exact selection algorithm is a study specification; its disclosure follows
+[RECORD's code/cleaning guidance](reconstruction_rationale.md#r08).
+Decisions D02-D05 in the [register](../provenance/reconstruction_decisions.csv)
+separate classification evidence from local retention choices.
 
 1. Read the official raw `cau_cie10` discharge-diagnosis code, without converting it to its value label. Trim surrounding whitespace, uppercase it and remove the decimal point.
 2. Retain only a full match to `C71[0-9]`: C710 through C719. Do not include C79 secondary brain lesions, benign/uncertain neoplasms or broader CNS codes. No age or sex restriction is applied.
@@ -68,9 +80,16 @@ Machine-readable results: [annual reconciliation](../provenance/t02/annual_recon
 
 **2024:** there are two separate discrepancies. Within the legacy data, the SAV and both workbook `Hoja3` sheets contain 1,007 admissions, 85 deaths and **922** live discharges. The manuscript's 895 live discharges are a transcription error. Independently, the official release contains **1,019** eligible records, 87 deaths and 932 live discharges. It would be insufficient to correct only the manuscript cell while retaining the incomplete legacy extract.
 
-Both legacy and reconstructed 2024 data contain **379 C719 discharges**. Consequently, a zero unspecified hospitalization rate is not supported. The precise spreadsheet/rate calculation that produced zero has not been recovered; T03 must regenerate the rate from the verified numerator.
+Both legacy and reconstructed 2024 data contain **379 C719 discharges**. Consequently, a zero unspecified hospitalization rate is not supported. The precise spreadsheet/rate calculation that produced zero has not been recovered; T03 subsequently regenerated the nonzero rate from the verified numerator.
 
 ## Anatomical classification errors
+
+The source classification identifies C71.4 as occipital lobe and C71.7 as
+brainstem; see [PAHO/WHO C71](reconstruction_rationale.md#r02).
+The four combined analysis groups are defined by this study, not prescribed by WHO.
+In particular, C71.5 identifies cerebral ventricles and is not universally
+infratentorial; the combined name must remain "infratentorial/midline" with
+its exact subcodes reported.
 
 The legacy SAV assigns **127 C714 (occipital-lobe) records to infratentorial/midline**, and **82 C717 (brainstem) records to unspecified**. These 209 classifications contradict the manuscript's stated grouping. The saved derived CIE10 group must not be reused.
 
@@ -78,7 +97,15 @@ The reconstructed mapping is C710–C714 → supratentorial; C715–C717 → inf
 
 ## Outcome, age and stay rules
 
-- **Outcome:** source codes 1=live; 2=death under 48 hours; 3=death at 48 hours or more. The new `death` variable is 0 for code 1 and 1 for codes 2/3; unexpected values become missing. Annual metadata were checked against these meanings. All 10,972 selected records have a recognized outcome. This does not settle which event the old SPSS regression modelled; T04 must still inspect/refit that model.
+The INEC [2018 archived schema](../provenance/t02/2018_schema.json), under
+value_labels/con_egrpa and value_labels/cod_edad, explicitly supplies the
+discharge codes and valid age-unit ranges below; annual schemas preserve
+the corresponding source evidence ([R01](reconstruction_rationale.md#r01)).
+Stay cut-points are study-defined, mutually exclusive categories; no cited
+clinical literature validates these thresholds. The minimum-one-day stay
+convention remains an inference from local date comparisons.
+
+- **Outcome:** source codes 1=live; 2=death under 48 hours; 3=death at 48 hours or more. The new `death` variable is 0 for code 1 and 1 for codes 2/3; unexpected values become missing. Annual metadata were checked against these meanings. All 10,972 selected records have a recognized outcome. T04 subsequently decoded the supplied SPV event as live discharge and rebuilt the model with death=1; see [the T04 report](t04_mortality_analysis.md).
 - **Age:** preserve `cod_edad` and raw `edad`. There are 90 subyear records: 3 coded in hours, 3 in days and 84 in months; they belong to the pediatric group and have completed age zero. A number of months is never treated as that many years. Valid year ages are 1–115; age group boundaries are 0–17, 18–44, 45–64, 65–79 and 80+. Unknown/invalid units or values are missing rather than assigned to 80+. No selected record has an unclassifiable age under these rules.
 - **Stay:** use recorded `dia_estad`, with categories 0 days, 1–3, 4–14, 15–30 and **31+**, preserving invalid or missing values as unknown. Day 30 belongs only to 15–30. There are 68 day-30 records in the reconstructed cohort. No selected record has zero, negative, missing or noninteger recorded stay.
 - **Dates:** all selected discharges have valid parsed admission/discharge dates, no negative date interval and no discharge-year mismatch. There are 827 same-calendar-day admissions with recorded stay 1. Every other recorded stay equals the calendar-day difference. This is consistent with a minimum-one-day recorded-stay convention; the recorded variable is retained, and both date-derived duration and their difference are preserved. Do not convert these 827 records to missing or silently replace their stay.
@@ -86,6 +113,13 @@ The reconstructed mapping is C710–C714 → supratentorial; C715–C717 → inf
 These rules are defined in `scripts/audit_admissions.py` and covered by boundary tests. The longest recorded stay is 1,684 days; the dates support this interval, so it was retained rather than arbitrarily capped.
 
 ## Missingness, geography and dependence
+
+Source labels determine the recorded variable meanings
+([INEC](reconstruction_rationale.md#r01)); transparent reporting of missing
+data and analysis choices is addressed by
+[STROBE](reconstruction_rationale.md#r09). Neither source establishes a
+patient linkage or resolves the provisional early residence-area labels.
+See D09-D11 for the evidence limits.
 
 [Missingness by year and variable](../provenance/t02/missingness_by_year.csv) distinguishes blanks/nulls from source-coded unknowns summarized in [quality by year](../provenance/t02/quality_by_year.csv).
 
@@ -108,4 +142,4 @@ Verified: six preserved inputs unchanged; all downloaded archives hashed; ten an
 
 **T02 reconstruction is implemented. G1 remains pending confirmation of early-year residence-area labels and review of the recorded inclusion/geography decisions before association modelling.** Historical processing remains an open provenance question, not a reason to silently reuse the legacy cohort. Independent replication and any later discovery of earlier source versions should be recorded before manuscript numbers are finalized.
 
-Next: T03 should use the rebuilt cohort and original annual population denominators to regenerate every standardized rate. T04/T05 must rebuild models; none of the old aORs/aRRRs should be transferred to this cohort.
+Current follow-up: T03 has regenerated the rates using annual population denominators; see [the methods and references](t03_rates_and_methods.md). T04 has rebuilt the mortality model; see [its specification, results and limitations](t04_mortality_analysis.md). T05 must still address the multinomial model. None of the old aORs/aRRRs should be transferred to this cohort.
