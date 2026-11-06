@@ -11,6 +11,15 @@ Start with the [independent review](Writeable/current_state_review.md),
 [T02 audit](Writeable/t02_data_audit.md), [T03 rates and methods](Writeable/t03_rates_and_methods.md),
 and [provenance notes](provenance/README.md).
 
+## Complete reproduction guide and missing CSV recovery
+
+Use [README_REPRODUCTION.md](README_REPRODUCTION.md) for the complete macOS/Windows
+workflow from a fresh checkout, required inputs and expected results.
+`data/processed/admissions_c71_audited.csv` is ignored by Git and is created by
+`audit_admissions.py`, after `extract_inec.py`. Cloning alone does not create it.
+The guide also documents `scripts/restore_analysis_inputs.py`, which restores official
+inputs from recorded URLs without replacing the source manifests.
+
 ## Original analysis files and validation sources
 
 Author clarification, 6 November 2026: the supplied `BASE DATOS TESIS.sav`,
@@ -133,12 +142,12 @@ files. The scripts use the existing dated acquisition directory; that date ident
 the project batch, while manifests record actual access timestamps.
 
 ```sh
-python -X utf8 scripts/acquire_inec.py
-python -X utf8 scripts/acquire_early_dictionaries.py
+python -X utf8 scripts/restore_analysis_inputs.py --download
 ```
 
-The first command obtains the 2015–2024 releases and linked dictionaries. The
-second obtains early-year syntax archives used to investigate missing labels.
+This restores the official discharge/dictionary archives and population workbooks
+from the committed manifest URLs, verifies hashes and preserves the manifests.
+Optional early-year syntax restoration is covered in the complete reproduction guide.
 Restoring archived downloads is preferable when reproducing the original audit;
 files served by the website may change. Preserve existing manifests and compare
 checksums before treating fresh downloads as the same source version.
@@ -179,8 +188,9 @@ verified. The test suite and checksum verification provide the checks to run the
 ## Current limits and next work
 
 The official annual files and available dictionaries have been acquired in T02.
-The original legacy extraction script, editable manuscript source, population
-files and plotting/mapping code remain unavailable in the documented workflow.
+The original data preparation steps, editable manuscript source and plotting/mapping
+code remain incompletely documented or unavailable. T03 population inputs have been
+acquired and can be restored as described in the reproduction guide.
 The original workbook generation history is unverified. Confirm 2015–2017
 residence-area labels before rural/urban association modelling.
 
