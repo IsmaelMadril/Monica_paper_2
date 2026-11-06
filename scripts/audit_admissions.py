@@ -1,11 +1,11 @@
 """Build and audit the C71 admission cohort from preserved official annual extracts.
 
 Never deletes repeated/identical projected records. No modelling or rates.
+Default reconstruction uses INEC inputs only; --compare-legacy adds thesis comparisons.
 """
-import csv, hashlib, json
+import argparse, hashlib, json
 from pathlib import Path
 import pandas as pd
-import pyreadstat
 ROOT=Path(__file__).resolve().parents[1]
 PROV=ROOT/'provenance/t02'
 OUT=ROOT/'data/processed'
@@ -38,9 +38,38 @@ def labels(series,mapping):
         return pd.NA
     return series.map(lookup)
 
-def main():
-    from freeze_inputs import verify
-    verify()
+def compare_with_legacy(annual):
+    """Write legacy-only reports after the caller verifies the thesis baseline."""
+    import pyreadstat
+
+    legacy,lmeta=pyreadstat.read_sav(str(ROOT/'Data_base/BASE DATOS TESIS.sav'))
+    legacy['icd10']=legacy.cau_cie10.str.extract(r'^(C71[0-9])')
+    legacy['expected_anatomy']=legacy.icd10.map(anatomy)
+    legacy_map={'Supratentorial (Hemisférico)':'Supratentorial','Infratentorial y Línea Media':'Infratentorial/midline','Lesiones Sobrepuestas':'Overlapping','No Especificado / Otros':'Unspecified'}
+    legacy['recorded_anatomy']=legacy.CIE10.map(legacy_map)
+    legacy.groupby(['icd10','recorded_anatomy','expected_anatomy']).size().rename('records').reset_index().to_csv(PROV/'legacy_anatomy_audit.csv',index=False)
+    lg=legacy.groupby('Año').agg(legacy_admissions=('con_egrpa','size'),legacy_deaths=('con_egrpa',lambda s:s.eq('Fallecido').sum())).reset_index().rename(columns={'Año':'source_year'})
+    annual=annual.merge(lg,on='source_year');annual['admissions_difference']=annual.admissions-annual.legacy_admissions;annual['deaths_difference']=annual.deaths-annual.legacy_deaths
+    annual.to_csv(PROV/'annual_reconciliation.csv',index=False)
+    book=[]
+    for path in sorted((ROOT/'Data_base').glob('*.xlsx')):
+        x=pd.read_excel(path,sheet_name='Hoja3')
+        shared=list(x)
+        norm=lambda s:s.astype('string').str.replace(r'\.0$','',regex=True)
+        equal=len(x)==len(legacy) and all(norm(x[k]).equals(norm(legacy[k])) for k in shared)
+        book.append({'path':path.relative_to(ROOT).as_posix(),'sheet':'Hoja3','rows':len(x),'shared_fields':len(shared),'same_order_and_values_as_sav_after_numeric_format_normalization':equal})
+    (PROV/'workbook_reconciliation.json').write_text(json.dumps(book,indent=2)+'\n')
+    return annual, {
+        'legacy_misclassified_anatomy':int(legacy.recorded_anatomy.ne(legacy.expected_anatomy).sum()),
+        'legacy_projected_duplicates_beyond_first':int(legacy[list(lmeta.column_names)].duplicated().sum()),
+    }
+
+
+def main(compare_legacy=False):
+    # Thesis originals are required only for the explicitly requested comparison.
+    if compare_legacy:
+        from freeze_inputs import verify
+        verify()
     manifest=pd.read_csv(ROOT/'provenance/inec_download_manifest.csv')
     for r in manifest.itertuples():
         with (ROOT/r.path).open('rb') as stream:
@@ -92,15 +121,7 @@ def main():
     annual=c.groupby('source_year').agg(admissions=('admission_id','size'),deaths=('death','sum'),known_outcomes=('death','count')).reset_index()
     annual['alive']=annual.known_outcomes-annual.deaths
     annual['unknown_outcomes']=annual.admissions-annual.known_outcomes
-    legacy,lmeta=pyreadstat.read_sav(str(ROOT/'Data_base/BASE DATOS TESIS.sav'))
-    legacy['icd10']=legacy.cau_cie10.str.extract(r'^(C71[0-9])')
-    legacy['expected_anatomy']=legacy.icd10.map(anatomy)
-    legacy_map={'Supratentorial (Hemisférico)':'Supratentorial','Infratentorial y Línea Media':'Infratentorial/midline','Lesiones Sobrepuestas':'Overlapping','No Especificado / Otros':'Unspecified'}
-    legacy['recorded_anatomy']=legacy.CIE10.map(legacy_map)
-    legacy.groupby(['icd10','recorded_anatomy','expected_anatomy']).size().rename('records').reset_index().to_csv(PROV/'legacy_anatomy_audit.csv',index=False)
-    lg=legacy.groupby('Año').agg(legacy_admissions=('con_egrpa','size'),legacy_deaths=('con_egrpa',lambda s:s.eq('Fallecido').sum())).reset_index().rename(columns={'Año':'source_year'})
-    annual=annual.merge(lg,on='source_year');annual['admissions_difference']=annual.admissions-annual.legacy_admissions;annual['deaths_difference']=annual.deaths-annual.legacy_deaths
-    annual.to_csv(PROV/'annual_reconciliation.csv',index=False)
+    annual.to_csv(PROV/'annual_counts.csv',index=False)
     c.groupby(['source_year','icd10','anatomy','death'],dropna=False).size().rename('records').reset_index().to_csv(PROV/'year_code_outcome.csv',index=False)
     for v in ['age_group','los_group','sex','ethnicity_recorded','sector_group','residence_area','facility_province','residence_province','con_egrpa','cod_edad']:
         c.groupby(['source_year',v],dropna=False).size().rename('records').reset_index().to_csv(PROV/f'counts_{v}.csv',index=False)
@@ -109,16 +130,20 @@ def main():
     c['identical_projected_row']=c.duplicated(rawfields,keep=False)
     duplicates=c.groupby('source_year').agg(rows_in_identical_groups=('identical_projected_row','sum')).reset_index()
     duplicates.to_csv(PROV/'duplicate_projection_audit.csv',index=False)
-    book=[]
-    for path in sorted((ROOT/'Data_base').glob('*.xlsx')):
-        x=pd.read_excel(path,sheet_name='Hoja3')
-        shared=list(x)
-        norm=lambda s:s.astype('string').str.replace(r'\.0$','',regex=True)
-        equal=len(x)==len(legacy) and all(norm(x[k]).equals(norm(legacy[k])) for k in shared)
-        book.append({'path':path.relative_to(ROOT).as_posix(),'sheet':'Hoja3','rows':len(x),'shared_fields':len(shared),'same_order_and_values_as_sav_after_numeric_format_normalization':equal})
-    (PROV/'workbook_reconciliation.json').write_text(json.dumps(book,indent=2)+'\n')
-    summary={'admissions':len(c),'deaths':int(c.death.sum()),'alive':int(c.death.eq(0).sum()),'unknown_outcome':int(c.death.isna().sum()),'legacy_misclassified_anatomy':int(legacy.recorded_anatomy.ne(legacy.expected_anatomy).sum()),'legacy_projected_duplicates_beyond_first':int(legacy[list(lmeta.column_names)].duplicated().sum()),'retention_policy':'All C710-C719 records retained; no covariate or deduplication exclusions; unknown covariates explicitly flagged','year_policy':'All 2015-2024 years retained from official source reconstruction; no anomaly-year exclusion'}
+    summary={'admissions':len(c),'deaths':int(c.death.sum()),'alive':int(c.death.eq(0).sum()),'unknown_outcome':int(c.death.isna().sum()),'legacy_comparison_status':'not_run','legacy_misclassified_anatomy':None,'legacy_projected_duplicates_beyond_first':None,'retention_policy':'All C710-C719 records retained; no covariate or deduplication exclusions; unknown covariates explicitly flagged','year_policy':'All 2015-2024 years retained from official source reconstruction; no anomaly-year exclusion'}
+    if compare_legacy:
+        annual,legacy_metrics=compare_with_legacy(annual)
+        summary.update(legacy_metrics)
+        summary['legacy_comparison_status']='completed'
+    else:
+        print('Legacy comparison not run; use --compare-legacy with verified thesis inputs. '
+              'Existing legacy comparison reports are retained from prior runs.')
     (PROV/'audit_summary.json').write_text(json.dumps(summary,indent=2)+'\n')
     print(annual.to_string(index=False));print(summary)
 
-if __name__=='__main__':main()
+if __name__=='__main__':
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--compare-legacy',action='store_true',
+                        help='Verify the thesis baseline and compare the INEC cohort with the original SAV/workbooks.')
+    args=parser.parse_args()
+    main(compare_legacy=args.compare_legacy)

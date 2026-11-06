@@ -56,7 +56,6 @@ python3.14 -m venv .venv
 source .venv/bin/activate
 python --version
 python -m pip install -r requirements.txt
-python -X utf8 scripts/freeze_inputs.py --verify
 ```
 
 If your Python 3.14 installation exposes `python3` instead of `python3.14`, check
@@ -70,7 +69,6 @@ py -3.14 -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python --version
 python -m pip install -r requirements.txt
-python -X utf8 scripts/freeze_inputs.py --verify
 ```
 
 If `py` is unavailable, use the installed Python 3.14 executable to run
@@ -79,7 +77,6 @@ run the environment's interpreter directly without changing execution policy:
 
 ```powershell
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt
-.\.venv\Scripts\python.exe -X utf8 scripts/freeze_inputs.py --verify
 ```
 
 For any later command beginning with `python`, substitute
@@ -107,16 +104,16 @@ The remaining commands are identical in both shells once the environment is
 active. Run `deactivate` to leave it. After pulling dependency changes, run
 `python -m pip install -r requirements.txt` again in that machine's environment.
 
-## Restore the research inputs
+## Optional: restore thesis inputs for legacy comparison
 
-A Git checkout does not contain the ignored inputs needed to reproduce the audit.
+The default INEC reconstruction does not require thesis originals or baseline
+snapshots. Restore them only for the optional `--compare-legacy` audit.
+A Git checkout does not contain these ignored thesis inputs.
 Restore these folders from your research backup, at the same relative paths:
 
 - `Data_base/`: the supplied SAV and both workbooks.
 - `Results/`: the supplied `RESULTADOS.spv`.
 - `data/raw/baseline_2026-10-23/`: six preserved baseline snapshots.
-- `data/raw/inec_2026-10-23/` and `data/raw/inec_discovery_2026-10-23/`:
-  official downloads and archived release pages, if already available.
 
 Keep the original manuscript PDF and `Writeable/review_issues.md` byte-identical
 to the baseline as well. Git/editor line-ending conversion of a text input can
@@ -154,7 +151,7 @@ checksums before treating fresh downloads as the same source version.
 
 ## Reproduce the admission audit
 
-After restoring the baseline inputs and acquiring/restoring the official sources:
+After acquiring/restoring the official INEC sources (no `Data_base/` required):
 
 ```sh
 python -X utf8 scripts/extract_inec.py
@@ -163,13 +160,22 @@ python -X utf8 -m unittest discover -s tests -v
 ```
 
 The audited cohort is written to `data/processed/admissions_c71_audited.csv`.
-Aggregate evidence and dictionaries are written to `provenance/t02/`.
+Aggregate evidence and dictionaries are written to `provenance/t02/`, including
+INEC-only `annual_counts.csv`. The summary records that the legacy comparison was
+not run; previous legacy reports remain historical evidence. To regenerate them
+after restoring the complete thesis baseline, run:
+
+```sh
+python -X utf8 scripts/audit_admissions.py --compare-legacy
+```
+
 Run extraction and auditing before the tests: cohort-integrity tests are skipped
 if the generated cohort is absent, so a test run alone does not prove reconstruction.
 
-The documented audit was executed on macOS. Windows instructions have been checked
-against the scripts' path handling; execution on a Windows machine remains to be
-verified. The test suite and checksum verification provide the checks to run there.
+The historical audit was executed on macOS. The INEC-only audit and all 26 tests
+also passed on Windows with the existing local Python 3.13.7 environment on
+6 November 2026. The optional comparison with actual legacy files was not rerun
+on Windows because those originals were unavailable.
 
 ## Project layout
 

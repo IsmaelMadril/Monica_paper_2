@@ -1,10 +1,10 @@
 {
-  "recorded_utc": "2026-11-06T14:36:45.402408+00:00",
+  "recorded_utc": "2026-11-06T15:33:31.344353+00:00",
   "inputs_sha256": {
-    "data/processed/admissions_c71_audited.csv": "ee5d45af5653e07e8177c90d37633058697a58bb54db0a026a5554abe64c83d5",
-    "provenance/t03/population_manifest.csv": "ec0c0f79dd597fde6cfc511c6597ea30f8b13ec87f5102f491176eb46a4c1558",
-    "provenance/t03/annual_population_by_age.csv": "c681a68c0350f1139078d582a89b84995586b5b98159c20faf3a603dafe63f9e",
-    "provenance/t03/standard_weights_2022.csv": "8e0f02b6324f06b06a59a049d65ab88978f7c906bd16aa81b619a623e61ecda0"
+    "data/processed/admissions_c71_audited.csv": "3716a7f3433d5b0c9aa72586c10b8f0837173d9f8f4f635c0007f815edd19b36",
+    "provenance/t03/population_manifest.csv": "4e85cf2d179b0e19627ef2d7d43bcd640724e9b3894bd7e19ae6845743aa7a78",
+    "provenance/t03/annual_population_by_age.csv": "f7dc71c2af458120e8d68272bd5631026491bb7d351aa564213272373acdf7d5",
+    "provenance/t03/standard_weights_2022.csv": "c390ab25eae7defee9b1c80c0bea1e398e18387a713f3846d11014094a2b41e0"
   },
   "primary_policy": "resident; exclude source province code88 foreign; no unknown residence province in audited cohort",
   "primary_age_groups": [

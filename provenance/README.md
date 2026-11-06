@@ -56,7 +56,6 @@ After changing to the project root and activating the local environment, run the
 same commands in either shell:
 
 ```sh
-python -X utf8 scripts/freeze_inputs.py --verify
 python -X utf8 scripts/extract_inec.py
 python -X utf8 scripts/audit_admissions.py
 python -X utf8 -m unittest discover -s tests -v
@@ -65,7 +64,15 @@ python -X utf8 -m unittest discover -s tests -v
 If PowerShell activation is blocked, replace `python` with
 `.\.venv\Scripts\python.exe`. Without activation on macOS, replace it with
 `./.venv/bin/python`. No execution-policy change is required to invoke Python
-directly. Restore baseline and official input files before running the audit.
+directly. Restore official INEC input files before running the default audit.
+Thesis originals and baseline snapshots are required only for the optional
+`python -X utf8 scripts/audit_admissions.py --compare-legacy` command, which
+verifies them before comparing the cohorts.
+
+Default runs write `t02/annual_counts.csv` and record
+`legacy_comparison_status: "not_run"` with null legacy metrics in the audit
+summary. Existing legacy reconciliation reports are preserved as historical
+evidence; they are regenerated only by a successful `--compare-legacy` run.
 
 Keep the version-controlled manifests and their archived inputs together. Do not
 rerun acquisition merely to verify a restored archive: the acquisition scripts can
