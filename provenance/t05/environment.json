@@ -1,0 +1,6 @@
+{
+  "python": "3.14.7",
+  "platform": "macOS-27.2-arm64-arm-64bit-Mach-O",
+  "statsmodels": "0.15.0",
+  "tested_stage": "T05 on macOS; Windows execution pending"
+}

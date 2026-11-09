@@ -1,0 +1,13 @@
+9 November 2026 — macOS
+61 project tests passed, no skips, including 11 T06 method/integration controls.
+All 17 characteristic blocks reconcile to source counts and outcome margins.
+All-year cohort: 10,972 admissions, 963 deaths, 10,009 live discharges.
+Residence-only blocks: 7,621 verified 2018–2024 records, 658 deaths, 6,963 live.
+2024: 1,019 admissions, 932 live, 87 deaths; live column share=9.31%, fatality=8.54%.
+13 Pearson comparisons and four fixed-margin Monte Carlo comparisons (99,999 draws each).
+Sparse 2x2 Fisher branch checked against an independent library call; unused for current tables.
+Small conditional 2x3 enumeration independently verifies simulated-tail calculation.
+Primary Tables 4–5 numeric coefficients/intervals/p-values unchanged.
+Model scripts compile and use a shared renderer; no regression refit or new dependencies.
+Windows execution remains unverified; reproducible commands are provided for both systems.
+Independence, clustering, coding and provisional early residence limitations remain explicit.

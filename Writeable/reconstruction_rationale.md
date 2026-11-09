@@ -1,6 +1,6 @@
 # Bibliographic rationale for reconstruction and reanalysis
 
-Recorded 6 November 2026. This register covers the implemented T01-T03 reconstruction, the optional legacy comparison, Table 3, and the current reproduction/verification workflow. T04 mortality modelling is now completed under [its separately documented specification, primary references and validation](t04_mortality_analysis.md); this T01-T03 methods register does not itself certify that model or pending T05-T10 work.
+Recorded 6 November 2026. This register covers the implemented T01-T03 reconstruction, the optional legacy comparison, Table 3, and the current reproduction/verification workflow. T04 mortality modelling and the T05 replacement analyses are completed under [the T04 specification/report](t04_mortality_analysis.md) and [the T05 decision, references and validation](t05_anatomy_analysis.md). T06 descriptive tables and shared model legends are documented in [the T06 report](t06_descriptive_tables.md) and entries D30–D32. This does not certify pending T07–T10 work.
 
 ## How the evidence is used
 
@@ -22,7 +22,7 @@ The machine-readable version is [reconstruction_decisions.csv](../provenance/rec
 | D06 | **Recode discharge deaths from codes 2 and 3.** Annual value labels distinguish alive, death before 48 hours and death at 48 hours or later. | [R01](#r01) | Source metadata. Labels support the recode, not validation against medical records. |
 | D07 | **Respect source age units and valid ranges.** INEC labels specify hours 1-23, days 1-28, months 1-11 and years 1-115. Valid subyear ages have zero completed years; invalid values remain unknown. | [R01](#r01) | Source metadata. Early-year application must remain auditable against each annual schema; no selected record is unclassifiable. |
 | D08 | **Use mutually exclusive stay categories.** Preserve recorded stay; assign day 30 only to 15-30 and use 31+ for the next group. Retain date discrepancies as audit fields. | [R01](#r01), [R09](#r09) | Study categorization and arithmetic correction. No clinical threshold is validated; the inferred same-day minimum-one convention is descriptive, not proven from a manual. |
-| D09 | **Preserve missing and unknown values.** Unknown ethnicity is distinct from Other; covariate missingness does not remove otherwise eligible discharges at reconstruction. | [R01](#r01), [R09](#r09) | Source coding and analytic retention. This is not by itself a regression missing-data solution; T04 handling is documented separately and T05 decisions remain pending. |
+| D09 | **Preserve missing and unknown values.** Unknown ethnicity is distinct from Other; covariate missingness does not remove otherwise eligible discharges at reconstruction. | [R01](#r01), [R09](#r09) | Source coding and analytic retention. This is not by itself a regression missing-data solution; T04 handling is documented separately; T05 preserves source categories descriptively and specifies primary/extended adjustment separately. |
 | D10 | **Separate residence, facility geography and sector.** Use prov_res for resident eligibility; keep prov_ubi separately. Preserve three source sectors and explicitly label the binary aggregation. | [R01](#r01) | Source-defined meanings; study aggregation. Facility location is not resident origin; binary sector is not the only possible grouping. |
 | D11 | **Flag unverified early rural/urban labels.** The 2015-2017 residence-area interpretation lacks independent label confirmation. Preserve codes and provisional status. | [R01](#r01) | Unresolved evidence. No bibliographic assertion closes this gap. These labels are not used in Table 3. |
 | D12 | **Match resident numerator to resident denominators.** Exclude three foreign-resident live discharges only from primary population rates; keep them in the full cohort and sensitivity analysis. | [R01](#r01), [R03](#r03), [R05](#r05) | Study eligibility decision. The exact exclusion policy is our decision; sources define variables and the rate framework, not an Ecuador-specific mandated exclusion. |
@@ -37,7 +37,7 @@ The machine-readable version is [reconstruction_decisions.csv](../provenance/rec
 | D21 | **Interpret intervals conditionally.** State Poisson/binomial assumptions and omitted clustering, coding errors and demographic uncertainty; avoid causal trend conclusions. | [R12](#r12), [R09](#r09) | Model limits and cautious interpretation. No trend hypothesis test, clinical diagnostic validation or causal pandemic analysis has been performed. |
 | D22 | **Freeze source bytes and record software versions.** Use immutable archives, SHA-256 checks and scripted regeneration; preserve historical manifests rather than resetting expected hashes. | [R10](#r10), [R11](#r11) | Reproducibility and integrity controls. Byte identity is distinct from scientific correctness; small platform floating-point differences require numeric comparison. |
 | D23 | **Verify table values and reconcile manuscript changes.** Check source cells, independent formulas, component totals, mean definitions and displayed rounding; expose manuscript differences. | [R10](#r10) | Project-specific computational evidence. Published references justify methods; the local verification establishes the actual numbers. The old PDF and Figure 1 still need revision. |
-| D24 | **Require evidence for subsequent changes.** Record the change, rationale, source locator, result checks and unresolved assumptions before carrying it into manuscript claims. | [R08](#r08), [R09](#r09), [R10](#r10) | Project reporting rule. T04 has its own specification and evidence; T05-T10 are not validated by this register. Each later model, exclusion and interpretation needs its own evidence. |
+| D24 | **Require evidence for subsequent changes.** Record the change, rationale, source locator, result checks and unresolved assumptions before carrying it into manuscript claims. | [R08](#r08), [R09](#r09), [R10](#r10) | Project reporting rule. T04 and T05 have their own specifications and evidence; T06 now has its own specification/evidence; pending T07–T10 work is not validated by this register. Each later model, exclusion and interpretation needs its own evidence. |
 
 ## T04 evidence retained in the merged workflow
 
@@ -47,9 +47,26 @@ the SPV event-coding evidence and hashes, the pre-fit specification, separation 
 convergence checks, sensitivity fits, and sparse-level profile intervals stored in
 `provenance/t04/`. It confirms that the supplied SPV modelled live discharge, while
 the rebuilt primary model explicitly uses death=1. Patient/facility dependence and
-clinical specification review remain limitations; no pending multinomial analysis
-is represented as completed. The linked evidence is recorded as D25 in the decision
+clinical specification review remain limitations. T05 subsequently replaced the
+unstable multinomial question with two separately specified binary analyses; the
+original conventional multinomial fit is not represented as valid. The linked evidence is recorded as D25 in the decision
 register, without treating Table 3's references as validation of a different model.
+
+## T05 decision and supporting evidence
+
+The [T05 report](t05_anatomy_analysis.md) separates non-C719 coding from a conditional
+infratentorial/midline-versus-supratentorial comparison. These are explicit new
+exploratory estimands, not recovered versions of the original aRRRs. The smaller
+primary models use age, sex, sector and year with age18-44 reference; ethnicity
+remains descriptive and is included in extended sensitivity fits. Final LOS and
+unverified early residence labels are excluded from the primary models.
+
+| Decision | Rationale and primary support | Local verification and limits |
+|---|---|---|
+| D26 | Separate code detail from conditional anatomy. Code meanings: [R02](#r02); transparent code/selection reporting: [R08](#r08); binomial fitting: [R13](#r13). The two-panel structure is a study choice, not a guideline requirement. | `provenance/t05/model_flow.csv`; C718 is never assigned to one compartment, and C719 is not imputed. No selection-bias correction or diagnostic-accuracy claim. |
+| D27 | Do not report the old conventional multinomial estimates. Model structure: [R14](#r14); finite-MLE/convergence concerns: [R15](#r15). | Saved NOMREG warning and four constructive zero-cell certificates in `provenance/t05/`; a coefficient can diverge while likelihood increases. The four-outcome model is not estimated, rather than disguised as repaired. |
+| D28 | Use explicit adult reference and smaller primary adjustment, with all ethnicity levels retained in extended analyses. Reporting principles: [R08](#r08), [R09](#r09). | Pre-fit specification, category counts and covariance-based age reference contrasts; no p-value-driven merging and no claim of complete confounding control. |
+| D29 | Report period/group-definition sensitivities and conditional uncertainty. Fitting: [R13](#r13); profile likelihood uses [R16](#r16). | Fifteen converged fits, eight sparse profile intervals and tests. Pediatric association varies by period; unobserved patient/facility dependence and nonrandom recording remain unresolved. |
 
 ## Statistical argument for Table 3
 
@@ -157,3 +174,75 @@ Source locator and scope: Technical source for SHA-256 digests used to detect by
 
 Source locator and scope: Supports explicit interpretation of model-based rate uncertainty and limitations beyond Poisson variation. Its production interval variant is not used as a substitute for the Fay-Feuer implementation.
 
+
+<a id="r13"></a>
+
+**R13.** statsmodels developers. Generalized Linear Models: binomial logit fitting
+and GLM results. Version0.15.0 documentation, accessed9 November2026.
+[Primary source](https://www.statsmodels.org/stable/glm.html).
+
+Source locator and scope: GLM/Binomial logit and covariance implementation. Actual
+model parameters, fit validity checks and outputs are local evidence, not established
+by citing software documentation. Exact environment versions are preserved.
+
+<a id="r14"></a>
+
+**R14.** statsmodels developers. MNLogit: multinomial logit model, version0.15.0
+documentation, accessed9 November2026.
+[Primary source](https://www.statsmodels.org/stable/generated/statsmodels.discrete.discrete_model.MNLogit.html).
+
+Source locator and scope: multinomial model structure and available fitting methods.
+It neither mandates the original outcome baseline nor validates this study's old fit.
+
+<a id="r15"></a>
+
+**R15.** statsmodels developers. Pitfalls: unidentified parameters, convergence and
+incomplete convergence in maximum-likelihood models. Version0.15.0 documentation,
+accessed9 November2026. [Primary source](https://www.statsmodels.org/stable/pitfalls.html).
+
+Source locator and scope: generic finite-MLE and convergence concerns. The new
+four-outcome separation argument is an explicit local mathematical certificate,
+not an inference based only on this warning guidance.
+
+<a id="r16"></a>
+
+**R16.** Wilks SS. The Large-Sample Distribution of the Likelihood Ratio for Testing
+Composite Hypotheses. Annals of Mathematical Statistics.1938;9(1):60-62.
+[Primary paper](https://doi.org/10.1214/aoms/1177732360).
+
+Source locator and scope: asymptotic likelihood-ratio chi-square framework used for
+supplementary profile intervals, not a guarantee of exact sparse-cell coverage,
+independent admissions or absence of systematic bias.
+
+## T06 denominator and table-reporting decisions
+
+The [T06 report](t06_descriptive_tables.md) documents generated Tables 1–2,
+unchanged T04/T05 model estimates and their shared legends. The task-specific
+specification precedes the new test results; 61 tests and 17 block reconciliations
+provide local verification. D30–D32 extend the decision register:
+
+| Decision | Primary support and argument | Local evidence and limits |
+|---|---|---|
+| D30 | Make composition/fatality denominators explicit and retain unknown categories; STROBE reporting items 12/14/16 [R09](#r09), routine-data transparency [R08](#r08), source labels [R01](#r01). | Numeric cell/scopes/missingness files in `provenance/t06/`. Residence-only blocks restrict to 2018–2024; no guideline mandates that exact period and the early-label question remains open. |
+| D31 | Use explicit, conservative sparse-cell test routing and preserve p precision; [R17](#r17). | 13 Pearson/four fixed-margin Monte Carlo comparisons. A small enumerated distribution validates the simulated Pearson tail. Seeds, replicates and tail-probability intervals are recorded; simulation floor is not an exact p or upper bound. No multiplicity or clustering correction. |
+| D32 | Self-contained model legends give events, N, covariates, references and Wald interval/p methods; [R09](#r09), fitting context [R13](#r13). | Shared renderer, unchanged primary coefficient CSVs and integration checks; source/model cohort hashes agree. Presentation changes do not establish causality or independent admissions. Manuscript insertion remains T07. |
+
+<a id="r17"></a>
+
+**R17.** SciPy developers. Contingency-table independence testing and fixed-margin
+random tables. Online documentation accessed 9 November 2026 (web pages identify
+version 1.18.0; executed environment is SciPy 1.18.1, recorded separately).
+[chi2_contingency](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.chi2_contingency.html),
+[random_table](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.random_table.html),
+[fisher_exact](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.fisher_exact.html),
+[monte_carlo_test](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.monte_carlo_test.html).
+
+Source locators and scope: chi2_contingency Parameters/Notes describe uncorrected
+Pearson and the observed/expected-cell guideline; random_table describes the
+conditional fixed-margin distribution and Patefield draws; fisher_exact gives
+two-sided 2×2 probability ordering; monte_carlo_test defines tails and numerical
+tie concerns. T06 implements the Pearson upper tail explicitly using random_table,
+not the Fisher probability-ordering statistic for larger tables. The choice of
+99,999 replicates, seeds, conservative >=5 dispatch and extra simulation interval
+are declared implementation choices; documentation does not mandate the tests or
+validate this study's independence assumptions.

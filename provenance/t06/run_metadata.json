@@ -1,0 +1,27 @@
+{
+  "recorded_utc": "2026-11-09T17:40:44.038662+00:00",
+  "specification_date": "2026-11-09",
+  "inputs_sha256": {
+    "data/processed/admissions_c71_audited.csv": "ee5d45af5653e07e8177c90d37633058697a58bb54db0a026a5554abe64c83d5",
+    "provenance/t04/run_metadata.json": "954d00f63f8b1cbb3b1eef40a79768b998cc255b29a049c6fec4b0db81a3eeab",
+    "provenance/t04/model_diagnostics.json": "2de7dbb4c92e7128c1e4cfb9a3fe12e9a4d7c87d096bf2bbe4be0227833a45b3",
+    "provenance/t04/all_model_coefficients.csv": "41bc95a59185d6f4f5fcd67351e72c2b8871f7fe720089e560fe815318fb1eaf",
+    "provenance/t05/run_metadata.json": "e2f1013bd45159429488cc7791a93c06e97b87e0c0981cb8a2954c1c3891a167",
+    "provenance/t05/model_diagnostics.json": "f2e0a6f88f7fb32166268f08985a6489283291eb70a7d843c7a8544d57761edc",
+    "provenance/t05/all_model_coefficients.csv": "efa4ebdc572a0add30077dd7ac9511b75d84496f4f57aa89da1d9a7f1fee1032",
+    "scripts/generate_descriptive_tables.py": "19b96a89d83bcd4c0630ab36d8c825edd6d12f58d395f03b73a3c515e68d2772",
+    "scripts/table_reporting.py": "4e599280862af5b13e9129d9317d5b7146d23c740f1f1548631ef489e4f4d540",
+    "provenance/t06/analysis_specification.md": "8ebcfdd75fead1514f512ab9a72b0e78956e5f7b58d15070460e1dca2dae4f02"
+  },
+  "python": "3.14.7",
+  "platform": "macOS-27.2-arm64-arm-64bit-Mach-O",
+  "scipy": "1.18.1",
+  "numpy": "2.5.4",
+  "pandas": "3.1.0",
+  "replicates": 99999,
+  "seed_base": 20261109,
+  "admissions": 10972,
+  "deaths": 963,
+  "model_estimates_changed": false,
+  "comparisons": 17
+}

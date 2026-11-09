@@ -1,0 +1,5 @@
+predictor,level,outcome,outcome_count,other_outcomes,reference_predictor,reference_outcome,direction,conclusion
+ethnicity,1,Overlapping,0,89,6,Unspecified,decrease overlapping-outcome ethnicity coefficient toward minus infinity,no finite unpenalized maximum in full four-outcome ethnicity model
+ethnicity,3,Overlapping,0,14,6,Unspecified,decrease overlapping-outcome ethnicity coefficient toward minus infinity,no finite unpenalized maximum in full four-outcome ethnicity model
+ethnicity,4,Overlapping,0,22,6,Unspecified,decrease overlapping-outcome ethnicity coefficient toward minus infinity,no finite unpenalized maximum in full four-outcome ethnicity model
+ethnicity,5,Overlapping,0,32,6,Unspecified,decrease overlapping-outcome ethnicity coefficient toward minus infinity,no finite unpenalized maximum in full four-outcome ethnicity model

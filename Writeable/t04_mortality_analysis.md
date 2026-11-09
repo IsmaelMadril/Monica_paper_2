@@ -139,7 +139,7 @@ T03 metadata and original inputs were not rewritten.
 
 **All 38 project tests pass** on this workstation, including independent 2×2 logistic controls, outcome reversal, complete/quasi separation, profile bounds, reference levels and integration checks. Numerical modelling was run on macOS; the new T04 stage has not yet been executed on Windows. The existing cross-platform path and UTF-8 conventions are preserved.
 
-**T04's technical analysis is complete for this specification.** Covariate choices, residual confounding, sparse comparisons and uncertainty assumptions still need coauthor review before submission. T02's residence-label question remains open; T05's multinomial model repair is next. The original article will need updated interpretation and tables during the planned manuscript revision tasks.
+**T04's technical analysis is complete for this specification.** Covariate choices, residual confounding, sparse comparisons and uncertainty assumptions still need coauthor review before submission. T02's residence-label question remains open. Follow-up on 9 November 2026: T05 has completed [its separately specified replacement analyses](t05_anatomy_analysis.md); T06 descriptive tables and model legends are now complete under [their own specification/report](t06_descriptive_tables.md). T07 is next. The original article will need updated interpretation and tables during the planned manuscript revision tasks.
 
 ## Primary documentation used
 

@@ -1,0 +1,11 @@
+{
+  "source_path": "Results/RESULTADOS.spv",
+  "source_sha256": "f72f24e628e687111ea556f5516fe4f5cb5842674095c37a1ab7f74dc05abbdf",
+  "member": "00000000072_lightWarningData.bin",
+  "member_sha256": "9cb402aa4597be3e2d1f8dbfef6f64a8507b53ff00650b3f851e63b651fb4eb2",
+  "warning_text": [
+    "Se han encontrado singularidades inesperadas en la matriz hessiana. Esto indica que o bien se deben excluir algunas variables de predictor, o bien se deben fusionar algunas categorías.",
+    "El procedimiento NOMREG continúa a pesar de las advertencias anteriores. Los resultados posteriores mostrados se basan en la última iteración. La validez del ajuste de modelo es incierta."
+  ],
+  "interpretation": "Saved NOMREG reports Hessian singularities and uncertain validity; not a valid conventional Table5 fit"
+}

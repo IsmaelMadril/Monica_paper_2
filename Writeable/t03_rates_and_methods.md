@@ -161,7 +161,7 @@ Key files:
 
 Verified: source hashes; both-sex totals; single-age sums versus source totals; one denominator per year/age; census sum 16,938,986; weight sums; rate-component additivity; death rates no larger than admission rates; exact arithmetic-mean reproduction; confidence-interval methods and zero-count behavior; source-cohort exclusions. **All 26 project tests pass**, including independent mathematical controls for Poisson and Wilson intervals. Source projections are not claimed to be error-free because arithmetic checks pass.
 
-**T03 is complete for the documented reconstructed-cohort specification.** T02 residence-label verification remains open. The T04 mortality model has since been rebuilt under [its separate specification and evidence](t04_mortality_analysis.md); T05 multinomial repair remains pending. Manuscript replacement numbers should explicitly identify the reconstructed cohort and the resident-only rate population.
+**T03 is complete for the documented reconstructed-cohort specification.** T02 residence-label verification remains open. The T04 mortality model has since been rebuilt under [its separate specification and evidence](t04_mortality_analysis.md); T05 has since completed [its replacement decision and analyses](t05_anatomy_analysis.md). Manuscript replacement numbers should explicitly identify the reconstructed cohort and the resident-only rate population.
 
 ## Official sources and statistical references
 

@@ -7,7 +7,7 @@ reconstruction and Table 3 changes to primary sources, study-specific choices
 and local verification. Later changes must extend this record rather than
 inherit an unsupported claim of validation.
 
-This directory documents the preserved T01 baseline, T02 source reconstruction, T03 rates and T04 mortality models.
+This directory documents the preserved T01 baseline, T02 source reconstruction, T03 rates, T04 mortality models, T05 replacement analyses and T06 descriptive tables.
 It is shared through Git; large inputs and generated admission files are restored
 separately on each machine. See the [main README](../README.md) for macOS and Windows
 PowerShell setup and [the T02 audit](../Writeable/t02_data_audit.md) for findings.
@@ -136,3 +136,30 @@ rural/urban labels are excluded from the primary fit. See the
 [T04 report](../Writeable/t04_mortality_analysis.md) for interpretation and limitations.
 Legacy evidence can be re-examined when the supplied SPV is restored; primary
 model reproduction requires the audited cohort, not the original SPV.
+
+## T05 recorded coding and conditional-site evidence
+
+`provenance/t05/` contains the pre-fit model decision and explicit outcome definitions,
+source code/outcome cells, legacy NOMREG warning, four zero-cell non-finite-MLE
+certificates, two primary binary models and sensitivities. All 15 fits are finite,
+full rank and converged without warnings/separation. The original four-outcome
+multinomial model is not treated as validated or silently relabelled. See the
+[T05 report](../Writeable/t05_anatomy_analysis.md), rationale entries D26–D29 and
+references R13–R16. Sparse extended ethnicity intervals and period-dependent
+pediatric associations remain explicit uncertainty; no original aRRR is carried
+forward into the new aOR table.
+
+## T06 descriptive tables and statistical legends
+
+`t06/` contains tracked Markdown review copies of Tables 1, 2, 4 and 5, numeric
+Table 1–2 cells with explicit denominators, scope and missingness registers,
+reconciliation checks, full independence-test results and simulation uncertainty,
+a pre-result specification, validation and run metadata. `generate_descriptive_tables.py`
+recreates these from the audited cohort and validated saved T04/T05 results.
+Shared `table_reporting.py` controls presentation in T04, T05 and T06. Model
+estimates remain unchanged. Read the [T06 report](../Writeable/t06_descriptive_tables.md).
+
+Residence comparisons use verified 2018–2024 only; all other descriptive blocks
+retain the full ten-year cohort. This avoids publishing provisional early labels
+as confirmed and does not close the T02 label question. Software versions and
+code/input hashes are recorded; this stage was run on macOS, not Windows.

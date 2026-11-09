@@ -1,0 +1,8 @@
+9 November 2026
+50 project tests passed, including12 T05 outcome, selection, reference, estimator and integration controls.
+Coding primary:10972 records;6304 events;16 full-rank parameters.
+Conditional-site primary:6192 records;1523 events;16 full-rank parameters.
+All15 specified fits converge in5 iterations with no warnings or LP separation.
+Four explicit no-finite-MLE directions demonstrate why the old full four-outcome ethnicity model is not reported.
+Eight sparse extended ethnicity contrasts have supplementary profile-likelihood intervals.
+Period sensitivity, selection/coding uncertainty and patient/facility dependence remain explicit limitations.

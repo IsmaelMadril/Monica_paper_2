@@ -11,9 +11,9 @@ SHA-256 checks detect changed bytes under the
 they do not establish scientific validity. Making legacy comparisons optional
 is a project implementation choice, not a requirement of either reference.
 
-This guide reproduces the implemented **T01–T04 workflow**: input verification,
-C71 admission reconstruction, data audit, age-adjusted rates and mortality modelling.
-T05 multinomial model repair and later manuscript work are not yet implemented. Run commands from the
+This guide reproduces the implemented **T01–T06 workflow**: input verification,
+C71 admission reconstruction, data audit, age-adjusted rates, mortality modelling,
+separate coding/anatomical-group analyses and descriptive tables. T07–T10 remain pending. Run commands from the
 repository root and stop when a command reports an error.
 
 ## Immediate fix: `admissions_c71_audited.csv` is missing
@@ -413,3 +413,69 @@ associations. See [the complete T04 methods/report](Writeable/t04_mortality_anal
 for references, uncertainty and dependence limitations. New T04 execution has been
 verified on macOS only; the previously documented Windows validation of T02/T03
 does not establish Windows validation of this newly added model stage.
+
+## T05: reproduce replacement Table 5
+
+After step 5 has created `data/processed/admissions_c71_audited.csv`, use these
+commands on macOS or Windows PowerShell with the local environment active:
+
+```sh
+python -m pip install -r requirements.txt
+python -X utf8 scripts/fit_anatomy.py
+python -X utf8 -m unittest discover -s tests -v
+```
+
+The script reads the audited cohort; T03 population files and T04 model outputs are
+not runtime inputs. It reuses statistical helper functions from existing modules.
+All T05 main and sensitivity fits plus sparse profile intervals run in one command.
+If the optional supplied SPV is present, its NOMREG warning is exported; if absent,
+historical evidence is preserved and fitting proceeds using the audited cohort.
+
+Expected controls: coding panel10972 records/6304 non-C719 events; conditional-site
+panel6192 records/1523 infratentorial-midline events; 16 parameters per primary
+model; 15 converged finite fits overall; no binary separation; four certificates
+explain why the full four-outcome ethnicity model has no finite maximum.
+Primary pediatric-versus-age18-44 aORs are1.897457 (coding) and1.140529 (conditional
+site). Do not label these as the original multinomial aRRRs. Temporal sensitivity
+and selection limitations are material; consult the [T05 report](Writeable/t05_anatomy_analysis.md).
+
+Generated outputs: `outputs/tables/table5_rebuilt.md` and `.csv`. Tracked evidence:
+`provenance/t05/` including model flow, source cells, covariances, coefficients,
+reference re-expressions, diagnostics and sensitivity/profile intervals. The new
+T05 stage was executed on macOS; existing Windows validation of earlier stages
+does not establish Windows validation of this stage.
+
+## T06: reproduce Tables 1–2 and consistent model legends
+
+Run the T02 audited-cohort build, T04 mortality fit and T05 anatomical analyses
+first. T03 population/rate files are not T06 runtime inputs. These commands are
+the same on macOS and Windows PowerShell after activating the local environment:
+
+```sh
+python -X utf8 scripts/fit_mortality.py
+python -X utf8 scripts/profile_sparse_mortality.py
+python -X utf8 scripts/fit_anatomy.py
+python -X utf8 scripts/generate_descriptive_tables.py
+python -X utf8 -m unittest discover -s tests -v
+```
+
+Skip the first three commands if their outputs already exist for exactly the
+current audited cohort bytes. T06 checks those cohort hashes and saved diagnostics
+and stops if they disagree; rerun the relevant model stage after recreating the
+cohort on a different workstation. It refreshes presentation from saved
+coefficients, without changing estimates or refitting. No original SAV/SPV/XLSX
+is required for the rebuilt T06 stage.
+
+Expected controls: 10,972 admissions, 963 deaths, 10,009 live discharges. All 17
+characteristic blocks reconcile. Residence comparisons alone use 7,621 records
+from verified 2018–2024 labels; 3,351 early records are excluded from those blocks.
+2024: 1,019 admissions, 932 live, 87 deaths; live column share 9.31%, within-year
+fatality 8.54%. Four sparse comparisons use 99,999 fixed-margin Monte Carlo draws;
+13 use Pearson chi-square. Seeds, simulation resolution and uncertainty are saved.
+
+Outputs: Markdown and numeric CSV for Tables 1, 2, 4 and 5 in `outputs/tables/`.
+Tracked evidence: `provenance/t06/`, including readable copies of those four tables,
+long-form numeric cells, denominator/missingness registers, independence tests,
+reconciliation and code/input/environment metadata. The [T06 report](Writeable/t06_descriptive_tables.md)
+explains conventions and remaining limits. Full local suite: 61 tests, no skips.
+The new stage has been executed on macOS; Windows execution remains unverified.

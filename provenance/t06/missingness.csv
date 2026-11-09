@@ -1,0 +1,18 @@
+table,variable,scope,null_count,source_unknown_count
+1,age_group,2015–2024,0,0
+1,sex,2015–2024,0,0
+1,ethnicity,2015–2024,0,1290
+1,sector_binary,2015–2024,0,0
+1,sector_group,2015–2024,0,0
+1,los_group,2015–2024,0,0
+1,year,2015–2024,0,0
+1,residence_area,2018–2024 verified residence labels,0,0
+1,anatomy,2015–2024,0,0
+2,age_group,2015–2024,0,0
+2,sex,2015–2024,0,0
+2,ethnicity,2015–2024,0,1290
+2,sector_binary,2015–2024,0,0
+2,sector_group,2015–2024,0,0
+2,los_group,2015–2024,0,0
+2,year,2015–2024,0,0
+2,residence_area,2018–2024 verified residence labels,0,0

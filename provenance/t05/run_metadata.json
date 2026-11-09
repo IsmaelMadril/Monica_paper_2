@@ -1,0 +1,35 @@
+{
+  "recorded_utc": "2026-11-09T15:22:41.920002+00:00",
+  "specification_date": "2026-11-09",
+  "inputs_sha256": {
+    "data/processed/admissions_c71_audited.csv": "ee5d45af5653e07e8177c90d37633058697a58bb54db0a026a5554abe64c83d5",
+    "provenance/t05/analysis_specification.md": "dc5e34b36035d81b2e56c1c19ab92ab3d44ebf23c240c4788ffd60e3d2fd8a70"
+  },
+  "statsmodels": "0.15.0",
+  "primary_events": {
+    "coding": "non-C719=1;C719=0",
+    "site": "C715-C717=1;C710-C714=0;C718/C719 excluded"
+  },
+  "primary_references": {
+    "coding": {
+      "age_group": "18-44",
+      "sex": "Hombre",
+      "sector_binary": "Private",
+      "year": "2015"
+    },
+    "site": {
+      "age_group": "18-44",
+      "sex": "Hombre",
+      "sector_binary": "Private",
+      "year": "2015"
+    }
+  },
+  "primary_covariance": "Observed-information; independent admission records",
+  "four_outcome_decision": "Not estimated: conceptual mixture plus demonstrated no-finite-MLE directions when source ethnicity included",
+  "limitations": [
+    "Conditional coding/selection",
+    "Unknown patient/facility dependence",
+    "Missing severity/treatment",
+    "Exploratory comparisons"
+  ]
+}

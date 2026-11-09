@@ -1,6 +1,6 @@
 # T02 — Admission reconstruction and data audit
 
-Audit date: 23 October 2026. **The cohort has been rebuilt from official annual INEC SPSS releases, rather than repaired by editing the supplied SAV.** The reconstructed C71.0–C71.9 cohort contains **10,972 discharge records: 963 deaths and 10,009 live discharges**. These supersede the legacy dataset counts for the next analysis stage; they are not yet replacement manuscript results. T03 rates have since been rebuilt and verified, and the T04 mortality analysis is complete for its documented specification. T05 multinomial modelling remains pending.
+Audit date: 23 October 2026. **The cohort has been rebuilt from official annual INEC SPSS releases, rather than repaired by editing the supplied SAV.** The reconstructed C71.0–C71.9 cohort contains **10,972 discharge records: 963 deaths and 10,009 live discharges**. These supersede the legacy dataset counts for the next analysis stage; they are not yet replacement manuscript results. T03 rates have since been rebuilt and verified, and the T04 mortality analysis is complete for its documented specification. T05 has since replaced the unsupported multinomial table with separately specified coding-detail and conditional-site analyses; see [the T05 report](t05_anatomy_analysis.md).
 
 ## Author clarification — 6 November 2026
 
@@ -142,4 +142,4 @@ Verified: six preserved inputs unchanged; all downloaded archives hashed; ten an
 
 **T02 reconstruction is implemented. G1 remains pending confirmation of early-year residence-area labels and review of the recorded inclusion/geography decisions before association modelling.** Historical processing remains an open provenance question, not a reason to silently reuse the legacy cohort. Independent replication and any later discovery of earlier source versions should be recorded before manuscript numbers are finalized.
 
-Current follow-up: T03 has regenerated the rates using annual population denominators; see [the methods and references](t03_rates_and_methods.md). T04 has rebuilt the mortality model; see [its specification, results and limitations](t04_mortality_analysis.md). T05 must still address the multinomial model. None of the old aORs/aRRRs should be transferred to this cohort.
+Current follow-up: T03 has regenerated the rates using annual population denominators; see [the methods and references](t03_rates_and_methods.md). T04 has rebuilt the mortality model; see [its specification, results and limitations](t04_mortality_analysis.md). T05 has since documented why the old multinomial model is not retained and supplied two replacement binary panels; see [its decision and results](t05_anatomy_analysis.md). None of the old aORs/aRRRs should be transferred to this cohort.

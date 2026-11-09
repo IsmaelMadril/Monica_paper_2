@@ -3,11 +3,10 @@
 Bibliographic requirement for every implemented task: document the change,
 argument, exact primary reference/source locator, local verification and
 remaining uncertainty in [the rationale](reconstruction_rationale.md) and
-[decision register](../provenance/reconstruction_decisions.csv). The register covers T01-T03 work and links the separately documented T04 analysis.
-It does not validate pending T05 models, figures, causal interpretations or ethics
-claims.
+[decision register](../provenance/reconstruction_decisions.csv). The register covers T01-T03 work and links the separately documented T04 and T05 analyses.
+It does not validate pending figures, causal interpretations or ethics claims.
 
-Prepared 23 October 2026. Companion evidence: `current_state_review.md`. Preserve `review_issues.md` as the original review record. This plan covers all original issues 1–22 and new findings N01–N15. This is the original task sequence; dated progress notes below record completed work. T01, T03 and the T04 technical mortality analysis are implemented; T02 retains an early residence-label question and T05 multinomial refitting remains pending.
+Prepared 23 October 2026. Companion evidence: `current_state_review.md`. Preserve `review_issues.md` as the original review record. This plan covers all original issues 1–22 and new findings N01–N15. This is the original task sequence; dated progress notes below record completed work. T01, T03, T04, the T05 technical replacement analysis and T06 table regeneration are implemented. T02 retains an early residence-label question; T07 manuscript rewriting is next.
 
 **Recommended order: establish trustworthy data → rebuild rates and models → rewrite findings → prepare submission.** Do not retain a result because it supports the present narrative. If data or models cannot be validated, narrow the paper to defensible descriptive analyses and revise its scope accordingly.
 
@@ -77,7 +76,8 @@ Progress, 23 October 2026: official 2015–2024 releases reconstructed (10,972 a
 
 ## T05 — Decide whether the multinomial analysis answers a defensible question
 
-- [ ] **P0/P1 · statistician + clinical coauthor · 1–2 days · after T02.**
+- [x] **Technical decision and replacement analysis completed 9 November 2026.** See `t05_anatomy_analysis.md`, `../provenance/t05/` and `../outputs/tables/table5_rebuilt.md`. The old mixed-outcome multinomial fit is not presented as repaired: it is replaced by non-C719 coding and conditional anatomical-group binary panels with explicit populations/references, 15 finite converged fits, zero-cell certificates and sensitivity analyses. Period dependence and nonrandom coding remain limitations requiring coauthor review before manuscript adoption.
+- **P0/P1 · statistician + clinical coauthor · 1–2 days · after T02.**
 - Clarify whether the scientific question concerns recorded coding specificity, anatomical distribution among specified diagnoses, or their mixture. State the population and reference outcome.
 - Review the saved Hessian warning, sparse ethnic groups and zero overlapping-lesion cells. Count observations in every outcome/predictor combination and report model sample size.
 - Choose among: a simpler clinically justified model; a suitable penalized multinomial approach; separate specified/unspecified and specified-site analyses; or descriptive presentation if inference is unsupported. Do not merge ethnic groups solely to obtain significance, or apply a binary Firth procedure directly to an unchanged multinomial outcome.
@@ -89,7 +89,8 @@ Progress, 23 October 2026: official 2015–2024 releases reconstructed (10,972 a
 
 ## T06 — Regenerate descriptive tables and statistical footnotes
 
-- [ ] **P1 · analyst · 0.5–1 day · after T02; coordinate with T04/T05.**
+- [x] **Completed 9 November 2026 for the reconstructed-cohort specification.** See `t06_descriptive_tables.md`, `../provenance/t06/` and generated Tables 1–2/4–5. All 17 characteristic blocks reconcile; four sparse comparisons use fixed-margin Monte Carlo tests; model estimates are unchanged. Residence-only blocks are explicitly restricted to verified 2018–2024 labels. All 61 tests pass. Manuscript insertion remains T07, and the T02 early-label question remains open.
+- **P1 · analyst · 0.5–1 day · after T02; coordinate with T04/T05.**
 - Generate Tables 1–2 directly from the validated extract. Specify row versus column percentages; report actual within-group fatality if mortality comparisons are discussed.
 - Verify counts across every characteristic, denominators for missing values, and year totals. Repair the 2024 alive percentage through regeneration.
 - Recalculate tests and identify which comparisons use chi-square versus exact/Monte Carlo methods where appropriate. Record actual p-value precision; never replace all small values by exactly 0.001.

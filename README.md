@@ -11,8 +11,8 @@ Research workspace for the 2015–2024 nationwide hospital-discharge manuscript.
 The unit of analysis is an admission/discharge record. T02 reconstructed **10,972
 admissions and 963 in-hospital deaths** from official INEC releases. Early-year
 residence-area labels remain provisional. T03 has rebuilt resident-population rates;
-T04 mortality modelling is complete for its documented specification; T05 multinomial
-modelling remains pending.
+T04 mortality modelling and T05 replacement analyses are complete for their documented
+specifications. T06 descriptive tables and model legends are complete; T07 manuscript rewriting is next.
 
 Start with the [independent review](Writeable/current_state_review.md),
 [revision task plan](Writeable/revision_task_plan.md),
@@ -208,8 +208,8 @@ acquired and can be restored as described in the reproduction guide.
 The original workbook generation history is unverified. Confirm 2015–2017
 residence-area labels before rural/urban association modelling.
 
-T03 rate recalculation and T04 mortality modelling are complete for their documented
-specifications. Next is T05 multinomial model repair; T02 early residence-area labels still require confirmation. T01 environment
+T03 rates, T04 mortality modelling and T05 replacement analyses are complete for their
+documented specifications. T06 descriptive tables and legends are complete; T07 is next. T02 early residence-area labels still require confirmation. T01 environment
 records describe the historical baseline; T02 versions are recorded separately in
 `provenance/t02/environment_freeze.txt`. Those records are provenance, not a virtual
 environment to copy between machines.
@@ -254,3 +254,40 @@ and `provenance/t04/analysis_specification.md`. Generated Table 4 is in
 LOS and unverified early residence-area labels are excluded from the primary fit.
 T04 includes sensitivities and sparse-level profile intervals. The new T04 stage
 has been executed on macOS; it has not yet been verified on Windows.
+
+## Reproduce T05 coding and anatomical-group analyses
+
+With the audited cohort available and the local environment active:
+
+```sh
+python -m pip install -r requirements.txt
+python -X utf8 scripts/fit_anatomy.py
+python -X utf8 -m unittest discover -s tests -v
+```
+
+The two primary binary models separate non-C719 coding from the conditional
+infratentorial/midline-versus-supratentorial comparison; they replace the old
+multinomial Table 5 and report aORs, not aRRRs. Overlapping/unspecified records
+remain descriptive, with exact exclusions in the conditional-site model. See the
+[T05 report](Writeable/t05_anatomy_analysis.md), pre-fit specification and evidence
+in `provenance/t05/`. Primary references include age18–44, male, private and year2015.
+The script runs the sensitivities and sparse profile intervals, then generates
+`outputs/tables/table5_rebuilt.md` and `.csv`. No new package is required beyond
+the pinned environment. T05 was tested on macOS; Windows execution of this new
+stage remains to be verified.
+
+## Reproduce T06 descriptive tables and model legends
+
+After creating the audited cohort and executing T04 and T05, run the same commands
+on macOS or Windows PowerShell with the local virtual environment active:
+
+```sh
+python -X utf8 scripts/generate_descriptive_tables.py
+python -X utf8 -m unittest discover -s tests -v
+```
+
+This produces Tables 1–2 and refreshes Tables 4–5 presentation without refitting
+models. Read the [T06 report](Writeable/t06_descriptive_tables.md) for denominators,
+restricted residence comparisons, sparse-cell testing and validation. Readable
+review copies and evidence are tracked in `provenance/t06/`; regenerated products
+are in `outputs/tables/`. This stage was executed on macOS; Windows is untested.
