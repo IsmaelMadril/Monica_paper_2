@@ -1,0 +1,108 @@
+{
+  "prepared_date": "2026-11-13",
+  "recorded_utc": "2026-11-13T14:07:57.564405+00:00",
+  "inputs_sha256": {
+    "data/processed/admissions_c71_audited.csv": "ee5d45af5653e07e8177c90d37633058697a58bb54db0a026a5554abe64c83d5",
+    "outputs/tables/table3_rebuilt.csv": "b55111c506e3d10390b56de22cd052d0693bf3ac039c67499267cd55f873220b",
+    "provenance/t03/annual_standardized_rates.csv": "0c1e9f8ff892c6a050a4b54a618f771190c913a83303be95e3a133a644810db2",
+    "provenance/t02/selection_flow.csv": "e40b14e073827a54cb61f6012e2a40bf0a23b1a98f244ed0ce0b4372d4d4acea",
+    "provenance/t09/boundary_manifest.json": "f971cdbd499357d4884391bf7a42c03d24b3ecf24aed7d1ce2c05eb006d05830",
+    "provenance/t09/ecuador_adm1.geojson": "ddab55b98606edc09fe603eaf88e6205533fffd496d85c2dee03e345aed33c95",
+    "provenance/t09/analysis_specification.md": "12d58f9975cf306019577bd92ecbca0bb019659fc4b23659ddab4087a6d33c7d",
+    "scripts/generate_figures.py": "9ac90c4b2dc4f0155ac813bcdf30deb8934f4f9e71f71fc518a3c9af85d9ba42",
+    "requirements-figures.txt": "ea01b83d01d6796535c464fed200bc270c77b6067938b863bbfc4e98b402492e"
+  },
+  "t03_input_checks": {
+    "data/processed/admissions_c71_audited.csv": {
+      "expected_sha256": "3716a7f3433d5b0c9aa72586c10b8f0837173d9f8f4f635c0007f815edd19b36",
+      "current_sha256": "ee5d45af5653e07e8177c90d37633058697a58bb54db0a026a5554abe64c83d5",
+      "exact_or_line_ending_equivalent": true
+    },
+    "provenance/t03/population_manifest.csv": {
+      "expected_sha256": "4e85cf2d179b0e19627ef2d7d43bcd640724e9b3894bd7e19ae6845743aa7a78",
+      "current_sha256": "ec0c0f79dd597fde6cfc511c6597ea30f8b13ec87f5102f491176eb46a4c1558",
+      "exact_or_line_ending_equivalent": true
+    },
+    "provenance/t03/annual_population_by_age.csv": {
+      "expected_sha256": "f7dc71c2af458120e8d68272bd5631026491bb7d351aa564213272373acdf7d5",
+      "current_sha256": "c681a68c0350f1139078d582a89b84995586b5b98159c20faf3a603dafe63f9e",
+      "exact_or_line_ending_equivalent": true
+    },
+    "provenance/t03/standard_weights_2022.csv": {
+      "expected_sha256": "c390ab25eae7defee9b1c80c0bea1e398e18387a713f3846d11014094a2b41e0",
+      "current_sha256": "8e0f02b6324f06b06a59a049d65ab88978f7c906bd16aa81b619a623e61ecda0",
+      "exact_or_line_ending_equivalent": true
+    }
+  },
+  "matplotlib": "3.11.2",
+  "numpy": "2.5.4",
+  "pandas": "3.1.0",
+  "rate_points": 100,
+  "residence_cells": 240,
+  "facility_cells": 240,
+  "residence_admissions": 10969,
+  "facility_admissions": 10972,
+  "foreign_exclusions": 3,
+  "unknown_province_exclusions": 0,
+  "count_scale_min": 0,
+  "count_scale_max": 500,
+  "count_scale_type": "shared linear",
+  "rate_controls": {
+    "2017_total_death_rate": {
+      "events": 113.0,
+      "rate_per_100k": 0.7581663368164497,
+      "lower_95": 0.6238335773291687,
+      "upper_95": 0.9138910462375578
+    },
+    "2024_total_admission_rate": {
+      "events": 1019.0,
+      "rate_per_100k": 5.783972830194686,
+      "lower_95": 5.43395080504552,
+      "upper_95": 6.151412222765902
+    },
+    "2024_unspecified_admission_rate": {
+      "events": 379.0,
+      "rate_per_100k": 2.1522338509559074,
+      "lower_95": 1.9408121654356139,
+      "upper_95": 2.381219219990391
+    }
+  },
+  "boundary_join": "24-to-24 by explicit province name/code crosswalk, accent normalization only",
+  "source_ISO_not_used_duplicates": [
+    "EC-H"
+  ],
+  "geography": "residence primary; facility separate; both count admission records",
+  "rendering": "180mm width main figures; PDF/SVG;600dpi PNG; ten-page atlas PDF and annual SVG/300dpi preview",
+  "outputs_sha256": {
+    "figureS1_residence_atlas.pdf": "b78c7b98f572392d56152f962fda229b78c401eb2c5c93b7fba20d8e2ac36c73",
+    "figureS1_2016.png": "d1164575aa425473e48cd19d05954ad9c4391c472d98fc281d4bfd13fd373fca",
+    "figureS1_2017.png": "df1106a17621bc5ccdef2809640dd0ed7e0dc5a5e582aaa6e5482cb4dccf760c",
+    "figureS1_2015.png": "14ebc867023bb1083c560268c4a8089a39de7f366178327747e954bc545d5d4a",
+    "figureS1_2015.svg": "09e5f582d47ceb11b6cc6cc012b2055a9cb9ee644298d7bd1204edc04f558f8b",
+    "figureS1_2017.svg": "d8b529d5a5584eb1a8ae08653c294afa353cdf1b6eaa2e742148993be958211c",
+    "figureS1_2016.svg": "20db2ce6d9c16dc16c4a55b9721d4e1d067c0f96df6796b8688d8823f8b3ab4c",
+    "figureS1_2021.svg": "5fe9efb2949569df5cc6410fae4533210643bef787db609d9f4473c1499b65a6",
+    "figureS1_2020.svg": "9800a9ce82d8dc10deba63c88bd68ab24b1bb307d9d2a55ed03ac37c4d83d59a",
+    "figureS2_facility_counts.pdf": "dd495995fc885fdb2ece3f333942bae4b411c66532d6e11f6b9506ea47639fb0",
+    "figureS2_facility_counts.png": "5b4b60f45532c274340aa5ab4c2abe10063a3539bc0c299a2c2e0f9193333470",
+    "figureS1_2022.svg": "7e53c1fd1fae212e6e95e81c1cbf2a26fd0bcf97e4238573fabb33dd208aa918",
+    "figureS1_2023.svg": "a1532bfb1db73ea5cdfd52c4252e982885568aebc40bcb7af14294d3af7f2e11",
+    "figure2_residence_counts.svg": "fe38623f92c3ee9ac4fb687ec3efa519fbed0bcb822fa55f7a166c72b5fb57fe",
+    "figure1_rates.svg": "f7916b5a9a20315d0991cf1661fecf8a783666a5cf5f04b227ebabc5c057a2e4",
+    "figureS1_2024.svg": "60bd7544e9a1e1cd9a4c77a0392c168ea15203ae897bbbcf319f24b9b521634f",
+    "figureS1_2018.svg": "f4c2bc9eccf82ba7b4ae08615bb199d30368c95d5140d9c0c05a4af98ddb3ade",
+    "figureS1_2019.svg": "90a268ffb2c9135612a4493f24333a741e905585cc1ce781759d2367eb90dff9",
+    "figureS1_2019.png": "92412c0ce567fc7f29fa9001cc37431067443304d91131f21952e998cf84a5d9",
+    "figure2_residence_counts.pdf": "d5045c26d684a063f585ef0868c4326219de577dde94472374e6bff7fcfb2fff",
+    "figureS1_2018.png": "ac7d98dc293af27dec86a2930d36d81144d8899fe5922b6f7e33a4bab0379c5f",
+    "figureS1_2024.png": "c5fb5e7e908ed279222df4c8195118e7337119312101a971643e29cc44cabfea",
+    "figure1_rates.png": "2b92461b10b47d86d0c35a3460b710b3c01319120cff4d78bc80d48e66ef5a13",
+    "figure1_rates.pdf": "eb3f5e8f30708c27f2d497ee7d75f8d4dc3b7fedeed8f36586961b1efc0d1375",
+    "figure2_residence_counts.png": "431e76e6a93c46bcc94039e0ebd7683bbd2bd18afe5d641276f66a807b76a8d7",
+    "figureS1_2023.png": "5410369fd1940e710ae5bf4247f59b434ac4b87232fc585fe03cee823c873ec5",
+    "figureS2_facility_counts.svg": "fa49566d01871cc225b361eaf1fdf2c8504cc0f5b766c8c97f4304966a836cae",
+    "figureS1_2022.png": "4861a267f231891baf90e0b534da9c2af8fc4c7e8c2a76ed3d69d93d677a41bc",
+    "figureS1_2020.png": "9c83c1e45254f058b9d0c282f16a6280f40ff480429bf01df4e9e51f7c5857cb",
+    "figureS1_2021.png": "4c9d50959405d89d747d9477684ddf66aeba7f44b5c5e450d8d85e38f54dac4c"
+  }
+}

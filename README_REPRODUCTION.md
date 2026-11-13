@@ -13,7 +13,7 @@ is a project implementation choice, not a requirement of either reference.
 
 This guide reproduces the implemented **T01–T06 workflow**: input verification,
 C71 admission reconstruction, data audit, age-adjusted rates, mortality modelling,
-separate coding/anatomical-group analyses and descriptive tables. T07–T10 remain pending. Run commands from the
+separate coding/anatomical-group analyses and descriptive tables. T07 replacement sections are drafted and T08 replacement narrative/evidence is complete; T09 figures are complete; whole-paper integration and T10 remain pending. Run commands from the
 repository root and stop when a command reports an error.
 
 ## Immediate fix: `admissions_c71_audited.csv` is missing
@@ -479,3 +479,124 @@ long-form numeric cells, denominator/missingness registers, independence tests,
 reconciliation and code/input/environment metadata. The [T06 report](Writeable/t06_descriptive_tables.md)
 explains conventions and remaining limits. Full local suite: 61 tests, no skips.
 The new stage has been executed on macOS; Windows execution remains unverified.
+
+## T07: reproduce revised title abstract and Methods
+
+After T02–T06 outputs exist, with the project environment active on macOS or
+Windows PowerShell:
+
+```sh
+python -X utf8 scripts/prepare_t07_sections.py
+```
+
+This uses the Python standard library to regenerate
+`Writeable/t07_manuscript_sections.md`, `provenance/t07/numeric_traceability.json`
+and `run_metadata.json`. The editable source is `Writeable/t07_sections_template.md`.
+All 32 numeric entries retain exact source filters/aggregations and display rounding.
+The generator checks cohort fingerprints against T04–T06 and exact LF/CRLF
+equivalence against T03; it rejects content differences. No refits, downloads or
+changes to historical manifests are performed. The locally found baseline Word
+file is optional, separately fingerprinted when present, and never overwritten.
+
+Optional Word export, on either operating system:
+
+```sh
+python -m pip install -r requirements-documents.txt
+python -X utf8 scripts/prepare_t07_sections.py --docx
+```
+
+The Word output is `Writeable/t07_manuscript_sections.docx`. This optional document
+dependency is separate from `requirements.txt`; it is not required for analysis
+or Markdown generation. The distributed document was rendered and visually
+checked on macOS with the bundled document runtime. New Windows text/Word
+generation has not been executed. Word engines can change pagination, so verify
+[the crosswalk](Writeable/t07_reporting_crosswalk.md) against the final layout.
+
+See [T07 revision notes](Writeable/t07_revision_notes.md) for integration steps.
+This is a seven-page replacement-section document, not a full manuscript; old
+Results/Discussion/figures must be replaced in T08–T09, and author declarations
+verified in T10. The T07 checkbox remains open until whole-paper consistency is checked.
+
+## T08: reproduce interpretation sections
+
+After T02–T07 evidence exists for the current cohort, use this command on macOS
+or Windows PowerShell with the local environment active:
+
+```sh
+python -X utf8 scripts/prepare_t08_sections.py
+```
+
+Inputs include the T07 numeric ledger and fingerprints, T02–T06 aggregate results,
+the tracked T08 claim/reference ledgers and the exact archived IARC Ecuador PDF.
+No source acquisition, network request or statistical refit occurs. The original
+baseline Word file is optional. The authoritative prose is
+`Writeable/t08_sections_template.md`; output text is
+`Writeable/t08_interpretation_sections.md`. Evidence and hashes are in `provenance/t08/`.
+
+Optional Word export:
+
+```sh
+python -m pip install -r requirements-documents.txt
+python -X utf8 scripts/prepare_t08_sections.py --docx
+```
+
+Expected: 44 numeric entries, 29 claim dispositions and a five-page Word section
+document under the verified macOS renderer. All 24 original reference entries have
+a recorded disposition. GLOBOCAN uses the frozen 2024 v1.0 Ecuador artifact labelled
+September 2026, accessed 12 November 2026, not an unspecified current endpoint.
+
+The [T08 notes](Writeable/t08_revision_notes.md) explain full-text versus abstract-only
+access, removed claims and integration requirements. Word/Markdown content equality
+and the five rendered page headings were checked; no new statistical tests or
+refits were required for this prose task. The new stage was executed on macOS;
+Windows execution and repagination remain unverified. T08 does not close T07's
+whole-paper consistency criterion or supply the T09 figures/T10 declarations.
+
+## T09: reproduce Figures 1–2 and supplementary geography
+
+First build the audited cohort (T02) and Table 3/rates (T03). The T04–T08 models
+and draft documents are not figure runtime inputs. From the repository root with
+the local environment active, run the same commands on macOS and Windows PowerShell:
+
+```sh
+python -m pip install -r requirements.txt
+python -m pip install -r requirements-figures.txt
+python -X utf8 scripts/generate_figures.py
+python -X utf8 -m unittest discover -s tests -v
+```
+
+Optional plotting packages are pinned separately; the core analysis requirements
+are unchanged. The script uses a headless backend and a repository-local font
+cache; no GUI is needed. Geometry, metadata and expected hashes are tracked.
+Normal plotting performs no network requests. If a boundary artifact is absent,
+restore from the recorded URL while keeping the manifest:
+
+```sh
+python -X utf8 scripts/acquire_figure_boundaries.py
+```
+
+Existing hashes are checked; the acquisition script never silently replaces an
+established expected manifest. A Git LFS pointer file is not accepted as geometry.
+Use the pinned source rather than a newly changed current API layer.
+
+Expected controls: 100 primary rate/interval rows match Table 3; residence count
+N=10,969 after three foreign-resident live exclusions; facility count N=10,972;
+240 province-year cells per assignment; 24-to-24 boundary join; shared count scale
+0–500. 2017 death rate=0.758166; 2024 total admission rate=5.783973 and unspecified
+rate=2.152234 per 100,000 residents. Full suite: 72 tests, no skips after all
+analysis/figure stages and dependencies are present. Figure tests explicitly skip
+when optional plotting dependencies or prerequisite outputs are unavailable; that
+is not equivalent to successful figure validation.
+
+Exports in `outputs/figures/`: `figure1_rates`, `figure2_residence_counts` and
+`figureS2_facility_counts` in PDF/SVG/600 dpi PNG; ten-page
+`figureS1_residence_atlas.pdf` and individual annual SVG/300 dpi PNG previews.
+Main figures are 180 mm wide. Tracked evidence/review previews are in
+`provenance/t09/`; captions and limitations are in
+[the figure legends](Writeable/t09_figure_legends.md). Read
+[T09 methods](Writeable/t09_figures_and_geography.md) for residence/facility
+meaning, code joins, boundary representation and uncertainty assumptions.
+
+Verified on macOS; new Windows figure generation is untested. Reinspect labels at
+the journal's final dimensions. T09 supplies figures, not an integrated submission
+manuscript or verified author/ethics declarations.

@@ -1,0 +1,26 @@
+{
+  "accessed_date": "2026-11-13",
+  "recorded_utc": "2026-11-13T13:54:43.513404+00:00",
+  "files": [
+    {
+      "path": "provenance/t09/boundary_metadata.json",
+      "url": "https://www.geoboundaries.org/api/current/gbOpen/ECU/ADM1/",
+      "sha256": "132f2db21aada75181407d9053d66de0f489d5e728985a8edffdef476293dd6b",
+      "bytes": 1746
+    },
+    {
+      "path": "provenance/t09/ecuador_adm1.geojson",
+      "url": "https://media.githubusercontent.com/media/wmgeolab/geoBoundaries/9469f09592ced973a3448cf66b6100b741b64c0d/releaseData/gbOpen/ECU/ADM1/geoBoundaries-ECU-ADM1_simplified.geojson",
+      "sha256": "ddab55b98606edc09fe603eaf88e6205533fffd496d85c2dee03e345aed33c95",
+      "bytes": 410945
+    }
+  ],
+  "boundary_id": "ECU-ADM1-780006",
+  "represented_year": "2011",
+  "source": "geoBoundaries, Wikimedia Commons",
+  "source_license": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+  "repository_commit": "9469f09592ced973a3448cf66b6100b741b64c0d",
+  "crs": "GeoJSON longitude latitude WGS84",
+  "use": "Fixed cartographic context for all ten years, not validated annual historical boundaries",
+  "attribution": "geoBoundaries / William & Mary geoLab; source metadata credits Wikimedia Commons"
+}

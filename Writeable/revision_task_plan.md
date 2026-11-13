@@ -6,7 +6,7 @@ remaining uncertainty in [the rationale](reconstruction_rationale.md) and
 [decision register](../provenance/reconstruction_decisions.csv). The register covers T01-T03 work and links the separately documented T04 and T05 analyses.
 It does not validate pending figures, causal interpretations or ethics claims.
 
-Prepared 23 October 2026. Companion evidence: `current_state_review.md`. Preserve `review_issues.md` as the original review record. This plan covers all original issues 1–22 and new findings N01–N15. This is the original task sequence; dated progress notes below record completed work. T01, T03, T04, the T05 technical replacement analysis and T06 table regeneration are implemented. T02 retains an early residence-label question; T07 manuscript rewriting is next.
+Prepared 23 October 2026. Companion evidence: `current_state_review.md`. Preserve `review_issues.md` as the original review record. This plan covers all original issues 1–22 and new findings N01–N15. This is the original task sequence; dated progress notes below record completed work. T01, T03, T04, the T05 technical replacement analysis and T06 table regeneration are implemented. T02 retains an early residence-label question; T07 replacement title/abstract/Methods and reporting crosswalk are drafted; T08 replacement narrative and evidence audit are complete. T09 figures are complete. Whole-paper integration and T10 author/submission checks remain pending.
 
 **Recommended order: establish trustworthy data → rebuild rates and models → rewrite findings → prepare submission.** Do not retain a result because it supports the present narrative. If data or models cannot be validated, narrow the paper to defensible descriptive analyses and revise its scope accordingly.
 
@@ -101,6 +101,8 @@ Progress, 23 October 2026: official 2015–2024 releases reconstructed (10,972 a
 
 ## T07 — Rewrite Methods, abstract and study framing from validated results
 
+Progress, 10 November 2026: replacement title, abstract, framing and Methods are ready in `t07_manuscript_sections.docx` and `.md`; see `t07_revision_notes.md` and `t07_reporting_crosswalk.md`. All abstract results have a numeric source ledger; seven rendered pages were checked. **The checkbox remains open because the full-paper consistency criterion requires integration with the revised Results, Discussion and figures (T08–T09).** The old manuscript is preserved, not represented as submission-ready.
+
 - [ ] **P1 · lead author + epidemiologist · 1–2 days · after T02–T06 for result-dependent text.**
 - Suggested working title: **Hospitalizations and In-Hospital Deaths Associated With Malignant Brain Neoplasms in Ecuador, 2015–2024: A Nationwide Analysis of Discharge Records.** Retain “primary” only with a clearly explained coded-diagnosis scope; avoid suggesting histological verification.
 - Retain the improved hospitalization/in-hospital mortality objective and explicit admission-level unit. Explain limitations in national capture and repeat admissions.
@@ -114,7 +116,8 @@ Progress, 23 October 2026: official 2015–2024 releases reconstructed (10,972 a
 
 ## T08 — Rebuild interpretation, limitations and evidence base
 
-- [ ] **P1 · lead author + clinical coauthor · 1–2 days · literature audit can start after T01; conclusions wait for T03–T05.**
+- [x] **Completed 12 November 2026 for the replacement narrative and evidence audit.** See `t08_interpretation_sections.docx`/`.md`, `t08_evidence_ledger.md`, `t08_revision_notes.md` and `../provenance/t08/`. Twenty-nine claim dispositions and all 24 original references are audited to explicitly stated access levels; 44 numeric entries trace to source evidence. Exact IARC GLOBOCAN 2024 v1.0 snapshot confirms 561 cases/463 deaths as estimates. No unsupported first, stability, coding-accuracy or causal-care claim is retained. Whole-paper integration remains T07; figures/geography remain T09 and author verification remains T10.
+- **P1 · lead author + clinical coauthor · 1–2 days · literature audit can start after T01; conclusions wait for T03–T05.**
 - Create a claim-to-source ledger. Verify every reference supports the attached statement, remove duplicate references, clean DOI fields, and archive the exact GLOBOCAN edition and estimates.
 - Compare hospitalization rates only with genuinely comparable hospitalization measures, cancer definitions and age standards. Clearly distinguish incidence, disease mortality and discharge outcomes.
 - Remove unvalidated improvement in coding accuracy, emergency-care prioritization, diagnostic/surgical timing and institutional complexity claims. A change in unspecified coding is not proof of diagnostic accuracy.
@@ -128,7 +131,8 @@ Progress, 23 October 2026: official 2015–2024 releases reconstructed (10,972 a
 
 ## T09 — Rebuild figures and geographic reporting
 
-- [ ] **P1/P2 · analyst + figure author · 0.5–1 day · after T02/T03.**
+- [x] **Completed 13 November 2026 for the reconstructed-cohort figure specification.** See `t09_figures_and_geography.md`, `t09_figure_legends.md`, `../provenance/t09/` and `../outputs/figures/`. Figure 1 uses all 100 primary Table 3 rate/interval rows; Figure 2 is a readable residence-province count heatmap, with ten yearly maps and a facility-province heatmap as supplements. All 480 geographic cells reconcile; 72 project tests pass. Fixed 2011-representation boundaries, sources, exclusions and count/rate limits are explicit. Whole-paper insertion remains T07; author/journal checks remain T10.
+- **P1/P2 · analyst + figure author · 0.5–1 day · after T02/T03.**
 - Regenerate Figure 1 from the exact rate table used for Table 3. Check 2017 mortality and 2024 total/unspecified series explicitly; include uncertainty if readable or provide it in a companion table.
 - Define residence versus treating-facility province. Use “admission counts” for count maps; do not imply incidence/risk. Add resident-population rates only if the geographic numerator/denominator match and the question warrants them.
 - Regenerate Figure 2, clarify incomplete years and distinguish zero from missing. Retain a comparable scale across years; improve label sizes or move detailed maps to a supplement.

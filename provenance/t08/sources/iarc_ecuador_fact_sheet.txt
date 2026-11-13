@@ -1,0 +1,265 @@
+PAGE 1
+Statistics at a glance, 2024
+Top 5 most frequent cancers
+Number of new cases
+31 204
+Number of deaths
+15 711
+Number of prevalent cases 
+(5-year)
+77 512
+Males Females Both sexes
+Population 9 041 133 9 094 352 18 135 482
+Incidence
+Number of new cancer cases 14 181 17 023 31 204
+Age-standardized incidence rate 144.2 149.9 145.1
+Risk of developing cancer before the age
+of 75 years (cum. risk %)
+12.4 13.6 13.0
+Top 3 leading cancers (ranked by
+cases)
+Prostate
+Stomach
+Colorectum
+Breast
+Cervix uteri
+Thyroid
+Prostate
+Breast
+Stomach
+Mortality
+Number of cancer deaths 7 623 8 088 15 711
+Age-standardized mortality rate 78.1 70.2 72.3
+Risk of dying from cancer before the age
+of 75 years (cum. risk %)
+6.4 6.8 6.5
+Top 3 leading cancers (ranked by
+deaths)
+Prostate
+Stomach
+Colorectum
+Stomach
+Breast
+Cervix uteri
+Stomach
+Prostate
+Colorectum
+Prevalence
+5-year prevalent cases 32 558 44 954 77 512
+*
+**
+*
+**
+*
+0 250 500 1000
+Kilometers
+Ecuador
+**
+Males
+Prostate
+Stomach
+Colorectum
+NHLLung
+Others
+Total: 14 181
+Rank Cancer site Number of cases Percent
+1st Prostate 4 072 28.7%
+2nd Stomach 1 602 11.3%
+3rd Colorectum 1 153 8.1%
+4th NHL 591 4.2%
+5th Lung 579 4.1%
+- Others 6 184 43.6%
+Females
+Breast
+Cervix uteri
+Thyroid
+StomachColorectum
+Others
+Total: 17 023
+Rank Cancer site Number of cases Percent
+1st Breast 3 614 21.2%
+2nd Cervix uteri 1 967 11.6%
+3rd Thyroid 1 508 8.9%
+4th Stomach 1 498 8.8%
+5th Colorectum 1 390 8.2%
+- Others 7 046 41.4%
+Both sexes
+Prostate
+Breast
+Stomach
+Colorectum
+Cervix uteri
+Others
+Total: 31 204
+Rank Cancer site Number of cases Percent
+1st Prostate 4 072 13.0%
+2nd Breast 3 614 11.6%
+3rd Stomach 3 100 9.9%
+4th Colorectum 2 543 8.1%
+5th Cervix uteri 1 967 6.3%
+- Others 15 908 51.0%The Global Cancer Observatory | All rights reserved | GLOBOCAN 2024 - September, 2026 Page 1
+G L O B O C A N  2 0 2 4
+ECUADOR
+PAGE 2
+Number of new cases in 2024, males, all ages Number of new cases in 2024, females, all ages Number of new cases in 2024, both sexes, all ages
+New cases Deaths 5-year prevalence
+Cancer Number Rank (%) Cum.risk Number Rank (%) Cum.risk Number Prop. (per 100 000)
+Prostate 4 072 1 13.1 4.2 1 518 2 9.7 0.89 8 952 99.0
+Breast 3 614 2 11.6 3.4 994 5 6.3 0.97 10 572 116.3
+Stomach 3 100 3 9.9 1.3 2 281 1 14.5 0.93 4 510 24.9
+Colorectum 2 543 4 8.2 1.1 1 320 3 8.4 0.57 6 833 37.7
+Cervix uteri 1 967 5 6.3 1.8 991 6 6.3 0.92 6 264 68.9
+Thyroid 1 921 6 6.2 0.83 209 14 1.3 0.09 6 220 34.3
+NHL 1 211 7 3.9 0.56 572 10 3.6 0.27 3 503 19.3
+Liver 1 155 8 3.7 0.51 1 077 4 6.9 0.48 1 455 8.0
+Lung 1 118 9 3.6 0.48 988 7 6.3 0.43 1 540 8.5
+Leukaemia 1 047 10 3.4 0.44 728 8 4.6 0.30 3 181 17.5
+Pancreas 737 11 2.4 0.35 711 9 4.5 0.34 712 3.9
+Brain CNS 561 12 1.8 0.27 463 11 2.9 0.22 1 975 10.9
+Ovary 543 13 1.7 0.53 341 12 2.2 0.35 1 459 16.0
+Corpus uteri 534 14 1.7 0.53 175 17 1.1 0.19 1 676 18.4
+Kidney 520 15 1.7 0.26 228 13 1.5 0.12 1 600 8.8
+Testis 440 16 1.4 0.31 62 23 0.40 0.04 1 580 17.5
+Bladder 410 17 1.3 0.12 198 15 1.3 0.06 1 178 6.5
+Melanoma 380 18 1.2 0.13 147 19 0.94 0.05 1 275 7.0
+Hodgkin lymphoma 350 19 1.1 0.14 93 22 0.59 0.04 1 207 6.7
+Multiple myeloma 259 20 0.83 0.14 196 16 1.2 0.11 677 3.7
+Lip, oral cavity 192 21 0.62 0.09 107 20 0.68 0.05 523 2.9
+Oesophagus 182 22 0.58 0.07 163 18 1.0 0.07 238 1.3
+Gallbladder 113 23 0.36 0.05 95 21 0.61 0.04 151 0.83
+Penis 82 24 0.26 0.06 37 24 0.24 0.03 230 2.5
+Salivary glands 79 25 0.25 0.04 35 27 0.22 0.02 238 1.3
+Oropharynx 73 26 0.23 0.04 37 24 0.24 0.02 199 1.1
+Larynx 73 26 0.23 0.04 36 26 0.23 0.02 208 1.2
+Vulva 59 28 0.19 0.04 28 28 0.18 0.02 157 1.7
+Kaposi sarcoma 52 29 0.17 0.03 17 30 0.11 0.01 137 0.76
+Nasopharynx 46 30 0.15 0.02 20 29 0.13 0.01 138 0.76
+Vagina 32 31 0.10 0.02 16 31 0.10 0.01 71 0.78
+Hypopharynx 14 32 0.05 0.01 6 33 0.04 0.00 22 0.12
+All cancers 31 204 - - 13.0 15 711 - - 6.5 77 512 -
+All cancers excl. NMSC 29 876 - - 12.7 15 509 - - 6.5 73 613 -
+Incidence, Mortality and Prevalence by cancer site
+Data source and methods
+Incidence
+Country-specific data source: No data  
+Method: National mortality estimates applied to model-based M:I
+ratios (registry survival data)
+Click here to see detailed data source and methods
+Mortality
+Country-specific data source: WHO (national)  
+Method: Trends in national rates projected to 2024
+Click here to see detailed data source and methods
+Prevalence
+Computed using sex-; site- and age-specific incidence to 1-;3- and
+5-year prevalence ratios from Nordic countries for the period
+(2011-2020), and scaled using Human Development Index (HDI)
+ratios.
+41.8
+33.5
+17.9
+13.9
+11.6
+8.8
+5.7
+5.3
+5.2
+5.2
+5.0
+4.8
+4.4
+3.4
+2.8
+0102030405060
+Prostate
+Breast
+Cervix uteri
+Stomach
+Colorectum
+Thyroid
+NHL
+Leukaemia
+Liver
+Ovary
+Lung
+Corpus uteri
+Testis
+Pancreas
+Brain CNS
+0 10 20 30 40 50 60
+15.5
+9.2
+9.0
+10.3
+6.0
+1.0
+2.7
+3.7
+4.9
+3.2
+4.5
+1.6
+0.6
+3.3
+2.3
+Incidence Mortality
+ASR (World) incidence and mortality rates, top 15 cancers**
+41.8
+16.0
+11.6
+6.1
+5.9
+5.8
+5.7
+4.4
+4.1
+3.7
+3.6
+0102030405060
+Prostate
+Breast
+Cervix uteri
+Stomach
+Colorectum
+NHL
+Leukaemia
+Lung
+Liver
+Ovary
+Corpus uteri
+Testis
+Thyroid
+Pancreas
+Brain CNS
+0 10 20 30 40 50 60
+33.5
+17.9
+12.5
+11.6
+5.5
+4.9
+4.5
+4.9
+5.2
+4.8
+12.6
+3.1
+2.2
+Males Females
+ASR (World) incidence rates per sex, top 15 cancers**
+* includes non-melanoma skin cancer (NMSC)
+** NMSC included in other cancers
+Age standardization using world population (see link)
+References
+Website citation
+Ervik M, Laversanne M, Lam F, Colombet M, Ferlay J, Filho AM, Bray F (2026). Global Cancer Observatory: Cancer
+Today (2024 estimates, version 1.0). Lyon, France: International Agency for Research on Cancer. Available from: 
+https://gco.iarc.who.int/today, accessed [DD Month YYYY].
+Cancer incidence and mortality data
+Sung H, Filho AM, Laversanne M, Ferlay J, Siegel RL, Soerjomataram I, Jemal A, Bray F (2026). Global cancer statistics
+2024: GLOBOCAN estimates of incidence and mortality worldwide for 34 cancers in 186 countries. CA Cancer J
+Clin. doi:10.3322/caac.70090
+Filho AM, Laversanne M, Ferlay J, Colombet M, Piñeros M, Znaor A, et al. (2025). The GLOBOCAN 2022 cancer
+estimates: data sources, methods, and a snapshot of the cancer burden worldwide. Int J Cancer. 156(7):1336–46.
+doi:10.1002/ijc.35278 PMID:39688499
+© IARC 1965-2026 | All Rights Reserved | https://gco.iarc.who.int | https://gco.iarc.who.int/today
+Page 2

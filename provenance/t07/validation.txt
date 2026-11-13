@@ -1,0 +1,18 @@
+10 November 2026 — T07 replacement sections
+All 32 numeric ledger entries matched source aggregates and appeared with declared rounding.
+All abstract results trace to executed aggregate rate/fatality/model evidence.
+Abstract length: 233 whitespace-delimited words excluding keywords and heading.
+Source/model/cohort/code/template fingerprints verified.
+T03 input differences match exact LF/CRLF transformations; no content differences accepted.
+Word and Markdown scientific text match exactly after removing formatting/page markers.
+Seven Word pages rendered with bundled LibreOffice and visually reviewed.
+All seven page headings verified; crosswalk locators refer to those pages only.
+No title paragraph borders, clipped long DOI, overlapping text or missing page found in final review.
+Crosswalk covers all 22 STROBE item groups and 13 RECORD extensions with explicit coverage status.
+35 unique decision IDs; original six-input T01 manifest unchanged.
+Builder compiled successfully; git diff --check passed.
+No statistical refits, new statistical dependencies or new analysis tests in this prose task.
+Earlier 61-test statistical-suite result is historical T06 validation, not a claimed new T07 test run.
+T07 full-paper consistency remains open pending integration with T08/T09 revisions.
+Author ethics/declaration verification remains T10; early residence labels remain unresolved.
+Windows execution and final journal pagination not verified.

@@ -1,0 +1,54 @@
+{
+  "prepared_date": "2026-11-10",
+  "recorded_utc": "2026-11-10T21:33:35.551608+00:00",
+  "inputs_sha256": {
+    "data/processed/admissions_c71_audited.csv": "ee5d45af5653e07e8177c90d37633058697a58bb54db0a026a5554abe64c83d5",
+    "provenance/t04/run_metadata.json": "954d00f63f8b1cbb3b1eef40a79768b998cc255b29a049c6fec4b0db81a3eeab",
+    "provenance/t05/run_metadata.json": "e2f1013bd45159429488cc7791a93c06e97b87e0c0981cb8a2954c1c3891a167",
+    "provenance/t06/run_metadata.json": "7ebf863b16e00570c4c23a390ee2c1c7906c4040b1d2b96d9fa4b85a4f3ca948",
+    "provenance/t03/population_manifest.csv": "ec0c0f79dd597fde6cfc511c6597ea30f8b13ec87f5102f491176eb46a4c1558",
+    "provenance/t03/annual_population_by_age.csv": "c681a68c0350f1139078d582a89b84995586b5b98159c20faf3a603dafe63f9e",
+    "provenance/t03/standard_weights_2022.csv": "8e0f02b6324f06b06a59a049d65ab88978f7c906bd16aa81b619a623e61ecda0",
+    "provenance/t03/run_metadata.json": "b8caa9cbe08746d651a7696c3ace14dfec5616327efe616c1c39b2cb02541b18",
+    "provenance/t02/selection_flow.csv": "e40b14e073827a54cb61f6012e2a40bf0a23b1a98f244ed0ce0b4372d4d4acea",
+    "provenance/t03/admission_fatality.csv": "3d24c61cd0a56801c802341abf84dcf355047b15857036919fe1535938d0c12b",
+    "provenance/t03/period_summary_rates.csv": "d12177d2c9dd099de5dedf07e0fe1cf2afd8a01da5b8bcce4ebce5403e1ee776",
+    "provenance/t04/all_model_coefficients.csv": "41bc95a59185d6f4f5fcd67351e72c2b8871f7fe720089e560fe815318fb1eaf",
+    "provenance/t05/all_model_coefficients.csv": "efa4ebdc572a0add30077dd7ac9511b75d84496f4f57aa89da1d9a7f1fee1032",
+    "provenance/t05/anatomy_descriptive.csv": "58836cacc935772931d5985291bced31765ab57eb442b8fffe1fe5a5baebae4e",
+    "provenance/t05/model_flow.csv": "78ca9d1ad1b48c67aea3c1a1e471317420d0a9d6bb674ddcc1e46aa80117d399",
+    "provenance/t06/table_scopes.csv": "22b2b0b09c41c8e5e3d247fd92f3d495bb868f952063eb61d297569e6ee374c2",
+    "provenance/t06/missingness.csv": "4fc85eccb3face4a885662073b310fcf21eeff2073cc793bc6a6c529ae33daa2",
+    "data/raw/baseline_2026-10-23/Writeable/tumores encefalo Monica art completo.docx": "718391727703dca4eacbc75ad0ad7fd24f2be2c40dfdb63939f5f4c52b46fd2c",
+    "Writeable/t07_sections_template.md": "27518c4811708e6b9ed0d6fe2dcaae161e55f743462b9f6654fa0f65effc4623",
+    "scripts/prepare_t07_sections.py": "178a266d536ff7f3cdf8e4b1bd585fb0a5dd261841ed9e2eb2c4194e15b6530a"
+  },
+  "section_text_sha256": "440d8cc693ac644ef6be73dddc3b460cbd8f8569e3e51cfa510a115bf9a504c2",
+  "baseline_docx_note": "Present at T07 inspection; absent from six-input T01 manifest; origin/version equivalence not established",
+  "scope": "Replacement title, abstract, framing and Methods; not an integrated submission manuscript",
+  "t03_cohort_exact_line_ending_equivalence": true,
+  "t03_input_checks": {
+    "data/processed/admissions_c71_audited.csv": {
+      "recorded_sha256": "3716a7f3433d5b0c9aa72586c10b8f0837173d9f8f4f635c0007f815edd19b36",
+      "current_sha256": "ee5d45af5653e07e8177c90d37633058697a58bb54db0a026a5554abe64c83d5",
+      "exact_or_exact_line_ending_equivalence": true
+    },
+    "provenance/t03/population_manifest.csv": {
+      "recorded_sha256": "4e85cf2d179b0e19627ef2d7d43bcd640724e9b3894bd7e19ae6845743aa7a78",
+      "current_sha256": "ec0c0f79dd597fde6cfc511c6597ea30f8b13ec87f5102f491176eb46a4c1558",
+      "exact_or_exact_line_ending_equivalence": true
+    },
+    "provenance/t03/annual_population_by_age.csv": {
+      "recorded_sha256": "f7dc71c2af458120e8d68272bd5631026491bb7d351aa564213272373acdf7d5",
+      "current_sha256": "c681a68c0350f1139078d582a89b84995586b5b98159c20faf3a603dafe63f9e",
+      "exact_or_exact_line_ending_equivalence": true
+    },
+    "provenance/t03/standard_weights_2022.csv": {
+      "recorded_sha256": "c390ab25eae7defee9b1c80c0bea1e398e18387a713f3846d11014094a2b41e0",
+      "current_sha256": "8e0f02b6324f06b06a59a049d65ab88978f7c906bd16aa81b619a623e61ecda0",
+      "exact_or_exact_line_ending_equivalence": true
+    }
+  },
+  "number_entries": 32,
+  "docx_sha256": "6a570a14e3e559845bd727b56d865cf0337ef9b1d1b4bd9f363d325fb8639328"
+}

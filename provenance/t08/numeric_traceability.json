@@ -1,0 +1,287 @@
+{
+  "aahr": {
+    "source": "provenance/t03/period_summary_rates.csv",
+    "locator": "resident / five_groups / Total / admissions / arithmetic mean / rate_per_100k",
+    "field": "aahr",
+    "raw_value": "6.6112384494540635",
+    "displayed": "6.611"
+  },
+  "aahr_hi": {
+    "source": "provenance/t03/period_summary_rates.csv",
+    "locator": "resident / five_groups / Total / admissions / arithmetic mean / upper_95",
+    "field": "aahr_hi",
+    "raw_value": "6.73725755697158",
+    "displayed": "6.737"
+  },
+  "aahr_lo": {
+    "source": "provenance/t03/period_summary_rates.csv",
+    "locator": "resident / five_groups / Total / admissions / arithmetic mean / lower_95",
+    "field": "aahr_lo",
+    "raw_value": "6.487227564166772",
+    "displayed": "6.487"
+  },
+  "admissions": {
+    "source": "provenance/t02/selection_flow.csv",
+    "locator": "sum eligible_c710_c719",
+    "field": "admissions",
+    "raw_value": 10972,
+    "displayed": "10,972"
+  },
+  "age_hi": {
+    "source": "provenance/t04/all_model_coefficients.csv",
+    "locator": "primary / 80+ vs 0-17 / upper_95",
+    "field": "age_hi",
+    "raw_value": "3.7154186745782285",
+    "displayed": "3.715"
+  },
+  "age_lo": {
+    "source": "provenance/t04/all_model_coefficients.csv",
+    "locator": "primary / 80+ vs 0-17 / lower_95",
+    "field": "age_lo",
+    "raw_value": "1.8635975426133928",
+    "displayed": "1.864"
+  },
+  "age_or": {
+    "source": "provenance/t04/all_model_coefficients.csv",
+    "locator": "primary / 80+ vs 0-17 / aor",
+    "field": "age_or",
+    "raw_value": "2.6313580356393724",
+    "displayed": "2.631"
+  },
+  "coding_year_hi": {
+    "source": "provenance/t05/all_model_coefficients.csv",
+    "locator": "{'panel': 'coding', 'model': 'primary', 'variable': 'year', 'level': '2024'}/upper_95",
+    "raw_value": "2.2587896633245657",
+    "displayed": "2.259"
+  },
+  "coding_year_lo": {
+    "source": "provenance/t05/all_model_coefficients.csv",
+    "locator": "{'panel': 'coding', 'model': 'primary', 'variable': 'year', 'level': '2024'}/lower_95",
+    "raw_value": "1.581631515705773",
+    "displayed": "1.582"
+  },
+  "coding_year_or": {
+    "source": "provenance/t05/all_model_coefficients.csv",
+    "locator": "{'panel': 'coding', 'model': 'primary', 'variable': 'year', 'level': '2024'}/aor",
+    "raw_value": "1.890125106670076",
+    "displayed": "1.890"
+  },
+  "count_2017": {
+    "source": "provenance/t02/selection_flow.csv",
+    "locator": "2017/eligible_c710_c719",
+    "raw_value": "1221",
+    "displayed": "1,221"
+  },
+  "count_2023": {
+    "source": "provenance/t02/selection_flow.csv",
+    "locator": "2023/eligible_c710_c719",
+    "raw_value": "1095",
+    "displayed": "1,095"
+  },
+  "death_rate": {
+    "source": "provenance/t03/period_summary_rates.csv",
+    "locator": "resident / five_groups / Total / deaths / arithmetic mean / rate_per_100k",
+    "field": "death_rate",
+    "raw_value": "0.5984640701967253",
+    "displayed": "0.598"
+  },
+  "death_rate_hi": {
+    "source": "provenance/t03/period_summary_rates.csv",
+    "locator": "resident / five_groups / Total / deaths / arithmetic mean / upper_95",
+    "field": "death_rate_hi",
+    "raw_value": "0.6380284715396932",
+    "displayed": "0.638"
+  },
+  "death_rate_lo": {
+    "source": "provenance/t03/period_summary_rates.csv",
+    "locator": "resident / five_groups / Total / deaths / arithmetic mean / lower_95",
+    "field": "death_rate_lo",
+    "raw_value": "0.5609706528732374",
+    "displayed": "0.561"
+  },
+  "deaths": {
+    "source": "provenance/t03/admission_fatality.csv",
+    "locator": "all_discharges / 2015-2024 / Total / deaths",
+    "field": "deaths",
+    "raw_value": "963",
+    "displayed": "963"
+  },
+  "fatality": {
+    "source": "provenance/t03/admission_fatality.csv",
+    "locator": "all_discharges / 2015-2024 / Total / percent",
+    "field": "fatality",
+    "raw_value": "8.776886620488517",
+    "displayed": "8.78"
+  },
+  "fatality_hi": {
+    "source": "provenance/t03/admission_fatality.csv",
+    "locator": "all_discharges / 2015-2024 / Total / upper_95",
+    "field": "fatality_hi",
+    "raw_value": "9.320871876073324",
+    "displayed": "9.32"
+  },
+  "fatality_lo": {
+    "source": "provenance/t03/admission_fatality.csv",
+    "locator": "all_discharges / 2015-2024 / Total / lower_95",
+    "field": "fatality_lo",
+    "raw_value": "8.26175690060042",
+    "displayed": "8.26"
+  },
+  "foreign": {
+    "source": "provenance/t03/period_summary_rates.csv",
+    "locator": "all minus resident admissions",
+    "field": "foreign",
+    "raw_value": 3,
+    "displayed": "3"
+  },
+  "iarc_cases": {
+    "source": "provenance/t08/sources/iarc_ecuador_fact_sheet.pdf",
+    "locator": "GLOBOCAN 2024 version 1.0; page2 Brain CNS; new_cases",
+    "raw_value": 561,
+    "displayed": "561"
+  },
+  "iarc_deaths": {
+    "source": "provenance/t08/sources/iarc_ecuador_fact_sheet.pdf",
+    "locator": "GLOBOCAN 2024 version 1.0; page2 Brain CNS; deaths",
+    "raw_value": 463,
+    "displayed": "463"
+  },
+  "rate_2019": {
+    "source": "provenance/t03/annual_standardized_rates.csv",
+    "locator": "resident/five_groups/2019/Total/admissions/rate_per_100k",
+    "raw_value": "7.440869591391776",
+    "displayed": "7.441"
+  },
+  "rate_2019_hi": {
+    "source": "provenance/t03/annual_standardized_rates.csv",
+    "locator": "resident/five_groups/2019/Total/admissions/upper_95",
+    "raw_value": "7.870601880154877",
+    "displayed": "7.871"
+  },
+  "rate_2019_lo": {
+    "source": "provenance/t03/annual_standardized_rates.csv",
+    "locator": "resident/five_groups/2019/Total/admissions/lower_95",
+    "raw_value": "7.0298958674899685",
+    "displayed": "7.030"
+  },
+  "rate_2020": {
+    "source": "provenance/t03/annual_standardized_rates.csv",
+    "locator": "resident/five_groups/2020/Total/admissions/rate_per_100k",
+    "raw_value": "5.540393628744993",
+    "displayed": "5.540"
+  },
+  "rate_2020_hi": {
+    "source": "provenance/t03/annual_standardized_rates.csv",
+    "locator": "resident/five_groups/2020/Total/admissions/upper_95",
+    "raw_value": "5.90827374033782",
+    "displayed": "5.908"
+  },
+  "rate_2020_lo": {
+    "source": "provenance/t03/annual_standardized_rates.csv",
+    "locator": "resident/five_groups/2020/Total/admissions/lower_95",
+    "raw_value": "5.190822240454495",
+    "displayed": "5.191"
+  },
+  "sector_hi": {
+    "source": "provenance/t04/all_model_coefficients.csv",
+    "locator": "{'model': 'primary', 'variable': 'sector_binary', 'level': 'Public'}/upper_95",
+    "raw_value": "1.3941266366248242",
+    "displayed": "1.394"
+  },
+  "sector_lo": {
+    "source": "provenance/t04/all_model_coefficients.csv",
+    "locator": "{'model': 'primary', 'variable': 'sector_binary', 'level': 'Public'}/lower_95",
+    "raw_value": "1.0349630280994968",
+    "displayed": "1.035"
+  },
+  "sector_or": {
+    "source": "provenance/t04/all_model_coefficients.csv",
+    "locator": "{'model': 'primary', 'variable': 'sector_binary', 'level': 'Public'}/aor",
+    "raw_value": "1.2011950405306355",
+    "displayed": "1.201"
+  },
+  "site_admissions": {
+    "source": "provenance/t05/model_flow.csv",
+    "locator": "site / included_admissions",
+    "field": "site_admissions",
+    "raw_value": "6192",
+    "displayed": "6,192"
+  },
+  "site_hi": {
+    "source": "provenance/t05/all_model_coefficients.csv",
+    "locator": "site / primary / 0-17 vs 18-44 / upper_95",
+    "field": "site_hi",
+    "raw_value": "1.32037006071839",
+    "displayed": "1.320"
+  },
+  "site_later_hi": {
+    "source": "provenance/t05/all_model_coefficients.csv",
+    "locator": "{'panel': 'site', 'model': 'verified_years_core', 'variable': 'age_group', 'level': '0-17'}/upper_95",
+    "raw_value": "2.01742847401072",
+    "displayed": "2.017"
+  },
+  "site_later_lo": {
+    "source": "provenance/t05/all_model_coefficients.csv",
+    "locator": "{'panel': 'site', 'model': 'verified_years_core', 'variable': 'age_group', 'level': '0-17'}/lower_95",
+    "raw_value": "1.4288624830393553",
+    "displayed": "1.429"
+  },
+  "site_later_or": {
+    "source": "provenance/t05/all_model_coefficients.csv",
+    "locator": "{'panel': 'site', 'model': 'verified_years_core', 'variable': 'age_group', 'level': '0-17'}/aor",
+    "raw_value": "1.697830338617276",
+    "displayed": "1.698"
+  },
+  "site_lo": {
+    "source": "provenance/t05/all_model_coefficients.csv",
+    "locator": "site / primary / 0-17 vs 18-44 / lower_95",
+    "field": "site_lo",
+    "raw_value": "0.9851832416650337",
+    "displayed": "0.985"
+  },
+  "site_or": {
+    "source": "provenance/t05/all_model_coefficients.csv",
+    "locator": "site / primary / 0-17 vs 18-44 / aor",
+    "field": "site_or",
+    "raw_value": "1.1405290248897662",
+    "displayed": "1.141"
+  },
+  "unspecified": {
+    "source": "provenance/t05/anatomy_descriptive.csv",
+    "locator": "Unspecified / admissions",
+    "field": "unspecified",
+    "raw_value": "4668",
+    "displayed": "4,668"
+  },
+  "unspecified_2024": {
+    "source": "provenance/t03/annual_standardized_rates.csv",
+    "locator": "resident/five_groups/2024/Unspecified/admissions/events",
+    "raw_value": "379",
+    "displayed": "379"
+  },
+  "unspecified_pct": {
+    "source": "provenance/t05/anatomy_descriptive.csv",
+    "locator": "Unspecified / percent",
+    "field": "unspecified_pct",
+    "raw_value": "42.54465913233686",
+    "displayed": "42.54"
+  },
+  "unspecified_rate_2024": {
+    "source": "provenance/t03/annual_standardized_rates.csv",
+    "locator": "resident/five_groups/2024/Unspecified/admissions/rate_per_100k",
+    "raw_value": "2.1522338509559074",
+    "displayed": "2.152"
+  },
+  "unspecified_rate_2024_hi": {
+    "source": "provenance/t03/annual_standardized_rates.csv",
+    "locator": "resident/five_groups/2024/Unspecified/admissions/upper_95",
+    "raw_value": "2.381219219990391",
+    "displayed": "2.381"
+  },
+  "unspecified_rate_2024_lo": {
+    "source": "provenance/t03/annual_standardized_rates.csv",
+    "locator": "resident/five_groups/2024/Unspecified/admissions/lower_95",
+    "raw_value": "1.9408121654356139",
+    "displayed": "1.941"
+  }
+}

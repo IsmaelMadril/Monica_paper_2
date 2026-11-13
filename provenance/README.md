@@ -163,3 +163,50 @@ Residence comparisons use verified 2018–2024 only; all other descriptive block
 retain the full ten-year cohort. This avoids publishing provisional early labels
 as confirmed and does not close the T02 label question. Software versions and
 code/input hashes are recorded; this stage was run on macOS, not Windows.
+
+## T07 replacement sections and numeric traceability
+
+`t07/` stores the numeric source ledger, input/code/generated-artifact fingerprints,
+rendered page verification and validation for the revised title, abstract, framing
+and Methods. `scripts/prepare_t07_sections.py` builds the section text from a
+tracked template and existing aggregate evidence. The optional Word export is
+tracked in `Writeable/`; no original manuscript file or model estimate is changed.
+Read [T07 revision notes](../Writeable/t07_revision_notes.md) and the
+[STROBE/RECORD crosswalk](../Writeable/t07_reporting_crosswalk.md). Full T07
+closure awaits manuscript-wide integration/consistency, not further refitting.
+
+The baseline-folder Word file discovered at T07 inspection was not listed in the
+six-input T01 manifest. Its current hash is separately recorded, without asserting
+its provenance or equivalence to the reviewed PDF. It is optional for generation.
+The earlier source-availability note above describes the earlier workflow.
+
+## T08 interpretation and source audit
+
+`t08/` stores 29 claim dispositions, the audit of all 24 original references,
+44 numeric source entries, the exact IARC Ecuador PDF/text and GLOBOCAN version
+metadata, run fingerprints and rendered-document verification. The original PDF
+and T01 manifests are preserved. R18–R20 identify the active external references;
+access level and source limitations are explicit in the
+[T08 ledger](../Writeable/t08_evidence_ledger.md).
+
+The IARC artifact confirms 561 cases/463 deaths as GLOBOCAN 2024 estimates v1.0,
+not recorded hospital counts. The fact sheet's September 2026 label does not
+authenticate the old citation's July 2026 access. The newly archived bytes/access
+date define this revision. Rebuilding T08 reads them locally and does not change
+the network source or refit models. Full-paper integration remains open.
+
+## T09 figures and geographic provenance
+
+`t09/` contains the pre-render specification, exact 100 Figure 1 rate rows, both
+240-cell province count grids, annual reconciliations, a 24-province crosswalk,
+fixed boundary metadata/GeoJSON/hash manifest, optional plotting environment,
+review previews, validation and rendered-export verification.
+`generate_figures.py` reads Table 3 and the audited cohort; normal generation is
+offline. Full PDF/SVG/PNG exports are ignored under `outputs/figures/`.
+
+The primary geography is residence; treating-facility geography is separate.
+Three foreign live discharges are excluded only from residence. Source code20
+unifies Galapagos/Galápagos; source boundary ISO labels are not trusted join keys.
+The fixed geoBoundaries layer represents 2011 and is cartographic context, not
+annual historical-boundary validation. Read [T09 methods](../Writeable/t09_figures_and_geography.md)
+and [legends](../Writeable/t09_figure_legends.md).

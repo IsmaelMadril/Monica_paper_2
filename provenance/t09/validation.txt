@@ -1,0 +1,28 @@
+T09 final verification — 2026-11-13
+
+Platform executed: macOS. Windows commands documented; Windows execution unverified.
+
+python -X utf8 -m unittest discover -s tests
+Ran 72 tests in 1.059s: OK, no skips.
+
+python -X utf8 -m unittest discover -s tests -p 'test_figures.py'
+Ran 11 tests in 0.447s: OK.
+
+python -m pip check
+No broken requirements found. Pip cache disabled by filesystem permissions.
+
+All 100 plotted rate rows match rebuilt Table 3. All 480 residence/facility
+province-year cells reconcile independently to the audited cohort. Residence
+counts include 10,969 admissions, excluding three foreign residents; facility
+counts include all 10,972 admissions. No unknown province exclusions.
+
+All input/output hashes match run_metadata.json. All 13 final PNG hashes match
+the visually inspected versions. Main PDFs are 180 mm wide; main PNGs are
+600 dpi. SVG exports contain no raster image elements. The annual atlas PDF
+has ten page objects, each 180 by 180 mm. See render_verification.json.
+
+The 24-province geometry join uses the recorded name/code crosswalk, not the
+source's duplicated ISO code. Fixed 2011 boundary context, source attribution,
+count interpretation and interval assumptions are documented in the report.
+
+git diff --check: passed.

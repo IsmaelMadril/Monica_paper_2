@@ -1,0 +1,313 @@
+[
+  {
+    "claim_id": "I01",
+    "anchor": "Malignant brain neoplasm discharge codes",
+    "status": "supported external context",
+    "sources": [
+      "R02",
+      "R19"
+    ],
+    "decision": "Distinguish site-coded administrative diagnoses from integrated tumour classification.",
+    "limits": "No claim of histological verification of study records."
+  },
+  {
+    "claim_id": "I02",
+    "anchor": "For Ecuador, the archived GLOBOCAN",
+    "status": "supported external estimate",
+    "sources": [
+      "R18",
+      "provenance/t08/globocan_snapshot.json"
+    ],
+    "decision": "561 cases/463 deaths retained as 2024 estimates v1.0; exact PDF, page and hash archived.",
+    "limits": "Modelled estimates, not recorded hospital events; historical July access not reconstructed."
+  },
+  {
+    "claim_id": "I03",
+    "anchor": "Regional work has described",
+    "status": "supported external methods",
+    "sources": [
+      "R20"
+    ],
+    "decision": "Only registry-incidence/WHO mortality/world-standardization methods stated in authors abstract are retained.",
+    "limits": "Abstract-only access; no numerical hospital comparison or Ecuador-specific finding inferred."
+  },
+  {
+    "claim_id": "I04",
+    "anchor": "We analyzed annual INEC",
+    "status": "study objective and contribution",
+    "sources": [
+      "R01",
+      "provenance/t02/selection_flow.csv",
+      "provenance/t04/analysis_specification.md",
+      "provenance/t05/analysis_specification.md"
+    ],
+    "decision": "Describe auditability and service-event question.",
+    "limits": "No first/unique claim or complete population cancer coverage."
+  },
+  {
+    "claim_id": "D01",
+    "anchor": "The reconstructed analysis included",
+    "status": "supported local result",
+    "sources": [
+      "provenance/t03/period_summary_rates.csv",
+      "provenance/t03/admission_fatality.csv",
+      "provenance/t07/numeric_traceability.json"
+    ],
+    "decision": "All-admission fatality and resident-population rate summaries use different explicit denominators.",
+    "limits": "Gamma/Wilson intervals omit systematic error and dependence."
+  },
+  {
+    "claim_id": "D02",
+    "anchor": "These service-event estimates should",
+    "status": "analytical interpretation",
+    "sources": [
+      "R18",
+      "R20",
+      "Writeable/t03_rates_and_methods.md"
+    ],
+    "decision": "Explain noncomparability of admissions, cancer incidence and disease mortality.",
+    "limits": "Do not divide the two mortality measures to infer a hospital capture fraction."
+  },
+  {
+    "claim_id": "D03",
+    "anchor": "The resident hospitalization rate was",
+    "status": "local observation plus untested hypotheses",
+    "sources": [
+      "provenance/t03/annual_standardized_rates.csv"
+    ],
+    "decision": "Report 2019/2020 rates and intervals; temporal coincidence only.",
+    "limits": "No causal COVID estimate. Potential admission/case-mix/recording explanations explicitly unmeasured; no external source offered as proof."
+  },
+  {
+    "claim_id": "D04",
+    "anchor": "The reconstructed official releases contained",
+    "status": "supported local correction",
+    "sources": [
+      "provenance/t02/selection_flow.csv",
+      "provenance/t02/annual_counts.csv"
+    ],
+    "decision": "Retain reconstructed 2017 and 2023; historical low counts not reproduced.",
+    "limits": "No identified historical loss mechanism; official completeness not proven."
+  },
+  {
+    "claim_id": "D05",
+    "anchor": "Rates are described with model-based",
+    "status": "executed analysis policy",
+    "sources": [
+      "provenance/t03/run_metadata.json",
+      "provenance/t06/analysis_specification.md"
+    ],
+    "decision": "Descriptive temporal series; no trend, stability or COVID intervention claim.",
+    "limits": "Non-significance is not equivalence or temporal stability."
+  },
+  {
+    "claim_id": "D06",
+    "anchor": "In the primary death model",
+    "status": "supported local result",
+    "sources": [
+      "provenance/t04/all_model_coefficients.csv",
+      "provenance/t04/legacy_encoding.json",
+      "provenance/t04/legacy_model_evidence.md"
+    ],
+    "decision": "Age80+ odds direction corrected; original event was live discharge and original fit failed.",
+    "limits": "No prognostic prediction, causal age effect or reciprocal repair of failed model."
+  },
+  {
+    "claim_id": "D07",
+    "anchor": "Public versus private sector had",
+    "status": "local result plus bias interpretation",
+    "sources": [
+      "provenance/t04/all_model_coefficients.csv",
+      "provenance/t04/analysis_specification.md"
+    ],
+    "decision": "Report adjusted odds with uncertainty; do not infer performance/tertiary complexity or access.",
+    "limits": "Unmeasured severity/referral and selection remain possible; final LOS is postadmission."
+  },
+  {
+    "claim_id": "D08",
+    "anchor": "Unspecified C71.9 coding remained",
+    "status": "supported local result",
+    "sources": [
+      "provenance/t05/anatomy_descriptive.csv",
+      "provenance/t03/annual_standardized_rates.csv",
+      "provenance/t05/all_model_coefficients.csv"
+    ],
+    "decision": "Retain C719 counts and nonzero 2024 rate; coding-detail association is not accuracy.",
+    "limits": "No external chart/pathology validation."
+  },
+  {
+    "claim_id": "D09",
+    "anchor": "The site comparison excluded",
+    "status": "supported local result",
+    "sources": [
+      "provenance/t05/model_flow.csv",
+      "provenance/t05/all_model_coefficients.csv"
+    ],
+    "decision": "Primary and later-period pediatric contrasts have different periods and must both be described honestly.",
+    "limits": "No formal interaction test; later-year fit not selected to replace primary."
+  },
+  {
+    "claim_id": "D10",
+    "anchor": "The conditional-site analysis describes",
+    "status": "conditional-estimand interpretation",
+    "sources": [
+      "R02",
+      "provenance/t05/analysis_specification.md"
+    ],
+    "decision": "State selected coded outcome population and operational C715 grouping.",
+    "limits": "No new biological pattern, ethnicity propensity or demonstrated selection correction."
+  },
+  {
+    "claim_id": "L01",
+    "anchor": "The observation is a discharge record.",
+    "status": "documented limitation",
+    "sources": [
+      "provenance/t02/duplicate_projection_audit.csv",
+      "Writeable/t04_mortality_analysis.md"
+    ],
+    "decision": "Repeated records cannot be resolved as people; independent-record precision is conditional.",
+    "limits": "Direction/magnitude of clustering uncertainty not identified."
+  },
+  {
+    "claim_id": "L02",
+    "anchor": "The administrative diagnosis was not",
+    "status": "documented limitation",
+    "sources": [
+      "R19",
+      "provenance/t02/derived_variable_dictionary.csv",
+      "provenance/t06/missingness.csv",
+      "provenance/t06/table_scopes.csv"
+    ],
+    "decision": "Identify unavailable clinical validation/severity and restricted residence labels.",
+    "limits": "No imputed known ethnicity; no all-decade rural comparison."
+  },
+  {
+    "claim_id": "L03",
+    "anchor": "Selection into inpatient care limits",
+    "status": "documented limitation",
+    "sources": [
+      "R08",
+      "provenance/t02/audit_summary.json",
+      "Writeable/t03_rates_and_methods.md"
+    ],
+    "decision": "Limit applicability to recorded inpatient events; no external follow-up linkage.",
+    "limits": "Coverage changes possible, not established mechanisms."
+  },
+  {
+    "claim_id": "L04",
+    "anchor": "Direct standardization improves",
+    "status": "conditional statistical interpretation",
+    "sources": [
+      "R03",
+      "R04",
+      "R05",
+      "R06",
+      "R07",
+      "Writeable/t03_rates_and_methods.md"
+    ],
+    "decision": "Standardization and narrower bands address stated age distributions, not all bias.",
+    "limits": "Fixed denominator/weight assumption; no cumulative risk interpretation."
+  },
+  {
+    "claim_id": "L05",
+    "anchor": "The death and coding/site models were",
+    "status": "local diagnostics plus limitation",
+    "sources": [
+      "provenance/t04/model_diagnostics.json",
+      "provenance/t05/model_diagnostics.json"
+    ],
+    "decision": "Finite converged models do not prove clinical/causal validity; sparse and multiple exploratory contrasts remain limited.",
+    "limits": "No significance-selected subgroup conclusion or missing-site correction."
+  },
+  {
+    "claim_id": "L06",
+    "anchor": "The study provides reproducible",
+    "status": "documented contribution and research implication",
+    "sources": [
+      "R08",
+      "R09",
+      "README_REPRODUCTION.md",
+      "provenance/t02/selection_flow.csv"
+    ],
+    "decision": "Offer auditability and service-event description; future validation/linkage are research proposals.",
+    "limits": "No assertion of firstness or specific clinical resource-allocation benefit."
+  },
+  {
+    "claim_id": "C01",
+    "anchor": "C71-coded admissions in Ecuador during 2015–2024",
+    "status": "summary of supported local results",
+    "sources": [
+      "provenance/t08/numeric_traceability.json",
+      "D01",
+      "D06",
+      "D08",
+      "D09"
+    ],
+    "decision": "Conclusion restates defined counts/rates/associations and limits.",
+    "limits": "Template anchor is expanded by the builder; no independent causal or novelty claim."
+  },
+  {
+    "claim_id": "X01",
+    "anchor": "first decade-long nationwide study",
+    "status": "removed",
+    "sources": [],
+    "decision": "Removed; limited contextual search is not exhaustive and priority is not needed to state the contribution.",
+    "limits": ""
+  },
+  {
+    "claim_id": "X02",
+    "anchor": "coding accuracy improved or unspecified coding eliminated",
+    "status": "removed",
+    "sources": [],
+    "decision": "Removed; C719 persists and clinical accuracy was not validated.",
+    "limits": ""
+  },
+  {
+    "claim_id": "X03",
+    "anchor": "pandemic caused delayed imaging postponed surgery or emergency prioritization",
+    "status": "removed",
+    "sources": [],
+    "decision": "Removed as factual mechanism; timing retained and alternatives explicitly untested.",
+    "limits": ""
+  },
+  {
+    "claim_id": "X04",
+    "anchor": "2017/2023 national registry failure",
+    "status": "removed",
+    "sources": [],
+    "decision": "Removed; reconstructed official counts contradict the historical deficit premise, without proving completeness.",
+    "limits": ""
+  },
+  {
+    "claim_id": "X05",
+    "anchor": "hospital rates align with 3.5–6 or 7–11.5 cancer incidence ranges",
+    "status": "removed",
+    "sources": [],
+    "decision": "Removed; endpoints/code definitions/standards are not matched.",
+    "limits": ""
+  },
+  {
+    "claim_id": "X06",
+    "anchor": "public tertiary hospitals handle complex tumours and prove access disparities",
+    "status": "removed",
+    "sources": [],
+    "decision": "Removed; facility complexity, severity and access were not established.",
+    "limits": ""
+  },
+  {
+    "claim_id": "X07",
+    "anchor": "prolonged stay protects or establishes surgical diagnostic window",
+    "status": "removed",
+    "sources": [],
+    "decision": "Removed; final stay is not a baseline causal exposure and old outcome/fit were invalid.",
+    "limits": ""
+  },
+  {
+    "claim_id": "X08",
+    "anchor": "stable burden or equal groups because confidence interval contains one",
+    "status": "removed",
+    "sources": [],
+    "decision": "Removed; descriptive rate series and non-significant tests do not establish equivalence or stability.",
+    "limits": ""
+  }
+]

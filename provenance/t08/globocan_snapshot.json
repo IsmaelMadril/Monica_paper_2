@@ -1,0 +1,21 @@
+{
+  "accessed_date": "2026-11-12",
+  "url": "https://gco.iarc.who.int/media/globocan/factsheets/populations/218-ecuador-fact-sheet.pdf",
+  "archived_path": "provenance/t08/sources/iarc_ecuador_fact_sheet.pdf",
+  "sha256": "2892c68e3f99cce0b63af457858c9660e94ea49842be80af4afc9da2c229688e",
+  "bytes": 708678,
+  "estimate_year": 2024,
+  "edition": "GLOBOCAN 2024",
+  "version": "1.0",
+  "release_label": "September, 2026",
+  "page": 2,
+  "population": "Ecuador; both sexes; all ages",
+  "site": "Brain CNS",
+  "new_cases": 561,
+  "deaths": 463,
+  "prevalent_cases_5_year": 1975,
+  "incidence_method": "National mortality estimates applied to model-based M:I ratios (registry survival data)",
+  "mortality_method": "Trends in national rates projected to 2024",
+  "interpretation": "Model-based cancer incidence and disease mortality; not observed C71 hospital admissions or in-hospital deaths",
+  "historical_access_note": "The old citation lists July 20 2026 access; this September-labelled release cannot authenticate what that endpoint showed in July. New access date and exact artifact used for revision."
+}

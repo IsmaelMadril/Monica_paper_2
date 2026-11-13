@@ -1,0 +1,19 @@
+12 November 2026 — T08 narrative and evidence audit
+Replacement Introduction Discussion Conclusion generated in Markdown and Word.
+44 numeric entries match source evidence and declared presentation rounding.
+29 claim dispositions: 21 retained narrative paragraphs and eight removed claims.
+Every narrative paragraph has exactly one retained claim anchor and explicit evidence/limit classification.
+All 24 original references preserved/dispositioned; no blanket full-text audit claimed.
+Original CBTRUS entries5/13 mapped to one identity; excluded from active replacement citations.
+R18 exact IARC Ecuador PDF archived: GLOBOCAN2024 estimates v1.0, September2026 label.
+Page2 Brain CNS confirms561 new cases/463 deaths; described as estimates, not hospital counts.
+Current PDF does not authenticate the old July2026 endpoint access.
+R19 classification support inspected in full text; R20 methods support limited to authors abstract.
+All source/input/code/template fingerprints verified; archived IARC PDF hash matches snapshot.
+Word text equals Markdown after removing formatting/page markers.
+All five Word pages rendered and visually reviewed; headings and page images fingerprinted.
+Unique bibliography keys/DOIs and38 unique decision IDs verified.
+Builder compiles; git diff --check passed.
+No model refits, new statistical dependencies or new statistical test runs for this prose task.
+Reproduction uses tracked sources without network; new Windows execution remains unverified.
+T08 narrative/evidence scope complete; T07 whole-paper integration, T09 figures and T10 author checks remain.

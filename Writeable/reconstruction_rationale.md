@@ -246,3 +246,113 @@ not the Fisher probability-ordering statistic for larger tables. The choice of
 99,999 replicates, seeds, conservative >=5 dispatch and extra simulation interval
 are declared implementation choices; documentation does not mandate the tests or
 validate this study's independence assumptions.
+
+## T07 section drafting and reporting crosswalk
+
+Prepared 10 November 2026. The [replacement sections](t07_manuscript_sections.md)
+and [page-referenced crosswalk](t07_reporting_crosswalk.md) translate the executed
+analysis into a revised title, abstract, objective and Methods. They are not an
+integrated replacement for the entire reviewed article. D33–D35 extend the register:
+
+| Decision | Rationale and primary support | Local verification and limits |
+|---|---|---|
+| D33 | Use recorded-admission scope, distinct denominators and executed model specifications; source definitions [R01](#r01), [R02](#r02), reporting [R08](#r08), [R09](#r09). | Text distinguishes primary discharge diagnosis from primary tumour origin and reports the replacement binary estimands. Full-paper integration and interpretation remain open. |
+| D34 | Generate numeric text from source aggregates with declared rounding and hashes; [R10](#r10), [R11](#r11). | Thirty-two numeric entries have exact locators and raw values. T03 differences are verified as exact LF/CRLF transformations; content changes are rejected. This verifies traceability, not clinical correctness. |
+| D35 | Use rendered page locators and record source uncertainty; reporting [R08](#r08), [R09](#r09), provenance [R10](#r10), [R11](#r11). | Seven Word pages were rendered/reviewed; crosswalk distinguishes covered, partial and inapplicable items. Newly observed baseline Word is outside the frozen six-input manifest; version equivalence is unverified. No blanket compliance or ethics assertion. |
+
+The primary STROBE and RECORD sources were rechecked on 10 November 2026 for
+checklist structure and relevant routine-data items, especially RECORD 1.1–1.3,
+6.1–6.3, 7.1, 12.1–12.3, 13.1, 19.1 and 22.1. The crosswalk's page references
+apply to the T07 section document and must be reassigned after final integration.
+These guidelines support explicit reporting; they do not validate diagnosis codes,
+unobserved dependence, an exemption basis or the paper's final interpretation.
+
+## T08 interpretation and source-support decisions
+
+Completed 12 November 2026 for the [replacement Introduction Discussion and
+Conclusion](t08_interpretation_sections.md) and [claim/reference ledger](t08_evidence_ledger.md).
+The narrative uses executed local estimates, source-limited contextual statements
+and explicit uncertainty. It is not an integrated full manuscript. D36–D38 extend
+the register:
+
+| Decision | Primary support and argument | Local verification and limits |
+|---|---|---|
+| D36 | Separate service events from cancer occurrence, code detail from accuracy and adjusted association from causal care effects; [R01](#r01), [R02](#r02), [R08](#r08), [R09](#r09), [R19](#r19), [R20](#r20). | Twenty-nine claim dispositions and 44 numeric entries. No first, stability, registry-failure or causal-care claim retained. Period-sensitive anatomy and unresolved dependence remain explicit. |
+| D37 | Preserve the exact IARC edition, estimate scope and modelled nature; [R18](#r18), reproducibility [R10](#r10), hashing [R11](#r11). | Archived 2024 v1.0 Ecuador PDF page 2 confirms 561 cases/463 deaths. The September 2026-labelled artifact accessed in November cannot authenticate the old July access. No hospital-rate equivalence inferred. |
+| D38 | Match each retained claim to accessible evidence and remove duplicate citation identities; [R08](#r08), [R09](#r09), [R19](#r19), [R20](#r20). | All 24 original references dispositioned. Classification support is full-text; regional endpoint support is abstract-only. Discarded references are not claimed fully reviewed; syntactic DOI cleanup is not independent resolution. |
+
+<a id="r18"></a>
+
+**R18.** Ervik M, Laversanne M, Lam F, Colombet M, Ferlay J, Filho AM, Bray F.
+Global Cancer Observatory Cancer Today. 2024 estimates, version 1.0. Lyon: IARC;
+2026. Ecuador fact sheet, September 2026 label. Accessed 12 November 2026.
+[Exact primary artifact](https://gco.iarc.who.int/media/globocan/factsheets/populations/218-ecuador-fact-sheet.pdf).
+
+Locator and scope: page 2 Brain CNS row, both sexes/all ages; model methods and
+citation/version block on that same page. PDF/text/hash and selected fields are
+archived in `provenance/t08/`. Supports the estimate edition and counts, not
+observed C71 hospital events, prior endpoint history or direct rate comparison.
+
+<a id="r19"></a>
+
+**R19.** Louis DN, Perry A, Wesseling P, et al. The 2021 WHO Classification of Tumors
+of the Central Nervous System: a summary. Neuro-Oncology. 2021;23(8):1231–1251.
+[Primary article](https://pmc.ncbi.nlm.nih.gov/articles/PMC8328013/).
+DOI: [10.1093/neuonc/noab106](https://doi.org/10.1093/neuonc/noab106).
+
+Locator and scope: classification discussion of integrated histological/molecular
+features and taxonomy, including the section immediately preceding CNS Tumor
+Nomenclature. Supports the distinction from site-coded administrative diagnoses;
+not evidence of an Ecuador COVID mechanism, clinical validation of our records or
+the latest classification edition in every subsequent year.
+
+<a id="r20"></a>
+
+**R20.** Piñeros M, Sierra MS, Izarzugaza MI, Forman D. Descriptive epidemiology of
+brain and central nervous system cancers in Central and South America. Cancer
+Epidemiology. 2016;44 Suppl 1:S141–S149.
+[Authors' abstract](https://pubmed.ncbi.nlm.nih.gov/27678316/).
+DOI: [10.1016/j.canep.2016.04.007](https://doi.org/10.1016/j.canep.2016.04.007).
+
+Locator and scope: Abstract Methods states population-based incidence registries,
+WHO mortality and world-population standardization. Publisher full text was not
+accessible through the current web tool (403). Only those abstract-stated methods
+are used; no body-only result, Ecuador-specific subgroup claim or direct numerical
+hospitalization comparison is drawn from this article. Contextual searches were
+not exhaustive; the firstness claim is removed.
+
+## T09 figure and geography decisions
+
+Completed 13 November 2026 for the [rebuilt figures and geography](t09_figures_and_geography.md)
+and [self-contained legends](t09_figure_legends.md). D39–D41 extend the register:
+
+| Decision | Rationale and source support | Local verification and limits |
+|---|---|---|
+| D39 | Plot the exact Table 3 primary-rate rows with consistent colours/shapes, total interval shading and all component intervals in companion data; R03–R07 and export [R22](#r22). | All 100 plotted estimates/intervals match Table 3 and T03 evidence; explicit 2017/2024 controls. No trend test, smoothing or causal pandemic inference. |
+| D40 | Use residence counts as primary geography and separate treating-facility counts, joining by INEC codes rather than variable spellings; [R01](#r01), reporting [R08](#r08), [R09](#r09). | All 480 count cells and annual margins reconcile; three foreign live discharges excluded only from residence. No population-rate, access or severity claim. Rural/urban uncertainty is not used. |
+| D41 | Use readable heatmaps at journal dimensions and fixed-source maps in a supplement; primary metadata [R21](#r21), export [R22](#r22). | 24-to-24 province crosswalk, pinned Git LFS hash, all ten atlas pages inspected. Source duplicate ISO is not used; fixed 2011 geometry is not validation of historical annual boundaries. |
+
+<a id="r21"></a>
+
+**R21.** geoBoundaries / William & Mary geoLab. Ecuador gbOpen ADM1 metadata and
+simplified geometry. Source build December 2023; represented year 2011. Accessed
+13 November 2026. [Primary metadata](https://www.geoboundaries.org/api/current/gbOpen/ECU/ADM1/)
+and [archival/API documentation](https://www.geoboundaries.org/api.html).
+
+Exact layer: boundaryID `ECU-ADM1-780006`, 24 provinces, repository commit
+`9469f09592ced973a3448cf66b6100b741b64c0d`. Metadata/geometry and hashes are archived
+under `provenance/t09/`. Metadata give Wikimedia Commons/geoBoundaries as source
+and CC0 1.0 as original licence; API documentation requests attribution. Neither
+source establishes correctness of admission assignment, annual historical
+boundaries, polygon-area risk interpretation or the discarded duplicate ISO label.
+
+<a id="r22"></a>
+
+**R22.** Matplotlib developers. `savefig` and backend documentation, version 3.11.2.
+Accessed 13 November 2026. [Primary documentation](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.savefig.html).
+
+Supports vector/raster export options and the implemented software surface. The
+chosen figure dimensions, marker/colour treatment, count scale and residence-first
+presentation are study/design choices. Executed source checks and visual inspection,
+not documentation citations alone, establish this task's local numerical/layout
+verification. Windows execution remains unverified.

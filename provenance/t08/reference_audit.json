@@ -1,0 +1,208 @@
+{
+  "audited_date": "2026-11-12",
+  "scope": "All 24 historical entries dispositioned; only retained source claims are verified to stated access level, not a blanket full-text review",
+  "active_new_references": [
+    "R18",
+    "R19",
+    "R20"
+  ],
+  "entries": [
+    {
+      "original_number": 1,
+      "original_entry": "Miller KD, Ostrom QT, Kruchko C, Patil N, Tihan T, Cioffi G, et al. Brain and other central nervous system tumor statistics, 2021. CA: A Cancer Journal for Clinicians 2021;71:381–406. https://doi.org/10.3322/CAAC.21693.",
+      "canonical_doi": "10.3322/caac.21693",
+      "doi_status": "Provided DOI normalized syntactically; no retained reliance",
+      "disposition": "Not retained in T08 active citations",
+      "support_review": "No full-text support claim; no T08 statement relies on this source"
+    },
+    {
+      "original_number": 2,
+      "original_entry": "Davalan W, Alkins R. Prognostic and predictive determinants in high-grade gliomas: integrating tumor-intrinsic biology with patient and system-level factors. Frontiers in Neurology 2025;16:1664458. https://doi.org/10.3389/FNEUR.2025.1664458/XML.",
+      "canonical_doi": "10.3389/fneur.2025.1664458",
+      "doi_status": "Provided DOI normalized syntactically; no retained reliance",
+      "disposition": "Not retained in T08 active citations",
+      "support_review": "No full-text support claim; no T08 statement relies on this source"
+    },
+    {
+      "original_number": 3,
+      "original_entry": "Roda D, Veiga P, Melo JB, Carreira IM, Ribeiro IP. Principles in the Management of Glioblastoma. Genes 2024, Vol 15, Page 501 2024;15:501. https://doi.org/10.3390/GENES15040501.",
+      "canonical_doi": "10.3390/genes15040501",
+      "doi_status": "Provided DOI normalized syntactically; no retained reliance",
+      "disposition": "Not retained in T08 active citations",
+      "support_review": "No full-text support claim; no T08 statement relies on this source"
+    },
+    {
+      "original_number": 4,
+      "original_entry": "Kim S, Son Y, Oh J, Kim S, Jang W, Lee S, et al. Global burden of brain and central nervous system cancer in 185 countries, and projections up to 2050: a population-based systematic analysis of GLOBOCAN 2022. Journal of Neuro-Oncology 2025;175:673–85. https://doi.org/10.1007/S11060-025-05164-0/METRICS.",
+      "canonical_doi": "10.1007/s11060-025-05164-0",
+      "doi_status": "Provided DOI normalized syntactically; no retained reliance",
+      "disposition": "Not retained in T08 active citations",
+      "support_review": "No full-text support claim; no T08 statement relies on this source"
+    },
+    {
+      "original_number": 5,
+      "original_entry": "Price M, Ballard C, Benedetti J, Neff C, Cioffi G, Waite KA, et al. CBTRUS Statistical Report: Primary Brain and Other Central Nervous System Tumors Diagnosed in the United States in 2017–2021. Neuro-Oncology 2024;26:vi1–85. https://doi.org/10.1093/NEUONC/NOAE145.",
+      "canonical_doi": "10.1093/neuonc/noae145",
+      "doi_status": "Provided DOI normalized syntactically; no retained reliance",
+      "disposition": "One canonical identity for duplicate original entries 5 and 13; not cited in replacement",
+      "support_review": "No full-text support claim; no T08 statement relies on this source",
+      "duplicate_group": "CBTRUS_2017_2021"
+    },
+    {
+      "original_number": 6,
+      "original_entry": "Leite LF, da Conceição LD, Saldanha EF, Menezes S, de Melo AC, Borea R, et al. Cancer Incidence and Mortality Estimates in Latin America and the Caribbean: A Systematic Analysis of the GLOBOCAN 2022. Cancer Research Communications 2025;5:2236–48. https://doi.org/10.1158/2767-9764.CRC-25-0564/767351/AM/CANCER-INCIDENCE-AND-MOR TALITY-ESTIMATES-IN-LATIN.",
+      "canonical_doi": "10.1158/2767-9764.crc-25-0564",
+      "doi_status": "Provided DOI normalized syntactically; no retained reliance",
+      "disposition": "Not retained in T08 active citations",
+      "support_review": "No full-text support claim; no T08 statement relies on this source"
+    },
+    {
+      "original_number": 7,
+      "original_entry": "Jemal A, Parkin DM, Bray F. Patterns of Cancer Incidence, Mortality, and Survival. Schottenfeld and Fraumeni Cancer Epidemiology and Prevention, Fourth Edition 2017:107–40. https://doi.org/10.1093/OSO/9780190238667.003.0008.",
+      "canonical_doi": "10.1093/oso/9780190238667.003.0008",
+      "doi_status": "Provided DOI normalized syntactically; no retained reliance",
+      "disposition": "Not retained in T08 active citations",
+      "support_review": "No full-text support claim; no T08 statement relies on this source"
+    },
+    {
+      "original_number": 8,
+      "original_entry": "Global Cancer Observatory n.d. https://gco.iarc.who.int/en (accessed July 20, 2026).",
+      "canonical_doi": null,
+      "doi_status": "Not supplied/not independently verified; no DOI invented",
+      "disposition": "Replace general homepage citation with R18 exact archived fact sheet",
+      "support_review": "2024 estimates v1.0 verified in downloaded PDF; new access date; old July citation cannot authenticate September release",
+      "active_reference": "R18"
+    },
+    {
+      "original_number": 9,
+      "original_entry": "Maldonado-Noboa I, Checa-Ron F, Tarupi-Montenegro W, Moreno-Ocampo A, Noboa-Jaramillo A, Pacheco-Ojeda L, et al. Cáncer en el Ecuador, ¿Qué ha cambiado en las últimas 3 décadas? Metro Ciencia 2025;33:s56–69. https://doi.org/10.47464/METROCIENCIA/VOL33/SUPLEMENTO-1/2025/S56-S69. 21",
+      "canonical_doi": "10.47464/metrociencia/vol33/suplemento-1/2025/s56-s69",
+      "doi_status": "Provided DOI normalized syntactically; no retained reliance",
+      "disposition": "Not retained in T08 active citations",
+      "support_review": "No full-text support claim; no T08 statement relies on this source"
+    },
+    {
+      "original_number": 10,
+      "original_entry": "Villarreal-Garza C, Aranda-Gutierrez A, Gonzalez-Sanchez DG, Bragança-Xavier C, Negrete-Tobar G, Chavarri-Guerra Y, et al. National cancer control plans in Latin America and the Caribbean: challenges and future directions. Lancet Oncol 2025;26:e320–30.",
+      "canonical_doi": null,
+      "doi_status": "Not supplied/not independently verified; no DOI invented",
+      "disposition": "Not retained in T08 active citations",
+      "support_review": "No full-text support claim; no T08 statement relies on this source"
+    },
+    {
+      "original_number": 11,
+      "original_entry": "Organization WH. WHO country stories: delivering for all. World Health Organization; 2023.",
+      "canonical_doi": null,
+      "doi_status": "Not supplied/not independently verified; no DOI invented",
+      "disposition": "Not retained in T08 active citations",
+      "support_review": "No full-text support claim; no T08 statement relies on this source"
+    },
+    {
+      "original_number": 12,
+      "original_entry": "Shakir M, Shariq SF, Irshad HA, Khowaja AH, Tahir I, Rae AI, et al. Barriers to neurosurgical care of brain tumors in low-and middle-income countries: a systematic review of the service delivery challenges. World Neurosurg 2024;187:211–22.",
+      "canonical_doi": null,
+      "doi_status": "Not supplied/not independently verified; no DOI invented",
+      "disposition": "Not retained in T08 active citations",
+      "support_review": "No full-text support claim; no T08 statement relies on this source"
+    },
+    {
+      "original_number": 13,
+      "original_entry": "Price M, Ballard C, Benedetti J, Neff C, Cioffi G, Waite KA, et al. CBTRUS statistical report: primary brain and other central nervous system tumors diagnosed in the United States in 2017–2021. Neuro Oncol 2024;26:vi1.",
+      "canonical_doi": "10.1093/neuonc/noae145",
+      "doi_status": "Provided DOI normalized syntactically; no retained reliance",
+      "disposition": "Duplicate of original 5; excluded from replacement bibliography",
+      "support_review": "No full-text support claim; no T08 statement relies on this source",
+      "duplicate_group": "CBTRUS_2017_2021"
+    },
+    {
+      "original_number": 14,
+      "original_entry": "Louis DN, Perry A, Wesseling P, Brat DJ, Cree IA, Figarella-Branger D, et al. The 2021 WHO classification of tumors of the central nervous system: a summary. Neuro Oncol 2021;23:1231–51.",
+      "canonical_doi": "10.1093/neuonc/noab106",
+      "doi_status": "Verified canonical DOI in primary classification article",
+      "disposition": "Retain as R19 for classification only; remove from COVID attribution",
+      "support_review": "Full-text classification taxonomy inspected; not evidence for Ecuador imaging delays or COVID care disruption",
+      "active_reference": "R19"
+    },
+    {
+      "original_number": 15,
+      "original_entry": "Girardi F, Allemani C, Coleman MP. Worldwide trends in survival from common childhood brain tumors: a systematic review. J Glob Oncol 2019;5:1–25.",
+      "canonical_doi": null,
+      "doi_status": "Not supplied/not independently verified; no DOI invented",
+      "disposition": "Not retained in T08 active citations",
+      "support_review": "Childhood survival review not used as evidence of prioritization of emergency neuro-oncology care in Ecuador; old mechanism claim removed"
+    },
+    {
+      "original_number": 16,
+      "original_entry": "Sung H, Ferlay J, Siegel RL, Laversanne M, Soerjomataram I, Jemal A, et al. Global cancer statistics 2020: GLOBOCAN estimates of incidence and mortality worldwide for 36 cancers in 185 countries. CA Cancer J Clin 2021;71:209–49.",
+      "canonical_doi": null,
+      "doi_status": "Not supplied/not independently verified; no DOI invented",
+      "disposition": "Not retained in T08 active citations",
+      "support_review": "Original GLOBOCAN incidence/disease-mortality title is not a hospital-admission benchmark; the claimed international hospitalization ranges are removed, not numerically patched"
+    },
+    {
+      "original_number": 17,
+      "original_entry": "Gupta T, Achari R, Chatterjee A, Chen Z-P, Mehta M, Bouffet E, et al. Comparison of epidemiology and outcomes in neuro-oncology between the east and the west: challenges and opportunities. Clin Oncol 2019;31:539–48.",
+      "canonical_doi": null,
+      "doi_status": "Not supplied/not independently verified; no DOI invented",
+      "disposition": "Not retained in T08 active citations",
+      "support_review": "No full-text support claim; no T08 statement relies on this source"
+    },
+    {
+      "original_number": 18,
+      "original_entry": "Ramirez Ferrer E, Zuluaga-Garcia JP, Alzate JD, Mayorga-Corvacho J, Sierra MA, Garzon-Duque MO, et al. Impact of healthcare disparities on the treatment and survival of patients with high-grade gliomas in Colombia: a multicenter inverse probability-weighted cohort analysis. J Neurooncol 2025;175:1067–77.",
+      "canonical_doi": null,
+      "doi_status": "Not supplied/not independently verified; no DOI invented",
+      "disposition": "Not retained in T08 active citations",
+      "support_review": "No full-text support claim; no T08 statement relies on this source"
+    },
+    {
+      "original_number": 19,
+      "original_entry": "Beltrán JQ, Soto-Abraham JE, Vidaurreta-Serrano J, Macias LGC, Apo EG, Ogando-Rivas E. Astrocytic tumors in Mexico: An overview of characteristics and prognosis in an open reference center for low-income population. J Neurosci Rural Pract 2017;9:516–21.",
+      "canonical_doi": null,
+      "doi_status": "Not supplied/not independently verified; no DOI invented",
+      "disposition": "Not retained in T08 active citations",
+      "support_review": "No full-text support claim; no T08 statement relies on this source"
+    },
+    {
+      "original_number": 20,
+      "original_entry": "Visser O, Ardanaz E, Botta L, Sant M, Tavilla A, Minicozzi P, et al. Survival of adults with primary malignant brain tumours in Europe; Results of the EUROCARE-5 study. Eur J Cancer 2015;51:2231–41.",
+      "canonical_doi": null,
+      "doi_status": "Not supplied/not independently verified; no DOI invented",
+      "disposition": "Not retained in T08 active citations",
+      "support_review": "European patient-survival study not used to establish Ecuador registry disruptions; historical 2017/2023 loss mechanism remains unknown"
+    },
+    {
+      "original_number": 21,
+      "original_entry": "Bray F, Laversanne M, Sung H, Ferlay J, Siegel RL, Soerjomataram I, et al. Global cancer statistics 2022: GLOBOCAN estimates of incidence and mortality worldwide for 36 cancers in 185 countries. CA Cancer J Clin 2024;74:229–63.",
+      "canonical_doi": "10.3322/caac.21834",
+      "doi_status": "Provided DOI normalized syntactically; no retained reliance",
+      "disposition": "Not retained in T08 active citations",
+      "support_review": "GLOBOCAN 2022 metadata identified; removed as support for WHO molecular classification; R19 used for that narrower claim"
+    },
+    {
+      "original_number": 22,
+      "original_entry": "Huang J, Chan SC, Lok V, Zhang L, Lin X, Lucero-Prisno DE, et al. Disease burden, risk factors, and trends of primary central nervous system (CNS) cancer: a global study of registries data. Neuro Oncol 2023;25:995–1005.",
+      "canonical_doi": null,
+      "doi_status": "Not supplied/not independently verified; no DOI invented",
+      "disposition": "Not retained in T08 active citations",
+      "support_review": "No full-text support claim; no T08 statement relies on this source"
+    },
+    {
+      "original_number": 23,
+      "original_entry": "Pineros M, Sierra MS, Izarzugaza MI, Forman D. Descriptive epidemiology of brain and central nervous system cancers in Central and South America. Cancer Epidemiol 2016;44:S141–9.",
+      "canonical_doi": "10.1016/j.canep.2016.04.007",
+      "doi_status": "Verified canonical DOI and metadata via PubMed",
+      "disposition": "Retain as R20 only for endpoints stated in author abstract",
+      "support_review": "Abstract Methods verified; publisher full text unavailable; no Ecuador-specific or hospital-rate numerical claim retained",
+      "active_reference": "R20"
+    },
+    {
+      "original_number": 24,
+      "original_entry": "Low JT, Ostrom QT, Cioffi G, Neff C, Waite KA, Kruchko C, et al. Primary brain and other central nervous system tumors in the United States (2014-2018): A summary of the CBTRUS statistical report for clinicians. Neurooncol Pract 2022;9:165–82. 22",
+      "canonical_doi": null,
+      "doi_status": "Not supplied/not independently verified; no DOI invented",
+      "disposition": "Not retained in T08 active citations",
+      "support_review": "No full-text support claim; no T08 statement relies on this source"
+    }
+  ]
+}

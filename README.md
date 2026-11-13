@@ -12,7 +12,7 @@ The unit of analysis is an admission/discharge record. T02 reconstructed **10,97
 admissions and 963 in-hospital deaths** from official INEC releases. Early-year
 residence-area labels remain provisional. T03 has rebuilt resident-population rates;
 T04 mortality modelling and T05 replacement analyses are complete for their documented
-specifications. T06 descriptive tables and model legends are complete; T07 manuscript rewriting is next.
+specifications. T06 descriptive tables and model legends are complete; T07 replacement sections/crosswalk and T08 narrative/evidence are prepared; full-paper integration remains open.
 
 Start with the [independent review](Writeable/current_state_review.md),
 [revision task plan](Writeable/revision_task_plan.md),
@@ -209,7 +209,7 @@ The original workbook generation history is unverified. Confirm 2015–2017
 residence-area labels before rural/urban association modelling.
 
 T03 rates, T04 mortality modelling and T05 replacement analyses are complete for their
-documented specifications. T06 descriptive tables and legends are complete; T07 is next. T02 early residence-area labels still require confirmation. T01 environment
+documented specifications. T06 descriptive tables and legends are complete; T07 replacement sections are drafted; full-paper integration remains open. T02 early residence-area labels still require confirmation. T01 environment
 records describe the historical baseline; T02 versions are recorded separately in
 `provenance/t02/environment_freeze.txt`. Those records are provenance, not a virtual
 environment to copy between machines.
@@ -291,3 +291,61 @@ models. Read the [T06 report](Writeable/t06_descriptive_tables.md) for denominat
 restricted residence comparisons, sparse-cell testing and validation. Readable
 review copies and evidence are tracked in `provenance/t06/`; regenerated products
 are in `outputs/tables/`. This stage was executed on macOS; Windows is untested.
+
+## T07 manuscript replacement sections
+
+Read the [T07 revision notes](Writeable/t07_revision_notes.md),
+[editable Word sections](Writeable/t07_manuscript_sections.docx),
+[version-controlled section text](Writeable/t07_manuscript_sections.md) and
+[STROBE/RECORD crosswalk](Writeable/t07_reporting_crosswalk.md). These replace
+the title, abstract, framing and Methods; they are not an integrated full paper.
+T08–T09 must update the remaining narrative/figures before T07 can close its
+whole-paper consistency criterion. Ethics and author declarations remain T10.
+
+After T02–T06, regenerate text and the numeric ledger on either system with:
+
+```sh
+python -X utf8 scripts/prepare_t07_sections.py
+```
+
+Optional Word export uses `requirements-documents.txt` and `--docx`; see the
+[reproduction guide](README_REPRODUCTION.md). No analysis dependency changed.
+
+## T08 interpretation and evidence audit
+
+The [T08 replacement Introduction Discussion and Conclusion](Writeable/t08_interpretation_sections.docx)
+and [evidence ledger](Writeable/t08_evidence_ledger.md) align interpretation with
+executed results and verified source claims. See [revision notes](Writeable/t08_revision_notes.md)
+for source-access limits, the exact GLOBOCAN edition and remaining integration.
+The new narrative is complete for its stated scope; T07 whole-paper integration,
+T09 figures and T10 author/submission verification remain open.
+
+```sh
+python -X utf8 scripts/prepare_t08_sections.py
+```
+
+This works from tracked aggregate evidence after T02–T07 and requires no network
+or model refits. `--docx` uses optional `requirements-documents.txt`. The archived
+IARC fact sheet is preserved with its hash rather than fetched on every run.
+
+## T09 publication figures and geographic reporting
+
+Read [T09 figure methods](Writeable/t09_figures_and_geography.md) and
+[figure legends](Writeable/t09_figure_legends.md). Figure 1 reproduces Table 3 rates;
+Figure 2 shows residence-province counts with full labels. Supplement S1 contains
+ten yearly maps, and S2 distinguishes treating-facility province counts. All are
+exported as PDF/SVG; main PNGs are 600 dpi at 180 mm width.
+
+After T02/T03 with the local environment active on macOS or Windows:
+
+```sh
+python -m pip install -r requirements-figures.txt
+python -X utf8 scripts/generate_figures.py
+python -X utf8 -m unittest discover -s tests -v
+```
+
+Fixed boundaries/metadata are tracked under `provenance/t09/`, so ordinary figure
+generation is offline. Plotting dependencies are optional and separate from core
+analysis. Full exports are in `outputs/figures/`; tracked review previews and
+reconciled data are in `provenance/t09/`. T09 is complete; T07 whole-paper
+integration and T10 author/submission checks remain open.

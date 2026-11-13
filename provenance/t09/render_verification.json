@@ -1,0 +1,23 @@
+{
+  "date": "2026-11-13",
+  "source_and_output_hashes": "all match run_metadata.json",
+  "main_figures": [
+    "figure1_rates",
+    "figure2_residence_counts",
+    "figureS2_facility_counts"
+  ],
+  "main_width_mm": 180,
+  "main_png_dpi": 600,
+  "svg_raster_images": 0,
+  "atlas_pdf_page_objects": 10,
+  "pdf_dimensions_check": "uncompressed MediaBox entries",
+  "visually_reviewed_pngs": 13,
+  "final_png_hashes_match_visually_inspected_versions": true,
+  "rate_rows_reconciled": 100,
+  "geography_cells_reconciled": 480,
+  "boundary_join_provinces": 24,
+  "tests_full_suite": 72,
+  "test_skips": 0,
+  "tests_t09_final": 11,
+  "platform_verified": "macOS"
+}

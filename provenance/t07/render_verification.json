@@ -1,0 +1,57 @@
+{
+  "review_date": "2026-11-10",
+  "docx_sha256": "6a570a14e3e559845bd727b56d865cf0337ef9b1d1b4bd9f363d325fb8639328",
+  "pdf_sha256": "cfdd7c8d64dadee6aca2bbc25afbd7724ee4d60f61399557fc8c1888ad41de19",
+  "page_count": 7,
+  "pages": [
+    {
+      "page": 1,
+      "heading": "Hospitalizations and In Hospital",
+      "words": 272,
+      "png_sha256": "67fbe9b34e3c39238ba40923d1497f89286e5c928a944e75faf00d378b158d4f"
+    },
+    {
+      "page": 2,
+      "heading": "Study framing and objective",
+      "words": 479,
+      "png_sha256": "8dfec0fef63bbe4ae27628c3cad3e2525bb481a2d7410c4f6befc5ecc8a39b4e"
+    },
+    {
+      "page": 3,
+      "heading": "Outcome definitions and anatomical groups",
+      "words": 496,
+      "png_sha256": "8179882bbddc45be371aabbb7dee6a433113f214d6310af76980123ec5c5e145"
+    },
+    {
+      "page": 4,
+      "heading": "Population denominators and standardization",
+      "words": 438,
+      "png_sha256": "a7f8d4ff09a9425a98b9ab60e632bae121cc0a40c41e73686839f0afb3eec3ba"
+    },
+    {
+      "page": 5,
+      "heading": "Primary regression models",
+      "words": 414,
+      "png_sha256": "a891f11a483cd5d5f2fe6a4b2383d5de1edd15c560edfa0ab86ce0494f74b782"
+    },
+    {
+      "page": 6,
+      "heading": "Sensitivity analyses and descriptive comparisons",
+      "words": 488,
+      "png_sha256": "4d99434e011d34565fe89923ed85a8165787dd5315b6c823e21a77974582ee13"
+    },
+    {
+      "page": 7,
+      "heading": "Source notes",
+      "words": 226,
+      "png_sha256": "fe651b6d4653336c85e92dc36572ff11d077f6ad0a0986d16282f6c2d52c2e9b"
+    }
+  ],
+  "word_text_matches_markdown": true,
+  "source_numbers_verified": 32,
+  "abstract_word_count": 233,
+  "review": "All seven pages inspected; source headings and crosswalk locators verified. Recheck pagination after final integration or Word-engine changes.",
+  "runtime_python": "3.12.14",
+  "runtime_executable": "/Users/abismo-mac/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python",
+  "renderer": "Bundled document skill render_docx.py using bundled LibreOffice; QA PDF/PNGs ignored by Git"
+}

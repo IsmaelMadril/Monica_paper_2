@@ -1,0 +1,11 @@
+year,residence_admissions,foreign_excluded,facility_admissions,source_admissions,passed
+2015,1073,0,1073,1073,True
+2016,1057,0,1057,1057,True
+2017,1221,0,1221,1221,True
+2018,1147,1,1148,1148,True
+2019,1237,2,1239,1239,True
+2020,942,0,942,942,True
+2021,1080,0,1080,1080,True
+2022,1098,0,1098,1098,True
+2023,1095,0,1095,1095,True
+2024,1019,0,1019,1019,True
