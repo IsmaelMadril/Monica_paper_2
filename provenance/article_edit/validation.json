@@ -1,0 +1,11 @@
+{
+  "date": "2026-11-16",
+  "docx_sha256": "021f4b83f4beb413b6fd871c78156ccc607862ec861cf10291031df0dc6e1e13",
+  "table_blocks_checked": 23,
+  "table_cells_match_source_markdown": true,
+  "rendered_numeric_tokens_present": true,
+  "pages": 19,
+  "inline_figures": 2,
+  "native_equations": 2,
+  "author_comments": 2
+}

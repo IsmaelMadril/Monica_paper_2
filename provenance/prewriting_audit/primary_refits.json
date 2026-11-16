@@ -1,0 +1,23 @@
+[
+  {
+    "model": "mortality",
+    "contrasts": 26,
+    "maximum_beta_se_difference": 0.0,
+    "converged": true,
+    "separation_detected": false
+  },
+  {
+    "model": "coding",
+    "contrasts": 15,
+    "maximum_beta_se_difference": 0.0,
+    "converged": true,
+    "separation_detected": false
+  },
+  {
+    "model": "site",
+    "contrasts": 15,
+    "maximum_beta_se_difference": 0.0,
+    "converged": true,
+    "separation_detected": false
+  }
+]

@@ -1,0 +1,382 @@
+[
+  {
+    "metadata": "provenance/t03/run_metadata.json",
+    "path": "data/processed/admissions_c71_audited.csv",
+    "status": "line_endings_only"
+  },
+  {
+    "metadata": "provenance/t03/run_metadata.json",
+    "path": "provenance/t03/population_manifest.csv",
+    "status": "line_endings_only"
+  },
+  {
+    "metadata": "provenance/t03/run_metadata.json",
+    "path": "provenance/t03/annual_population_by_age.csv",
+    "status": "line_endings_only"
+  },
+  {
+    "metadata": "provenance/t03/run_metadata.json",
+    "path": "provenance/t03/standard_weights_2022.csv",
+    "status": "line_endings_only"
+  },
+  {
+    "metadata": "provenance/t04/run_metadata.json",
+    "path": "data/processed/admissions_c71_audited.csv",
+    "status": "exact"
+  },
+  {
+    "metadata": "provenance/t04/run_metadata.json",
+    "path": "provenance/t04/analysis_specification.md",
+    "status": "exact"
+  },
+  {
+    "metadata": "provenance/t05/run_metadata.json",
+    "path": "data/processed/admissions_c71_audited.csv",
+    "status": "exact"
+  },
+  {
+    "metadata": "provenance/t05/run_metadata.json",
+    "path": "provenance/t05/analysis_specification.md",
+    "status": "exact"
+  },
+  {
+    "metadata": "provenance/t06/run_metadata.json",
+    "path": "data/processed/admissions_c71_audited.csv",
+    "status": "exact"
+  },
+  {
+    "metadata": "provenance/t06/run_metadata.json",
+    "path": "provenance/t04/run_metadata.json",
+    "status": "exact"
+  },
+  {
+    "metadata": "provenance/t06/run_metadata.json",
+    "path": "provenance/t04/model_diagnostics.json",
+    "status": "exact"
+  },
+  {
+    "metadata": "provenance/t06/run_metadata.json",
+    "path": "provenance/t04/all_model_coefficients.csv",
+    "status": "exact"
+  },
+  {
+    "metadata": "provenance/t06/run_metadata.json",
+    "path": "provenance/t05/run_metadata.json",
+    "status": "exact"
+  },
+  {
+    "metadata": "provenance/t06/run_metadata.json",
+    "path": "provenance/t05/model_diagnostics.json",
+    "status": "exact"
+  },
+  {
+    "metadata": "provenance/t06/run_metadata.json",
+    "path": "provenance/t05/all_model_coefficients.csv",
+    "status": "exact"
+  },
+  {
+    "metadata": "provenance/t06/run_metadata.json",
+    "path": "scripts/generate_descriptive_tables.py",
+    "status": "exact"
+  },
+  {
+    "metadata": "provenance/t06/run_metadata.json",
+    "path": "scripts/table_reporting.py",
+    "status": "exact"
+  },
+  {
+    "metadata": "provenance/t06/run_metadata.json",
+    "path": "provenance/t06/analysis_specification.md",
+    "status": "exact"
+  },
+  {
+    "metadata": "provenance/t07/run_metadata.json",
+    "path": "data/processed/admissions_c71_audited.csv",
+    "status": "exact"
+  },
+  {
+    "metadata": "provenance/t07/run_metadata.json",
+    "path": "provenance/t04/run_metadata.json",
+    "status": "exact"
+  },
+  {
+    "metadata": "provenance/t07/run_metadata.json",
+    "path": "provenance/t05/run_metadata.json",
+    "status": "exact"
+  },
+  {
+    "metadata": "provenance/t07/run_metadata.json",
+    "path": "provenance/t06/run_metadata.json",
+    "status": "exact"
+  },
+  {
+    "metadata": "provenance/t07/run_metadata.json",
+    "path": "provenance/t03/population_manifest.csv",
+    "status": "exact"
+  },
+  {
+    "metadata": "provenance/t07/run_metadata.json",
+    "path": "provenance/t03/annual_population_by_age.csv",
+    "status": "exact"
+  },
+  {
+    "metadata": "provenance/t07/run_metadata.json",
+    "path": "provenance/t03/standard_weights_2022.csv",
+    "status": "exact"
+  },
+  {
+    "metadata": "provenance/t07/run_metadata.json",
+    "path": "provenance/t03/run_metadata.json",
+    "status": "exact"
+  },
+  {
+    "metadata": "provenance/t07/run_metadata.json",
+    "path": "provenance/t02/selection_flow.csv",
+    "status": "exact"
+  },
+  {
+    "metadata": "provenance/t07/run_metadata.json",
+    "path": "provenance/t03/admission_fatality.csv",
+    "status": "exact"
+  },
+  {
+    "metadata": "provenance/t07/run_metadata.json",
+    "path": "provenance/t03/period_summary_rates.csv",
+    "status": "exact"
+  },
+  {
+    "metadata": "provenance/t07/run_metadata.json",
+    "path": "provenance/t04/all_model_coefficients.csv",
+    "status": "exact"
+  },
+  {
+    "metadata": "provenance/t07/run_metadata.json",
+    "path": "provenance/t05/all_model_coefficients.csv",
+    "status": "exact"
+  },
+  {
+    "metadata": "provenance/t07/run_metadata.json",
+    "path": "provenance/t05/anatomy_descriptive.csv",
+    "status": "exact"
+  },
+  {
+    "metadata": "provenance/t07/run_metadata.json",
+    "path": "provenance/t05/model_flow.csv",
+    "status": "exact"
+  },
+  {
+    "metadata": "provenance/t07/run_metadata.json",
+    "path": "provenance/t06/table_scopes.csv",
+    "status": "exact"
+  },
+  {
+    "metadata": "provenance/t07/run_metadata.json",
+    "path": "provenance/t06/missingness.csv",
+    "status": "exact"
+  },
+  {
+    "metadata": "provenance/t07/run_metadata.json",
+    "path": "data/raw/baseline_2026-10-23/Writeable/tumores encefalo Monica art completo.docx",
+    "status": "exact"
+  },
+  {
+    "metadata": "provenance/t07/run_metadata.json",
+    "path": "Writeable/t07_sections_template.md",
+    "status": "exact"
+  },
+  {
+    "metadata": "provenance/t07/run_metadata.json",
+    "path": "scripts/prepare_t07_sections.py",
+    "status": "exact"
+  },
+  {
+    "metadata": "provenance/t08/run_metadata.json",
+    "path": "data/processed/admissions_c71_audited.csv",
+    "status": "exact"
+  },
+  {
+    "metadata": "provenance/t08/run_metadata.json",
+    "path": "provenance/t04/run_metadata.json",
+    "status": "exact"
+  },
+  {
+    "metadata": "provenance/t08/run_metadata.json",
+    "path": "provenance/t05/run_metadata.json",
+    "status": "exact"
+  },
+  {
+    "metadata": "provenance/t08/run_metadata.json",
+    "path": "provenance/t06/run_metadata.json",
+    "status": "exact"
+  },
+  {
+    "metadata": "provenance/t08/run_metadata.json",
+    "path": "provenance/t03/population_manifest.csv",
+    "status": "exact"
+  },
+  {
+    "metadata": "provenance/t08/run_metadata.json",
+    "path": "provenance/t03/annual_population_by_age.csv",
+    "status": "exact"
+  },
+  {
+    "metadata": "provenance/t08/run_metadata.json",
+    "path": "provenance/t03/standard_weights_2022.csv",
+    "status": "exact"
+  },
+  {
+    "metadata": "provenance/t08/run_metadata.json",
+    "path": "provenance/t03/run_metadata.json",
+    "status": "exact"
+  },
+  {
+    "metadata": "provenance/t08/run_metadata.json",
+    "path": "provenance/t02/selection_flow.csv",
+    "status": "exact"
+  },
+  {
+    "metadata": "provenance/t08/run_metadata.json",
+    "path": "provenance/t03/admission_fatality.csv",
+    "status": "exact"
+  },
+  {
+    "metadata": "provenance/t08/run_metadata.json",
+    "path": "provenance/t03/period_summary_rates.csv",
+    "status": "exact"
+  },
+  {
+    "metadata": "provenance/t08/run_metadata.json",
+    "path": "provenance/t04/all_model_coefficients.csv",
+    "status": "exact"
+  },
+  {
+    "metadata": "provenance/t08/run_metadata.json",
+    "path": "provenance/t05/all_model_coefficients.csv",
+    "status": "exact"
+  },
+  {
+    "metadata": "provenance/t08/run_metadata.json",
+    "path": "provenance/t05/anatomy_descriptive.csv",
+    "status": "exact"
+  },
+  {
+    "metadata": "provenance/t08/run_metadata.json",
+    "path": "provenance/t05/model_flow.csv",
+    "status": "exact"
+  },
+  {
+    "metadata": "provenance/t08/run_metadata.json",
+    "path": "provenance/t06/table_scopes.csv",
+    "status": "exact"
+  },
+  {
+    "metadata": "provenance/t08/run_metadata.json",
+    "path": "provenance/t06/missingness.csv",
+    "status": "exact"
+  },
+  {
+    "metadata": "provenance/t08/run_metadata.json",
+    "path": "data/raw/baseline_2026-10-23/Writeable/tumores encefalo Monica art completo.docx",
+    "status": "exact"
+  },
+  {
+    "metadata": "provenance/t08/run_metadata.json",
+    "path": "Writeable/t07_sections_template.md",
+    "status": "exact"
+  },
+  {
+    "metadata": "provenance/t08/run_metadata.json",
+    "path": "scripts/prepare_t07_sections.py",
+    "status": "exact"
+  },
+  {
+    "metadata": "provenance/t08/run_metadata.json",
+    "path": "provenance/t07/numeric_traceability.json",
+    "status": "exact"
+  },
+  {
+    "metadata": "provenance/t08/run_metadata.json",
+    "path": "provenance/t08/globocan_snapshot.json",
+    "status": "exact"
+  },
+  {
+    "metadata": "provenance/t08/run_metadata.json",
+    "path": "provenance/t08/sources/iarc_ecuador_fact_sheet.pdf",
+    "status": "exact"
+  },
+  {
+    "metadata": "provenance/t08/run_metadata.json",
+    "path": "provenance/t03/annual_standardized_rates.csv",
+    "status": "exact"
+  },
+  {
+    "metadata": "provenance/t08/run_metadata.json",
+    "path": "Writeable/t08_sections_template.md",
+    "status": "exact"
+  },
+  {
+    "metadata": "provenance/t08/run_metadata.json",
+    "path": "scripts/prepare_t08_sections.py",
+    "status": "exact"
+  },
+  {
+    "metadata": "provenance/t08/run_metadata.json",
+    "path": "provenance/t08/claim_source_ledger.json",
+    "status": "exact"
+  },
+  {
+    "metadata": "provenance/t08/run_metadata.json",
+    "path": "provenance/t08/reference_audit.json",
+    "status": "exact"
+  },
+  {
+    "metadata": "provenance/t08/run_metadata.json",
+    "path": "references/reconstruction.bib",
+    "status": "mismatch"
+  },
+  {
+    "metadata": "provenance/t09/run_metadata.json",
+    "path": "data/processed/admissions_c71_audited.csv",
+    "status": "exact"
+  },
+  {
+    "metadata": "provenance/t09/run_metadata.json",
+    "path": "outputs/tables/table3_rebuilt.csv",
+    "status": "exact"
+  },
+  {
+    "metadata": "provenance/t09/run_metadata.json",
+    "path": "provenance/t03/annual_standardized_rates.csv",
+    "status": "exact"
+  },
+  {
+    "metadata": "provenance/t09/run_metadata.json",
+    "path": "provenance/t02/selection_flow.csv",
+    "status": "exact"
+  },
+  {
+    "metadata": "provenance/t09/run_metadata.json",
+    "path": "provenance/t09/boundary_manifest.json",
+    "status": "exact"
+  },
+  {
+    "metadata": "provenance/t09/run_metadata.json",
+    "path": "provenance/t09/ecuador_adm1.geojson",
+    "status": "exact"
+  },
+  {
+    "metadata": "provenance/t09/run_metadata.json",
+    "path": "provenance/t09/analysis_specification.md",
+    "status": "exact"
+  },
+  {
+    "metadata": "provenance/t09/run_metadata.json",
+    "path": "scripts/generate_figures.py",
+    "status": "exact"
+  },
+  {
+    "metadata": "provenance/t09/run_metadata.json",
+    "path": "requirements-figures.txt",
+    "status": "exact"
+  }
+]
